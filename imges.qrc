@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>images/game.png</file>
         <file>Dialogs.qml</file>
+        <file>../1.png</file>
     </qresource>
 </RCC>
