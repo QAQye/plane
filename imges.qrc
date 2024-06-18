@@ -1,6 +1,6 @@
 <RCC>
     <qresource prefix="/">
-        <file>images/game.png</file>
-        <file>Dialogs.qml</file>
+        <file>images/start.png</file>
+        <file>firstwindow.js</file>
     </qresource>
 </RCC>

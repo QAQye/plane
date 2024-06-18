@@ -20,6 +20,8 @@ qt_add_qml_module(appPlanes
     QML_FILES Content.qml
     QML_FILES Dialogs.qml
     QML_FILES Actions.qml
+    QML_FILES FirstWindow.qml
+    QML_FILES firstwindow.js
 )
 
 target_compile_features(appPlanes PRIVATE cxx_std_20)
