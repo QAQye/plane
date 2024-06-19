@@ -1,0 +1,8 @@
+module Planes
+typeinfo appPlanes.qmltypes
+prefer :/qt/qml/Planes/
+Window 1.0 Window.qml
+Content 1.0 Content.qml
+Dialogs 1.0 Dialogs.qml
+Actions 1.0 Actions.qml
+
