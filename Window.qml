@@ -48,10 +48,13 @@ ApplicationWindow {
     }
 
     // 使用 Content 组件
-    Loader {
-        id: contentLoader
-        source: "Content.qml"
-        anchors.fill: parent
+    // Loader {
+    //     id: contentLoader
+    //     source: "Content.qml"
+    //     anchors.fill: parent
+    // }
+    Content{
+        id:content
     }
 
     // 定义 Actions 组件

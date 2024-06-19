@@ -1,17 +1,12 @@
 import QtQuick
 
 Item {
-    id: content
+    id:contents
     anchors.fill: parent
-
-    Loader {
-        id: contentLoader
-        source: "2.qml"
-        anchors.fill: parent
+    Dialogs{
+        id:dialogs
     }
 
-    Component.onCompleted: {
-        console.log("Content loaded")
-    }
+   SecondWindow{}
 }
 

@@ -8,11 +8,17 @@ RowLayout{
         id:_mainMapRectangle
         // 在layout中设置填满父对象以及其首选宽度
         Layout.fillHeight: true
+        // 剩下的0.2决定放text
         Layout.preferredWidth: parent.width*0.8
+        // source:"qrc:/images/background.jpg"
         color: "#fffdca"
         Rectangle{
             id:_greenscreen
-            width: (_mainMapRectangle.width/13)*3
+            anchors.left: parent.left
+            anchors.top: parent.top
+            anchors.leftMargin: _mainMapRectangle.width * 0.07
+            anchors.topMargin: _mainMapRectangle.height * 0.005
+            width: _mainMapRectangle.width*0.18
             height: width
             color:"#83c326"
                 GridLayout {
@@ -42,9 +48,12 @@ RowLayout{
         }
         Rectangle{
             id:_redscreen
-            width:  (_mainMapRectangle.width/13)*3
+            width:  _mainMapRectangle.width*0.18
             height: width
             anchors.right: parent.right
+            anchors.top:parent.top
+            anchors.rightMargin: _mainMapRectangle.width*0.07
+            anchors.topMargin: _mainMapRectangle.height * 0.005
             color:"#db224e"
                 GridLayout {
                     anchors.fill: parent
@@ -74,9 +83,12 @@ RowLayout{
 
         Rectangle{
             id:_orangescreen
-            width:  (_mainMapRectangle.width/13)*3
+            width: _mainMapRectangle.width*0.18
             height: width
             anchors.bottom: parent.bottom
+            anchors.left: parent.left
+            anchors.leftMargin: _mainMapRectangle.width*0.07
+            anchors.bottomMargin: _mainMapRectangle.height * 0.005
             color:"#e77918"
                 GridLayout {
                     anchors.fill: parent
@@ -105,10 +117,12 @@ RowLayout{
         }
         Rectangle{
             id:_bluescreen
-            width:  (_mainMapRectangle.width/13)*3
+            width:  _mainMapRectangle.width*0.18
             height: width
             anchors.right: parent.right
             anchors.bottom: parent.bottom
+            anchors.rightMargin: _mainMapRectangle.width*0.07
+            anchors.bottomMargin: _mainMapRectangle.height * 0.005
             color:"#76c5f0"
                 GridLayout {
                     anchors.fill: parent
@@ -136,14 +150,24 @@ RowLayout{
                 }
 
         }
+        Triangle{
+            // startX: 90
+        }
+
+
     }
 
+    TapHandler{
+        id:tapHandler
+        onTapped: (eventPoint)=> {
+                      // x:28.4 654.5
+                      // 102  139.3
+                 console.log( eventPoint.scenePosition.x)
+                console.log(_mainMapRectangle.width)
+                  }
 
-    // TapHandler{
-    //     onTapped:{
-    //         console.log(contents.width)
-    //     }
-    // }
+    }
+
 
         // 使用组布局设置每行每列显示的个数
 

@@ -19,5 +19,6 @@
         <file>images/red.png</file>
         <file>images/yellow.png</file>
         <file>images/2background.png</file>
+        <file>images/background.jpg</file>
     </qresource>
 </RCC>
