@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="/qt/qml/Planes/">
+    <file alias="Window.qml">/root/111/plane/Window.qml</file>
+    <file alias="Content.qml">/root/111/plane/Content.qml</file>
+    <file alias="Dialogs.qml">/root/111/plane/Dialogs.qml</file>
+    <file alias="Actions.qml">/root/111/plane/Actions.qml</file>
+    <file alias="MainMap.qml">/root/111/plane/MainMap.qml</file>
+    <file alias="imges.qrc">/root/111/plane/imges.qrc</file>
+  </qresource>
+</RCC>
+
