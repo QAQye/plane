@@ -1,6 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>images/game.png</file>
-        <file>Dialogs.qml</file>
-    </qresource>
-</RCC>
