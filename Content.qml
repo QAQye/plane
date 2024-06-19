@@ -7,6 +7,6 @@ Item {
         id:dialogs
     }
 
-    MainMap{}
+    FirstWindow{}
 
 }

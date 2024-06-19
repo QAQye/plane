@@ -3,6 +3,5 @@
         <file>images/game.png</file>
         <file>Dialogs.qml</file>
         <file>images/start1.png</file>
-        <file>firstwindow.js</file>
     </qresource>
 </RCC>
