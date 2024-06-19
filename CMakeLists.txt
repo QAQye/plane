@@ -34,7 +34,8 @@ qt_add_qml_module(
   FirstWindow.qml
   QML_FILES
   SecondWindow.qml
-  QML_FILES Triangle.qml)
+  QML_FILES Triangle.qml
+  QML_FILES Control.js)
 
 target_compile_features(appPlanes PRIVATE cxx_std_20)
 
