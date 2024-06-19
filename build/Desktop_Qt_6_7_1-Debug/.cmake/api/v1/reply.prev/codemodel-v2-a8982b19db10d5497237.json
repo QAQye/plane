@@ -1,0 +1,169 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-ffd8735fa22eb9a98784.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Planes",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-Debug-f2dbc4c419f90fe8c58f.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-Debug-ba984e19fc8cf46df127.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_module-Debug-c343564e7ef66b8db3f9.json",
+					"name" : "all_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-Debug-44e1982104d94880c0af.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPlanes::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPlanes-Debug-3d6a5f375ff32842cc89.json",
+					"name" : "appPlanes",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPlanes_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPlanes_autogen-Debug-80527b6c18bfb4f3c861.json",
+					"name" : "appPlanes_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPlanes_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPlanes_autogen_timestamp_deps-Debug-53268a60bcbaca94408b.json",
+					"name" : "appPlanes_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPlanes_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPlanes_qmlimportscan-Debug-322bb1d945775dba8f80.json",
+					"name" : "appPlanes_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPlanes_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPlanes_qmllint-Debug-2c37d2f4116baeca3d6f.json",
+					"name" : "appPlanes_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPlanes_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPlanes_qmllint_json-Debug-5c86aec20f9afcc7d87c.json",
+					"name" : "appPlanes_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPlanes_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPlanes_qmllint_module-Debug-e9f8d36bca3ac48402fa.json",
+					"name" : "appPlanes_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPlanes_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPlanes_qmltyperegistration-Debug-4e185639dff89e196448.json",
+					"name" : "appPlanes_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPlanes_tooling::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPlanes_tooling-Debug-9d1d7521e3087759c363.json",
+					"name" : "appPlanes_tooling",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/root/Planes/build/Desktop_Qt_6_7_1-Debug",
+		"source" : "/root/Planes"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

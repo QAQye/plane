@@ -8,5 +8,5 @@ Item {
     }
 
     MainMap{}
-
 }
+
