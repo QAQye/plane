@@ -2,5 +2,21 @@
     <qresource prefix="/">
         <file>images/game.png</file>
         <file>Dialogs.qml</file>
+        <file>images/2.png</file>
+        <file>images/1.png</file>
+        <file>images/3.png</file>
+        <file>images/4.png</file>
+        <file>images/5.png</file>
+        <file>images/6.png</file>
+        <file>images/blue.png</file>
+        <file>images/fly.png</file>
+        <file>images/green.png</file>
+        <file>images/plane_blue_b.png</file>
+        <file>images/plane_green_b.png</file>
+        <file>images/plane_red_b.png</file>
+        <file>images/plane_yellow_b.png</file>
+        <file>images/red.png</file>
+        <file>images/yellow.png</file>
+        <file>images/2background.png</file>
     </qresource>
 </RCC>
