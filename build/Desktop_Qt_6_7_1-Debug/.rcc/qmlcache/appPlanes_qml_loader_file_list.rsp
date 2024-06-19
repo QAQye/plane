@@ -1,0 +1,11 @@
+--resource
+/root/111/plane/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qmake_Planes.qrc
+--resource
+/root/111/plane/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/appPlanes_raw_qml_0.qrc
+/qt/qml/Planes/Window.qml
+/qt/qml/Planes/Content.qml
+/qt/qml/Planes/Dialogs.qml
+/qt/qml/Planes/Actions.qml
+/qt/qml/Planes/MainMap.qml
+/qt/qml/Planes/FirstWindow.qml
+/qt/qml/Planes/SecondWindow.qml

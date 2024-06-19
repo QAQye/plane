@@ -33,7 +33,7 @@ qt_add_qml_module(
   QML_FILES
   FirstWindow.qml
   QML_FILES
-  2.qml)
+  SecondWindow.qml)
 
 target_compile_features(appPlanes PRIVATE cxx_std_20)
 
