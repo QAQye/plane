@@ -1,23 +1,31 @@
 import QtQuick
 import QtQuick.Controls
 Item {
-    property  alias exitAction: exitAction
-    property  alias aboutAction: aboutAction
-    property  alias stopAction: stopAction
+    property  alias exitAction: _exitAction
+    property  alias aboutAction: _aboutAction
+    property  alias stopAction: _stopAction
+    property   alias music: _music
     Action{
-        id:exitAction
+        id:_exitAction
         // icon.name:
-        text: qsTr("exit")
+        text: qsTr("退出")
+        onTriggered: {
+            // 如果点击按钮那么退出
+            Qt.quit()
+        }
 
     }
     Action{
-        id:aboutAction
-        text: "about"
-
+        id:_aboutAction
+        text: "关于我们"
     }
     Action{
-        id:stopAction
-        text: "stop"
+        id:_stopAction
+        text: "暂停"
+    }
+    Action{
+        id:_music
+        text: "音乐"
     }
 
 }

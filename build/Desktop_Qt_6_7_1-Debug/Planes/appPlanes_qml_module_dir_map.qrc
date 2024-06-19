@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/">
-    <file alias="/qt/qml/Planes">/root/111/plane/build/Desktop_Qt_6_7_1-Debug/Planes</file>
-
-  </qresource>
-</RCC>

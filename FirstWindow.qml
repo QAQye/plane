@@ -2,7 +2,8 @@ import QtQuick
 import QtLocation
 import QtPositioning
 Image{
-    signal  issucessclicked(eventPoint xPos,eventPoint yPos)
+    property alias startbutton:startButtonArea
+    signal isclicked()
     // visible: true
     id:myImage
     source: "qrc:/images/start1.png"
@@ -16,12 +17,10 @@ Image{
                }
 
         }
-    TapHandler{
-        id:tapHandler
-        onTapped: (eventPoint)=> {console.log( eventPoint.scenePosition.y)}
-    }
-    Item {
-        property alias dialogs:dialog
+    // TapHandler{
+    //     id:tapHandler
+    //     onTapped: (eventPoint)=> {console.log( eventPoint.scenePosition.y)}
+    // }
         Rectangle {
             id: startButtonArea
             color: "transparent"
@@ -29,18 +28,14 @@ Image{
             height: myImage.height * 0.15 // 按钮高度为图像高度的10%
             x: myImage.width * 0.43 // 按钮 x 坐标为图像宽度的25%
             y: myImage.height * 0.53 // 按钮 y 坐标为图像高度的60%
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    dialog.text = "开始按钮被点击"
-                    dialog.open()
+            TapHandler {
+                cursorShape: Qt.PointingHandCursor
+                onTapped: {
+                    console.log("开始按钮被点击")
+                    isclicked()
                 }
-            }
-        }
-    }
-    Dialogs {
-            id: dialog
 
+            }
         }
 
 }

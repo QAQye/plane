@@ -1,18 +1,25 @@
 import QtQuick
 
 Item {
-    id: content
+    property alias dialogs:_dialogs
+    property alias firstwindow:_firstwindow
+    property alias secondwindow:_secondwindow
+    property alias gamewindow: _gamewindow
     anchors.fill: parent
+    Dialogs{
+        id:_dialogs
+    }
 
-    // Loader {
-    //     id: contentLoader
-    //     source: "2.qml"
-    //     anchors.fill: parent
-    // }
-
-    // Component.onCompleted: {
-    //     console.log("Content loaded")
-    // }
-    FirstWindow{}
+   FirstWindow{
+       id:_firstwindow
+   }
+   SecondWindow{
+       id:_secondwindow
+       visible: false
+   }
+   MainMap{
+       id:_gamewindow
+       visible: false
+   }
 }
 
