@@ -78,6 +78,8 @@ CMakeFiles/appPlanes_qmlimportscan: .qt/qml_imports/appPlanes_build.cmake
 .qt/qml_imports/appPlanes_build.cmake: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/Content.qml
 .qt/qml_imports/appPlanes_build.cmake: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/Dialogs.qml
 .qt/qml_imports/appPlanes_build.cmake: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/Actions.qml
+.qt/qml_imports/appPlanes_build.cmake: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/MainMap.qml
+.qt/qml_imports/appPlanes_build.cmake: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/FirstWindow.qml
 .qt/qml_imports/appPlanes_build.cmake: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/2.qml
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Running qmlimportscanner for appPlanes"
 	cd /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane && /opt/Qt/6.7.1/gcc_64/libexec/qmlimportscanner @/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.qt/qml_imports/appPlanes_build.rsp

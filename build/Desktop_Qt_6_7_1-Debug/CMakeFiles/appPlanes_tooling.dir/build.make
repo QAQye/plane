@@ -85,18 +85,28 @@ Planes/Actions.qml: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Copying Actions.qml to /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/Planes/Actions.qml"
 	cd /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane && /usr/bin/cmake -E copy /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/Actions.qml /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/Planes/Actions.qml
 
+Planes/MainMap.qml: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/MainMap.qml
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Copying MainMap.qml to /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/Planes/MainMap.qml"
+	cd /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane && /usr/bin/cmake -E copy /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/MainMap.qml /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/Planes/MainMap.qml
+
+Planes/FirstWindow.qml: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/FirstWindow.qml
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Copying FirstWindow.qml to /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/Planes/FirstWindow.qml"
+	cd /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane && /usr/bin/cmake -E copy /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/FirstWindow.qml /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/Planes/FirstWindow.qml
+
 Planes/2.qml: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/2.qml
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Copying 2.qml to /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/Planes/2.qml"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Copying 2.qml to /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/Planes/2.qml"
 	cd /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane && /usr/bin/cmake -E copy /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/2.qml /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/Planes/2.qml
 
 Planes/imges.qrc: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/imges.qrc
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Copying imges.qrc to /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/Planes/imges.qrc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Copying imges.qrc to /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/Planes/imges.qrc"
 	cd /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane && /usr/bin/cmake -E copy /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/imges.qrc /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/Planes/imges.qrc
 
 appPlanes_tooling: Planes/2.qml
 appPlanes_tooling: Planes/Actions.qml
 appPlanes_tooling: Planes/Content.qml
 appPlanes_tooling: Planes/Dialogs.qml
+appPlanes_tooling: Planes/FirstWindow.qml
+appPlanes_tooling: Planes/MainMap.qml
 appPlanes_tooling: Planes/Window.qml
 appPlanes_tooling: Planes/imges.qrc
 appPlanes_tooling: CMakeFiles/appPlanes_tooling.dir/build.make

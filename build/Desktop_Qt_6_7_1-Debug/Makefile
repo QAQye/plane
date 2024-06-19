@@ -549,6 +549,54 @@ build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Dialogs_qml.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/appPlanes.dir/build.make CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Dialogs_qml.cpp.s
 .PHONY : build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Dialogs_qml.cpp.s
 
+build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.o: build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp.o
+.PHONY : build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.o
+
+# target to build an object file
+build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/appPlanes.dir/build.make CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp.o
+.PHONY : build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp.o
+
+build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.i: build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp.i
+.PHONY : build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.i
+
+# target to preprocess a source file
+build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/appPlanes.dir/build.make CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp.i
+.PHONY : build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp.i
+
+build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.s: build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp.s
+.PHONY : build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.s
+
+# target to generate assembly for a file
+build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/appPlanes.dir/build.make CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp.s
+.PHONY : build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp.s
+
+build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.o: build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp.o
+.PHONY : build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.o
+
+# target to build an object file
+build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/appPlanes.dir/build.make CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp.o
+.PHONY : build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp.o
+
+build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.i: build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp.i
+.PHONY : build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.i
+
+# target to preprocess a source file
+build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/appPlanes.dir/build.make CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp.i
+.PHONY : build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp.i
+
+build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.s: build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp.s
+.PHONY : build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.s
+
+# target to generate assembly for a file
+build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/appPlanes.dir/build.make CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp.s
+.PHONY : build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp.s
+
 build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Window_qml.o: build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Window_qml.cpp.o
 .PHONY : build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Window_qml.o
 
@@ -673,6 +721,12 @@ help:
 	@echo "... build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Dialogs_qml.o"
 	@echo "... build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Dialogs_qml.i"
 	@echo "... build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Dialogs_qml.s"
+	@echo "... build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.o"
+	@echo "... build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.i"
+	@echo "... build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.s"
+	@echo "... build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.o"
+	@echo "... build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.i"
+	@echo "... build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.s"
 	@echo "... build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Window_qml.o"
 	@echo "... build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Window_qml.i"
 	@echo "... build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Window_qml.s"

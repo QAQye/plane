@@ -5,4 +5,6 @@ Window 1.0 Window.qml
 Content 1.0 Content.qml
 Dialogs 1.0 Dialogs.qml
 Actions 1.0 Actions.qml
+MainMap 1.0 MainMap.qml
+FirstWindow 1.0 FirstWindow.qml
 

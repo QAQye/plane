@@ -74,6 +74,8 @@ CMakeFiles/appPlanes_qmllint: /run/media/root/80956fe8-46ba-4275-b756-9381127129
 CMakeFiles/appPlanes_qmllint: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/Content.qml
 CMakeFiles/appPlanes_qmllint: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/Dialogs.qml
 CMakeFiles/appPlanes_qmllint: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/Actions.qml
+CMakeFiles/appPlanes_qmllint: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/MainMap.qml
+CMakeFiles/appPlanes_qmllint: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/FirstWindow.qml
 CMakeFiles/appPlanes_qmllint: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/2.qml
 CMakeFiles/appPlanes_qmllint: .rcc/qmllint/appPlanes.rsp
 	cd /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane && /opt/Qt/6.7.1/gcc_64/bin/qmllint @/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.rcc/qmllint/appPlanes.rsp

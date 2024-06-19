@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "Planes/Actions.qml"
   "Planes/Content.qml"
   "Planes/Dialogs.qml"
+  "Planes/FirstWindow.qml"
+  "Planes/MainMap.qml"
   "Planes/Window.qml"
   "Planes/imges.qrc"
 )

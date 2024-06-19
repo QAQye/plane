@@ -150,13 +150,33 @@ Planes/appPlanes.qmltypes: appplanes_qmltyperegistrations.cpp
 	/usr/bin/cmake -E make_directory /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache
 	/opt/Qt/6.7.1/gcc_64/libexec/qmlcachegen --bare --resource-path /qt/qml/Planes/Actions.qml -I /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug -I /opt/Qt/6.7.1/gcc_64/./qml -i /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/Planes/qmldir --resource /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qmake_Planes.qrc --resource /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/appPlanes_raw_qml_0.qrc -o /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Actions_qml.cpp /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/Actions.qml
 
+.rcc/qmlcache/appPlanes_MainMap_qml.cpp: /opt/Qt/6.7.1/gcc_64/libexec/qmlcachegen
+.rcc/qmlcache/appPlanes_MainMap_qml.cpp: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/MainMap.qml
+.rcc/qmlcache/appPlanes_MainMap_qml.cpp: .qt/rcc/qmake_Planes.qrc
+.rcc/qmlcache/appPlanes_MainMap_qml.cpp: .qt/rcc/appPlanes_raw_qml_0.qrc
+.rcc/qmlcache/appPlanes_MainMap_qml.cpp: Planes/appPlanes.qmltypes
+.rcc/qmlcache/appPlanes_MainMap_qml.cpp: Planes/qmldir
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating .rcc/qmlcache/appPlanes_MainMap_qml.cpp"
+	/usr/bin/cmake -E make_directory /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache
+	/opt/Qt/6.7.1/gcc_64/libexec/qmlcachegen --bare --resource-path /qt/qml/Planes/MainMap.qml -I /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug -I /opt/Qt/6.7.1/gcc_64/./qml -i /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/Planes/qmldir --resource /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qmake_Planes.qrc --resource /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/appPlanes_raw_qml_0.qrc -o /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/MainMap.qml
+
+.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp: /opt/Qt/6.7.1/gcc_64/libexec/qmlcachegen
+.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/FirstWindow.qml
+.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp: .qt/rcc/qmake_Planes.qrc
+.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp: .qt/rcc/appPlanes_raw_qml_0.qrc
+.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp: Planes/appPlanes.qmltypes
+.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp: Planes/qmldir
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating .rcc/qmlcache/appPlanes_FirstWindow_qml.cpp"
+	/usr/bin/cmake -E make_directory /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache
+	/opt/Qt/6.7.1/gcc_64/libexec/qmlcachegen --bare --resource-path /qt/qml/Planes/FirstWindow.qml -I /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug -I /opt/Qt/6.7.1/gcc_64/./qml -i /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/Planes/qmldir --resource /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qmake_Planes.qrc --resource /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/appPlanes_raw_qml_0.qrc -o /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/FirstWindow.qml
+
 .rcc/qmlcache/appPlanes_2_qml.cpp: /opt/Qt/6.7.1/gcc_64/libexec/qmlcachegen
 .rcc/qmlcache/appPlanes_2_qml.cpp: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/2.qml
 .rcc/qmlcache/appPlanes_2_qml.cpp: .qt/rcc/qmake_Planes.qrc
 .rcc/qmlcache/appPlanes_2_qml.cpp: .qt/rcc/appPlanes_raw_qml_0.qrc
 .rcc/qmlcache/appPlanes_2_qml.cpp: Planes/appPlanes.qmltypes
 .rcc/qmlcache/appPlanes_2_qml.cpp: Planes/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating .rcc/qmlcache/appPlanes_2_qml.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating .rcc/qmlcache/appPlanes_2_qml.cpp"
 	/usr/bin/cmake -E make_directory /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache
 	/opt/Qt/6.7.1/gcc_64/libexec/qmlcachegen --bare --resource-path /qt/qml/Planes/2.qml -I /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug -I /opt/Qt/6.7.1/gcc_64/./qml -i /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/Planes/qmldir --resource /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qmake_Planes.qrc --resource /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/appPlanes_raw_qml_0.qrc -o /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_2_qml.cpp /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/2.qml
 
@@ -164,11 +184,13 @@ Planes/appPlanes.qmltypes: appplanes_qmltyperegistrations.cpp
 .qt/rcc/qrc_appPlanes_raw_qml_0.cpp: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/Content.qml
 .qt/rcc/qrc_appPlanes_raw_qml_0.cpp: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/Dialogs.qml
 .qt/rcc/qrc_appPlanes_raw_qml_0.cpp: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/Actions.qml
+.qt/rcc/qrc_appPlanes_raw_qml_0.cpp: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/MainMap.qml
+.qt/rcc/qrc_appPlanes_raw_qml_0.cpp: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/FirstWindow.qml
 .qt/rcc/qrc_appPlanes_raw_qml_0.cpp: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/2.qml
 .qt/rcc/qrc_appPlanes_raw_qml_0.cpp: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/imges.qrc
 .qt/rcc/qrc_appPlanes_raw_qml_0.cpp: .qt/rcc/appPlanes_raw_qml_0.qrc
 .qt/rcc/qrc_appPlanes_raw_qml_0.cpp: /opt/Qt/6.7.1/gcc_64/./libexec/rcc
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Running rcc for resource appPlanes_raw_qml_0"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Running rcc for resource appPlanes_raw_qml_0"
 	/opt/Qt/6.7.1/gcc_64/libexec/rcc --output /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qrc_appPlanes_raw_qml_0.cpp --name appPlanes_raw_qml_0 /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/appPlanes_raw_qml_0.qrc --no-zstd
 
 appPlanes_autogen/EWIEGA46WW/qrc_imges.cpp: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/imges.qrc
@@ -176,6 +198,7 @@ appPlanes_autogen/EWIEGA46WW/qrc_imges.cpp: CMakeFiles/appPlanes_autogen.dir/Aut
 appPlanes_autogen/EWIEGA46WW/qrc_imges.cpp: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/Dialogs.qml
 appPlanes_autogen/EWIEGA46WW/qrc_imges.cpp: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/images/2.png
 appPlanes_autogen/EWIEGA46WW/qrc_imges.cpp: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/images/plane_red_b.png
+appPlanes_autogen/EWIEGA46WW/qrc_imges.cpp: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/images/start1.png
 appPlanes_autogen/EWIEGA46WW/qrc_imges.cpp: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/images/plane_yellow_b.png
 appPlanes_autogen/EWIEGA46WW/qrc_imges.cpp: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/images/red.png
 appPlanes_autogen/EWIEGA46WW/qrc_imges.cpp: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/images/fly.png
@@ -193,22 +216,22 @@ appPlanes_autogen/EWIEGA46WW/qrc_imges.cpp: /run/media/root/80956fe8-46ba-4275-b
 appPlanes_autogen/EWIEGA46WW/qrc_imges.cpp: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/images/game.png
 appPlanes_autogen/EWIEGA46WW/qrc_imges.cpp: /opt/Qt/6.7.1/gcc_64/./libexec/rcc
 appPlanes_autogen/EWIEGA46WW/qrc_imges.cpp: /opt/Qt/6.7.1/gcc_64/./libexec/rcc
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Automatic RCC for imges.qrc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Automatic RCC for imges.qrc"
 	/usr/bin/cmake -E cmake_autorcc /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles/appPlanes_autogen.dir/AutoRcc_imges_EWIEGA46WW_Info.json Debug
 
 meta_types/appPlanes_json_file_list.txt: /opt/Qt/6.7.1/gcc_64/./libexec/cmake_automoc_parser
 meta_types/appPlanes_json_file_list.txt: appPlanes_autogen/timestamp
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Running AUTOMOC file extraction for target appPlanes"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Running AUTOMOC file extraction for target appPlanes"
 	/opt/Qt/6.7.1/gcc_64/libexec/cmake_automoc_parser --cmake-autogen-cache-file /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles/appPlanes_autogen.dir/ParseCache.txt --cmake-autogen-info-file /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles/appPlanes_autogen.dir/AutogenInfo.json --output-file-path /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/meta_types/appPlanes_json_file_list.txt --timestamp-file-path /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/meta_types/appPlanes_json_file_list.txt.timestamp --cmake-autogen-include-dir-path /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/appPlanes_autogen/include
 
 meta_types/qt6appplanes_debug_metatypes.json: meta_types/qt6appplanes_debug_metatypes.json.gen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating meta_types/qt6appplanes_debug_metatypes.json"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating meta_types/qt6appplanes_debug_metatypes.json"
 	/usr/bin/cmake -E true
 
 CMakeFiles/appPlanes.dir/appPlanes_autogen/mocs_compilation.cpp.o: CMakeFiles/appPlanes.dir/flags.make
 CMakeFiles/appPlanes.dir/appPlanes_autogen/mocs_compilation.cpp.o: appPlanes_autogen/mocs_compilation.cpp
 CMakeFiles/appPlanes.dir/appPlanes_autogen/mocs_compilation.cpp.o: CMakeFiles/appPlanes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/appPlanes.dir/appPlanes_autogen/mocs_compilation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/appPlanes.dir/appPlanes_autogen/mocs_compilation.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appPlanes.dir/appPlanes_autogen/mocs_compilation.cpp.o -MF CMakeFiles/appPlanes.dir/appPlanes_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/appPlanes.dir/appPlanes_autogen/mocs_compilation.cpp.o -c /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/appPlanes_autogen/mocs_compilation.cpp
 
 CMakeFiles/appPlanes.dir/appPlanes_autogen/mocs_compilation.cpp.i: cmake_force
@@ -222,7 +245,7 @@ CMakeFiles/appPlanes.dir/appPlanes_autogen/mocs_compilation.cpp.s: cmake_force
 CMakeFiles/appPlanes.dir/main.cpp.o: CMakeFiles/appPlanes.dir/flags.make
 CMakeFiles/appPlanes.dir/main.cpp.o: /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/main.cpp
 CMakeFiles/appPlanes.dir/main.cpp.o: CMakeFiles/appPlanes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/appPlanes.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/appPlanes.dir/main.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appPlanes.dir/main.cpp.o -MF CMakeFiles/appPlanes.dir/main.cpp.o.d -o CMakeFiles/appPlanes.dir/main.cpp.o -c /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/main.cpp
 
 CMakeFiles/appPlanes.dir/main.cpp.i: cmake_force
@@ -236,7 +259,7 @@ CMakeFiles/appPlanes.dir/main.cpp.s: cmake_force
 CMakeFiles/appPlanes.dir/appplanes_qmltyperegistrations.cpp.o: CMakeFiles/appPlanes.dir/flags.make
 CMakeFiles/appPlanes.dir/appplanes_qmltyperegistrations.cpp.o: appplanes_qmltyperegistrations.cpp
 CMakeFiles/appPlanes.dir/appplanes_qmltyperegistrations.cpp.o: CMakeFiles/appPlanes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/appPlanes.dir/appplanes_qmltyperegistrations.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/appPlanes.dir/appplanes_qmltyperegistrations.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appPlanes.dir/appplanes_qmltyperegistrations.cpp.o -MF CMakeFiles/appPlanes.dir/appplanes_qmltyperegistrations.cpp.o.d -o CMakeFiles/appPlanes.dir/appplanes_qmltyperegistrations.cpp.o -c /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/appplanes_qmltyperegistrations.cpp
 
 CMakeFiles/appPlanes.dir/appplanes_qmltyperegistrations.cpp.i: cmake_force
@@ -250,7 +273,7 @@ CMakeFiles/appPlanes.dir/appplanes_qmltyperegistrations.cpp.s: cmake_force
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qrc_qmake_Planes.cpp.o: CMakeFiles/appPlanes.dir/flags.make
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qrc_qmake_Planes.cpp.o: .qt/rcc/qrc_qmake_Planes.cpp
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qrc_qmake_Planes.cpp.o: CMakeFiles/appPlanes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qrc_qmake_Planes.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qrc_qmake_Planes.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qrc_qmake_Planes.cpp.o -MF CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qrc_qmake_Planes.cpp.o.d -o CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qrc_qmake_Planes.cpp.o -c /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qrc_qmake_Planes.cpp
 
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qrc_qmake_Planes.cpp.i: cmake_force
@@ -264,7 +287,7 @@ CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qrc_qmake_Planes.c
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_qmlcache_loader.cpp.o: CMakeFiles/appPlanes.dir/flags.make
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_qmlcache_loader.cpp.o: .rcc/qmlcache/appPlanes_qmlcache_loader.cpp
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_qmlcache_loader.cpp.o: CMakeFiles/appPlanes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_qmlcache_loader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_qmlcache_loader.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_qmlcache_loader.cpp.o -MF CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_qmlcache_loader.cpp.o.d -o CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_qmlcache_loader.cpp.o -c /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_qmlcache_loader.cpp
 
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_qmlcache_loader.cpp.i: cmake_force
@@ -278,7 +301,7 @@ CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_qm
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Window_qml.cpp.o: CMakeFiles/appPlanes.dir/flags.make
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Window_qml.cpp.o: .rcc/qmlcache/appPlanes_Window_qml.cpp
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Window_qml.cpp.o: CMakeFiles/appPlanes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Window_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Window_qml.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Window_qml.cpp.o -MF CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Window_qml.cpp.o.d -o CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Window_qml.cpp.o -c /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Window_qml.cpp
 
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Window_qml.cpp.i: cmake_force
@@ -292,7 +315,7 @@ CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Wi
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Content_qml.cpp.o: CMakeFiles/appPlanes.dir/flags.make
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Content_qml.cpp.o: .rcc/qmlcache/appPlanes_Content_qml.cpp
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Content_qml.cpp.o: CMakeFiles/appPlanes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Content_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Content_qml.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Content_qml.cpp.o -MF CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Content_qml.cpp.o.d -o CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Content_qml.cpp.o -c /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Content_qml.cpp
 
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Content_qml.cpp.i: cmake_force
@@ -306,7 +329,7 @@ CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Co
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Dialogs_qml.cpp.o: CMakeFiles/appPlanes.dir/flags.make
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Dialogs_qml.cpp.o: .rcc/qmlcache/appPlanes_Dialogs_qml.cpp
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Dialogs_qml.cpp.o: CMakeFiles/appPlanes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Dialogs_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Dialogs_qml.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Dialogs_qml.cpp.o -MF CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Dialogs_qml.cpp.o.d -o CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Dialogs_qml.cpp.o -c /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Dialogs_qml.cpp
 
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Dialogs_qml.cpp.i: cmake_force
@@ -320,7 +343,7 @@ CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Di
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Actions_qml.cpp.o: CMakeFiles/appPlanes.dir/flags.make
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Actions_qml.cpp.o: .rcc/qmlcache/appPlanes_Actions_qml.cpp
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Actions_qml.cpp.o: CMakeFiles/appPlanes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Actions_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Actions_qml.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Actions_qml.cpp.o -MF CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Actions_qml.cpp.o.d -o CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Actions_qml.cpp.o -c /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Actions_qml.cpp
 
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Actions_qml.cpp.i: cmake_force
@@ -331,10 +354,38 @@ CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Ac
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Actions_qml.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Actions_qml.cpp -o CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Actions_qml.cpp.s
 
+CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp.o: CMakeFiles/appPlanes.dir/flags.make
+CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp.o: .rcc/qmlcache/appPlanes_MainMap_qml.cpp
+CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp.o: CMakeFiles/appPlanes.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp.o -MF CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp.o.d -o CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp.o -c /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp
+
+CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp > CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp.i
+
+CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp -o CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp.s
+
+CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp.o: CMakeFiles/appPlanes.dir/flags.make
+CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp.o: .rcc/qmlcache/appPlanes_FirstWindow_qml.cpp
+CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp.o: CMakeFiles/appPlanes.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp.o -MF CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp.o.d -o CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp.o -c /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp
+
+CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp > CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp.i
+
+CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp -o CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp.s
+
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_2_qml.cpp.o: CMakeFiles/appPlanes.dir/flags.make
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_2_qml.cpp.o: .rcc/qmlcache/appPlanes_2_qml.cpp
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_2_qml.cpp.o: CMakeFiles/appPlanes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_2_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_2_qml.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_2_qml.cpp.o -MF CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_2_qml.cpp.o.d -o CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_2_qml.cpp.o -c /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_2_qml.cpp
 
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_2_qml.cpp.i: cmake_force
@@ -348,7 +399,7 @@ CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_2_
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qrc_appPlanes_raw_qml_0.cpp.o: CMakeFiles/appPlanes.dir/flags.make
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qrc_appPlanes_raw_qml_0.cpp.o: .qt/rcc/qrc_appPlanes_raw_qml_0.cpp
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qrc_appPlanes_raw_qml_0.cpp.o: CMakeFiles/appPlanes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qrc_appPlanes_raw_qml_0.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qrc_appPlanes_raw_qml_0.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qrc_appPlanes_raw_qml_0.cpp.o -MF CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qrc_appPlanes_raw_qml_0.cpp.o.d -o CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qrc_appPlanes_raw_qml_0.cpp.o -c /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qrc_appPlanes_raw_qml_0.cpp
 
 CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qrc_appPlanes_raw_qml_0.cpp.i: cmake_force
@@ -362,7 +413,7 @@ CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qrc_appPlanes_raw_
 CMakeFiles/appPlanes.dir/appPlanes_autogen/EWIEGA46WW/qrc_imges.cpp.o: CMakeFiles/appPlanes.dir/flags.make
 CMakeFiles/appPlanes.dir/appPlanes_autogen/EWIEGA46WW/qrc_imges.cpp.o: appPlanes_autogen/EWIEGA46WW/qrc_imges.cpp
 CMakeFiles/appPlanes.dir/appPlanes_autogen/EWIEGA46WW/qrc_imges.cpp.o: CMakeFiles/appPlanes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/appPlanes.dir/appPlanes_autogen/EWIEGA46WW/qrc_imges.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/appPlanes.dir/appPlanes_autogen/EWIEGA46WW/qrc_imges.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appPlanes.dir/appPlanes_autogen/EWIEGA46WW/qrc_imges.cpp.o -MF CMakeFiles/appPlanes.dir/appPlanes_autogen/EWIEGA46WW/qrc_imges.cpp.o.d -o CMakeFiles/appPlanes.dir/appPlanes_autogen/EWIEGA46WW/qrc_imges.cpp.o -c /run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/appPlanes_autogen/EWIEGA46WW/qrc_imges.cpp
 
 CMakeFiles/appPlanes.dir/appPlanes_autogen/EWIEGA46WW/qrc_imges.cpp.i: cmake_force
@@ -384,6 +435,8 @@ appPlanes_OBJECTS = \
 "CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Content_qml.cpp.o" \
 "CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Dialogs_qml.cpp.o" \
 "CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Actions_qml.cpp.o" \
+"CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp.o" \
+"CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp.o" \
 "CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_2_qml.cpp.o" \
 "CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qrc_appPlanes_raw_qml_0.cpp.o" \
 "CMakeFiles/appPlanes.dir/appPlanes_autogen/EWIEGA46WW/qrc_imges.cpp.o"
@@ -400,6 +453,8 @@ appPlanes: CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/a
 appPlanes: CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Content_qml.cpp.o
 appPlanes: CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Dialogs_qml.cpp.o
 appPlanes: CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_Actions_qml.cpp.o
+appPlanes: CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_MainMap_qml.cpp.o
+appPlanes: CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_FirstWindow_qml.cpp.o
 appPlanes: CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.rcc/qmlcache/appPlanes_2_qml.cpp.o
 appPlanes: CMakeFiles/appPlanes.dir/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qrc_appPlanes_raw_qml_0.cpp.o
 appPlanes: CMakeFiles/appPlanes.dir/appPlanes_autogen/EWIEGA46WW/qrc_imges.cpp.o
@@ -415,7 +470,7 @@ appPlanes: /opt/Qt/6.7.1/gcc_64/lib/libQt6Core.so.6.7.1
 appPlanes: /usr/lib/libGLX.so
 appPlanes: /usr/lib/libOpenGL.so
 appPlanes: CMakeFiles/appPlanes.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking CXX executable appPlanes"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Linking CXX executable appPlanes"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/appPlanes.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -432,6 +487,8 @@ CMakeFiles/appPlanes.dir/depend: .rcc/qmlcache/appPlanes_2_qml.cpp
 CMakeFiles/appPlanes.dir/depend: .rcc/qmlcache/appPlanes_Actions_qml.cpp
 CMakeFiles/appPlanes.dir/depend: .rcc/qmlcache/appPlanes_Content_qml.cpp
 CMakeFiles/appPlanes.dir/depend: .rcc/qmlcache/appPlanes_Dialogs_qml.cpp
+CMakeFiles/appPlanes.dir/depend: .rcc/qmlcache/appPlanes_FirstWindow_qml.cpp
+CMakeFiles/appPlanes.dir/depend: .rcc/qmlcache/appPlanes_MainMap_qml.cpp
 CMakeFiles/appPlanes.dir/depend: .rcc/qmlcache/appPlanes_Window_qml.cpp
 CMakeFiles/appPlanes.dir/depend: .rcc/qmlcache/appPlanes_qmlcache_loader.cpp
 CMakeFiles/appPlanes.dir/depend: Planes/appPlanes.qmltypes
