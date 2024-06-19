@@ -44,10 +44,12 @@ Item {
                     model: ["红色方", "蓝色方", "黄色方", "绿色方"]
                     delegate: Row {
                         spacing: 10
+                        property string playerColor: modelData
                         Text {
-                            text: "请选择"
-                            font.pixelSize: 14
-                            color: "black"
+                            text: modelData
+                            font.pixelSize: 18 // 增加字体大小
+                            font.bold: true // 设置粗体
+                            color: "#2d2d2d" // 设置颜色
                         }
                         Image {
                             id: imageItem
@@ -55,8 +57,8 @@ Item {
                                     index === 1 ? "qrc:/images/blue.png" :
                                     index === 2 ? "qrc:/images/yellow.png" :
                                                   "qrc:/images/green.png"
-                            width: 60
-                            height: 60
+                            width: 55
+                            height: 55
                         }
                         ComboBox {
                             id: comboBox
@@ -65,10 +67,7 @@ Item {
                             font.pixelSize: 14
                             currentIndex: 0
                             onActivated: {
-                                var color = (index === 0) ? "红色方" :
-                                            (index === 1) ? "蓝色方" :
-                                            (index === 2) ? "黄色方" : "绿色方";
-                                console.log(color + " 选择了: " + comboBox.currentText);
+                                console.log(playerColor + " 选择了: " + comboBox.currentText);
                             }
                         }
                     }
@@ -86,6 +85,7 @@ Item {
                     }
                     onClicked: {
                         console.log("游戏开始");
+                        // 这里可以添加进一步的逻辑，根据每个选项的选择进入不同的场景
                     }
                 }
             }
