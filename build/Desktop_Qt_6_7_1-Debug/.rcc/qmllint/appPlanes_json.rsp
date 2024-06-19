@@ -1,0 +1,16 @@
+--bare
+-I
+/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug
+-I
+/opt/Qt/6.7.1/gcc_64/./qml
+--resource
+/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qmake_Planes.qrc
+--resource
+/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/appPlanes_raw_qml_0.qrc
+/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/Window.qml
+/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/Content.qml
+/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/Dialogs.qml
+/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/Actions.qml
+/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/2.qml
+--json
+/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/build/Desktop_Qt_6_7_1-Debug/appPlanes_qmllint.json
