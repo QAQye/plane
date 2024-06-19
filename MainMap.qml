@@ -12,7 +12,7 @@ RowLayout{
         color: "#fffdca"
         Rectangle{
             id:_greenscreen
-            width: _mainMapRectangle.width*0.2
+            width: (_mainMapRectangle.width/13)*3
             height: width
             color:"#83c326"
                 GridLayout {
@@ -42,7 +42,7 @@ RowLayout{
         }
         Rectangle{
             id:_redscreen
-            width: _mainMapRectangle.width*0.2
+            width:  (_mainMapRectangle.width/13)*3
             height: width
             anchors.right: parent.right
             color:"#db224e"
@@ -74,7 +74,7 @@ RowLayout{
 
         Rectangle{
             id:_orangescreen
-            width: _mainMapRectangle.width*0.2
+            width:  (_mainMapRectangle.width/13)*3
             height: width
             anchors.bottom: parent.bottom
             color:"#e77918"
@@ -105,7 +105,7 @@ RowLayout{
         }
         Rectangle{
             id:_bluescreen
-            width: _mainMapRectangle.width*0.2
+            width:  (_mainMapRectangle.width/13)*3
             height: width
             anchors.right: parent.right
             anchors.bottom: parent.bottom
@@ -136,10 +136,9 @@ RowLayout{
                 }
 
         }
-
-
-
     }
+
+
     // TapHandler{
     //     onTapped:{
     //         console.log(contents.width)
