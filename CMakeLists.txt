@@ -31,7 +31,9 @@ qt_add_qml_module(
   QML_FILES
   MainMap.qml
   QML_FILES
-  FirstWindow.qml)
+  FirstWindow.qml
+  QML_FILES
+  2.qml)
 
 target_compile_features(appPlanes PRIVATE cxx_std_20)
 
