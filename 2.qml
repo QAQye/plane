@@ -41,7 +41,7 @@ Item {
 
                 // 重复项列表
                 Repeater {
-                    model: 4
+                    model: ["红色方", "蓝色方", "黄色方", "绿色方"]
                     delegate: Row {
                         spacing: 10
                         Text {
@@ -65,7 +65,10 @@ Item {
                             font.pixelSize: 14
                             currentIndex: 0
                             onActivated: {
-                                console.log("选择了: " + comboBox.currentText);
+                                var color = (index === 0) ? "红色方" :
+                                            (index === 1) ? "蓝色方" :
+                                            (index === 2) ? "黄色方" : "绿色方";
+                                console.log(color + " 选择了: " + comboBox.currentText);
                             }
                         }
                     }
