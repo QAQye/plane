@@ -5,7 +5,7 @@ Image{
     signal  issucessclicked(eventPoint xPos,eventPoint yPos)
     // visible: true
     id:myImage
-    source: "qrc:/images/start.png"
+    source: "qrc:/images/start1.png"
     anchors.fill: parent
      // fillMode: Image.PreserveAspectFit
     Component.onCompleted: {
@@ -25,10 +25,10 @@ Image{
         Rectangle {
             id: startButtonArea
             color: "transparent"
-            width: myImage.width * 0.42 // 按钮宽度为图像宽度的30%
-            height: myImage.height * 0.13 // 按钮高度为图像高度的10%
-            x: myImage.width * 0.3 // 按钮 x 坐标为图像宽度的25%
-            y: myImage.height * 0.75 // 按钮 y 坐标为图像高度的60%
+            width: myImage.width * 0.15 // 按钮宽度为图像宽度的30%
+            height: myImage.height * 0.15 // 按钮高度为图像高度的10%
+            x: myImage.width * 0.43 // 按钮 x 坐标为图像宽度的25%
+            y: myImage.height * 0.53 // 按钮 y 坐标为图像高度的60%
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
