@@ -20,5 +20,8 @@
         <file>images/yellow.png</file>
         <file>images/2background.png</file>
         <file>images/background.jpg</file>
+        <file>images/se4.png</file>
+        <file>images/se1.png</file>
+        <file>images/se5.png</file>
     </qresource>
 </RCC>

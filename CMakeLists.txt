@@ -37,7 +37,9 @@ qt_add_qml_module(
   QML_FILES
   Control.js
   QML_FILES
-  Triangle.qml)
+  Triangle.qml
+  QML_FILES
+  MapRectangle.qml)
 
 target_compile_features(appPlanes PRIVATE cxx_std_20)
 

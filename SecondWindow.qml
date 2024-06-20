@@ -2,85 +2,117 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
-Item {
-    signal startgame()
-    anchors.fill: parent
-
-    Image {
-        id: background
-        source: "qrc:/images/2background.png" // 外部背景图片
-        anchors.fill: parent
-    }
-
-    Rectangle {
-        width: parent.width
-        height: parent.height
-        color: "#2d2d2d" // 备用颜色，如果图片加载失败或尺寸不足时显示
-
-        Rectangle {
-            id: overlay
-            anchors.fill: parent
-            anchors.centerIn: parent
-            radius: 10
-            border.color: "#ffffff"
-            border.width: 2
-            scale: 1 / parent.scale
-
-            // 设置overlay的背景图片与外部背景图片相同
-            Image {
-                source: background.source // 使用外部背景图片的源
+Image {
+                id: _background
+                source: "qrc:/images/se5.png" // 外部背景图片
                 anchors.fill: parent
-                smooth: true // 可选项，平滑显示图片
-            }
 
-            Column {
-                anchors.centerIn: parent
-                spacing: parent.height*0.1
+                Rectangle {
+                    id:_deciveRectangle
+                    width: _background.width*0.32
+                    height: _background.height * 0.1//rectangle大小
+                    color: "transparent"
+                    // color: "red"
+                    x: _background.width * 0.432 // 按钮 x 坐标为图像宽度的%
+                    y: _background.height * 0.205 // 按钮 y 坐标为图像高度的%
+                    Text{
+                    text:"音乐:"
+                    font.pixelSize: _background.width * 0.03
+                    font.bold: true // 设置
+                    }
+                    ComboBox {
 
-                // 重复项列表
-                Repeater {
-                    model: ["红色方", "蓝色方", "黄色方", "绿色方"]
-                    delegate: Row {
-                        spacing: 10
-                        property string playerColor: modelData
-                        Text {
-                            text: modelData
-                            font.pixelSize: 18 // 增加字体大小
-                            font.bold: true // 设置粗体
-                            color: "#2d2d2d" // 设置颜色
+                        id: comboBox
+                         width: _background.width*0.21
+                         height: _background.height*0.04
+                         y: _deciveRectangle.height * 0.3
+                         x: _deciveRectangle.width * 0.33
+                        model: ["是", "否"] // 下拉列表框的选项
+                        currentIndex: 0 // 初始选中的索引
+
+                        // 在值改变时触发的信号处理函数
+                        onActivated: {
+                            console.log("选中的值为: " + comboBox.currentText)
                         }
-                        Image {
-                            id: imageItem
-                            source: index === 0 ? "qrc:/images/red.png" :
-                                    index === 1 ? "qrc:/images/blue.png" :
-                                    index === 2 ? "qrc:/images/yellow.png" :
-                                                  "qrc:/images/green.png"
-                            width: 55
-                            height: 55
+
+                    }
+                }
+                Rectangle {
+
+                    id:_deciveRectangle2
+                    width: _background.width*0.32
+                    height: _background.height * 0.1//rectangle大小
+                    color: "transparent"
+                    // color: "red"
+                    x: _background.width * 0.433 // 按钮 x 坐标为图像宽度的%
+                    y: _background.height * 0.39// 按钮 y 坐标为图像高度的%
+                    Text{
+                    text:"胜制:"
+                    font.pixelSize: _background.width * 0.03
+                    font.bold: true // 设置
+                    }
+                    ComboBox {
+
+                        id: comboBox2
+                         height: _background.height*0.04
+                         width: _background.width*0.21
+                         y: _deciveRectangle.height * 0.3
+                         x: _deciveRectangle.width * 0.33
+                        model: ["2进胜利", "3进胜利","4进胜利"] // 下拉列表框的选项
+                        currentIndex: 0 // 初始选中的索引
+
+                        // 在值改变时触发的信号处理函数
+                        onActivated: {
+                            console.log("选中的值为: " + comboBox2.currentText)
                         }
-                        ComboBox {
-                            id: comboBox
-                            width: 100
-                            model: ["请选择", "玩家", "电脑", "无"]
-                            font.pixelSize: 14
-                            currentIndex: 0
-                            onActivated: {
-                                console.log(playerColor + " 选择了: " + comboBox.currentText);
-                            }
-                        }
+
                     }
                 }
 
+                Rectangle {
+
+                    id:_deciveRectangle3
+                    width: _background.width*0.32
+                    height: _background.height * 0.1//rectangle大小
+                    color: "transparent"
+                    // color: "red"
+                    x: _background.width * 0.434 // 按钮 x 坐标为图像宽度的%
+                    y: _background.height * 0.59// 按钮 y 坐标为图像高度的%
+                    Text{
+                    text:"人数:"
+                    font.pixelSize: _background.width * 0.03
+                    font.bold: true // 设置
+                    }
+                    ComboBox {
+
+                        id: comboBox3
+                         height: _background.height*0.04
+                         width: _background.width*0.21
+                         y: _deciveRectangle.height * 0.3
+                         x: _deciveRectangle.width * 0.33
+                        model: ["2人", "4人"] // 下拉列表框的选项
+                        currentIndex: 0 // 初始选中的索引
+
+                        // 在值改变时触发的信号处理函数
+                        onActivated: {
+                            console.log("选中的值为: " + comboBox3.currentText)
+                        }
+
+                    }
+                }
+
+
                 Button {
 
-                    text: "开始"
-                    width: 100
-                    height: 40
-                    font.pixelSize: 16
-                    anchors.horizontalCenter: parent.horizontalCenter
+                    // text: "开始"
+                    font.pixelSize: Math.min(width, height) * 0.5 // 根据按钮的宽度和高度设置字体大小
+                    width: _background.width*0.13
+                    height: _background.height * 0.16//按钮大小
+                    x: _background.width * 0.09 // 按钮 x 坐标为图像宽度的%
+                    y: _background.height * 0.67 // 按钮 y 坐标为图像高度的%
                     background: Rectangle {
-                        color: "black"
-                        radius: 5
+                        color: "transparent"
+
                     }
                     onClicked: {
                         console.log("游戏开始");
@@ -90,7 +122,9 @@ Item {
 
                 }
             }
-        }
-    }
-}
+
+
+
+
+
 

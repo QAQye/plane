@@ -3,6 +3,7 @@ import QtQuick.Layouts
 import QtQuick.Controls
 RowLayout{
     id:rowlayout
+     property double longs: rowlayout.width/13
     anchors.fill: parent
     Rectangle{
         id:_mainMapRectangle
@@ -36,11 +37,11 @@ RowLayout{
                             Layout.preferredHeight: width
                             radius: width*0.5
                             color: "#c5de69"
-
                             // 修改这个可以放飞机
-                            Text {
+                            Image {
                                 anchors.centerIn: parent // 居中对齐
-                                text: index + 1
+                                anchors.fill: parent
+                                source:"qrc:/images/plane_green_b.png"
                             }
                         }
                     }
@@ -72,9 +73,10 @@ RowLayout{
                             color: "#f09abd"
 
                             // 修改这个可以放飞机
-                            Text {
+                            Image {
                                 anchors.centerIn: parent // 居中对齐
-                                text: index + 1
+                                anchors.fill: parent
+                                source:"qrc:/images/plane_red_b.png"
                             }
                         }
                     }
@@ -107,9 +109,10 @@ RowLayout{
                             color: "#fff500"
 
                             // 修改这个可以放飞机
-                            Text {
+                            Image {
                                 anchors.centerIn: parent // 居中对齐
-                                text: index + 1
+                                anchors.fill: parent
+                                source:"qrc:/images/plane_yellow_b.png"
                             }
                         }
                     }
@@ -142,9 +145,10 @@ RowLayout{
                             color: "#c5e5fa"
 
                             // 修改这个可以放飞机
-                            Text {
+                            Image {
                                 anchors.centerIn: parent // 居中对齐
-                                text: index + 1
+                                anchors.fill: parent
+                                source:"qrc:/images/plane_blue_b.png"
                             }
                         }
                     }
@@ -152,7 +156,144 @@ RowLayout{
 
         }
         Triangle{
-            // startX: 90
+            fcolor:"#76c5f0"
+            longs:rowlayout.longs
+            x:_mainMapRectangle.width*0.265
+            y:_mainMapRectangle.height*0.86
+
+        }
+        MapRectangle{
+            x:_mainMapRectangle.width*0.265+longs
+            y:_mainMapRectangle.height*0.86
+            width: longs/2
+            height: longs
+            color:"#db224e"
+
+        }
+        MapRectangle{
+            x:_mainMapRectangle.width*0.265+longs*3/2
+            y:_mainMapRectangle.height*0.86
+            width: longs/2
+            height: longs
+            color:"#83c326"
+
+        }
+
+        MapRectangle{
+            x:_mainMapRectangle.width*0.265+longs*2
+            y:_mainMapRectangle.height*0.86
+            width: longs/2
+            height: longs
+            color:"#e77918"
+        }
+        MapRectangle{
+            x:_mainMapRectangle.width*0.265+longs*5/2
+            y:_mainMapRectangle.height*0.86
+            width: longs/2
+            height: longs
+            color:"#76c5f0"
+        }
+        MapRectangle{
+            x:_mainMapRectangle.width*0.265+longs*3
+            y:_mainMapRectangle.height*0.86
+            width: longs/2
+            height: longs
+            color: "#db224e"
+        }
+        Triangle{
+            longs:rowlayout.longs
+            x:_mainMapRectangle.width*0.265+longs*7/2
+            y:_mainMapRectangle.height*0.86
+            rotation: 0
+            fcolor:"#83c326"
+
+        }
+        MapRectangle{
+            x:_mainMapRectangle.width*0.265+longs*7/2
+            y:_mainMapRectangle.height*0.86-longs/2
+            width: longs
+            height: longs/2
+            color: "#e77918"
+        }
+        MapRectangle{
+            x:_mainMapRectangle.width*0.265+longs*7/2
+            y:_mainMapRectangle.height*0.86-longs
+            width: longs
+            height: longs/2
+            color: "#76c5f0"
+        }
+        Triangle{
+            longs:rowlayout.longs
+            x:_mainMapRectangle.width*0.265+longs*7/2
+            y:_mainMapRectangle.height*0.86-longs*2
+            rotation: 270
+            fcolor:"#db224e"
+
+        }
+        Triangle{
+            longs:rowlayout.longs
+            x:_mainMapRectangle.width*0.265+longs*7/2
+            y:_mainMapRectangle.height*0.86-longs*2
+            rotation: 90
+            fcolor:"#83c326"
+
+        }
+        MapRectangle{
+            x:_mainMapRectangle.width*0.265+longs*9/2
+            y:_mainMapRectangle.height*0.86-longs*2
+            width:  longs/2
+            height: longs
+            color: "#e77918"
+        }
+        MapRectangle{
+            x:_mainMapRectangle.width*0.265+longs*5
+            y:_mainMapRectangle.height*0.86-longs*2
+            width: longs/2
+            height: longs
+            color: "#76c5f0"
+        }
+        Triangle{
+            longs:rowlayout.longs
+            x:_mainMapRectangle.width*0.265+longs*11/2
+            y:_mainMapRectangle.height*0.86-longs*2
+            rotation: 0
+            fcolor:"#db224e"
+
+        }
+        MapRectangle{
+            x:_mainMapRectangle.width*0.265+longs*11/2
+            y:_mainMapRectangle.height*0.86-longs*5/2
+            width: longs
+            height: longs/2
+            color: "#76c5f0"
+        }
+        MapRectangle{
+            x:_mainMapRectangle.width*0.265+longs*11/2
+            y:_mainMapRectangle.height*0.86-longs*3
+            width: longs
+            height: longs/2
+            color: "#76c5f0"
+        }
+        MapRectangle{
+            x:_mainMapRectangle.width*0.265+longs*11/2
+            y:_mainMapRectangle.height*0.86-longs*7/2
+            width: longs
+            height: longs/2
+            color: "#76c5f0"
+        }
+        MapRectangle{
+            x:_mainMapRectangle.width*0.265+longs*11/2
+            y:_mainMapRectangle.height*0.86-longs*4
+            width: longs
+            height: longs/2
+            color: "#76c5f0"
+        }
+        MapRectangle{
+            x:_mainMapRectangle.width*0.265+longs*11/2
+            y:_mainMapRectangle.height*0.86-longs*9/2
+            width: longs
+            height: longs/2
+            color: "#76c5f0"
         }
 
 
@@ -163,8 +304,8 @@ RowLayout{
         onTapped: (eventPoint)=> {
                       // x:28.4 654.5
                       // 102  139.3
-                 console.log( eventPoint.scenePosition.x)
-                console.log(_mainMapRectangle.width)
+                 console.log( eventPoint.scenePosition.y)
+                console.log(_mainMapRectangle.height)
                   }
 
     }

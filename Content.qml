@@ -12,10 +12,11 @@ Item {
 
    FirstWindow{
        id:_firstwindow
+        visible: false
    }
    SecondWindow{
        id:_secondwindow
-       visible: false
+       // visible: false
    }
    MainMap{
        id:_gamewindow
