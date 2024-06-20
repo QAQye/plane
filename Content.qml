@@ -20,7 +20,7 @@ Item {
    }
    MainMap{
        id:_gamewindow
-       // visible: false
+       visible: true
    }
 }
 
