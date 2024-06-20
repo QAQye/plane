@@ -1,11 +1,10 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
-import QtQuick.Layouts 1.15
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
 
 Item {
-    width: 800
-    height: 600
-    scale: Math.min(parent.width / 800, parent.height / 600)
+    signal startgame()
+    anchors.fill: parent
 
     Image {
         id: background
@@ -20,8 +19,7 @@ Item {
 
         Rectangle {
             id: overlay
-            width: 1000
-            height: 600
+            anchors.fill: parent
             anchors.centerIn: parent
             radius: 10
             border.color: "#ffffff"
@@ -37,7 +35,7 @@ Item {
 
             Column {
                 anchors.centerIn: parent
-                spacing: 20
+                spacing: parent.height*0.1
 
                 // 重复项列表
                 Repeater {
@@ -74,6 +72,7 @@ Item {
                 }
 
                 Button {
+
                     text: "开始"
                     width: 100
                     height: 40
@@ -86,7 +85,9 @@ Item {
                     onClicked: {
                         console.log("游戏开始");
                         // 这里可以添加进一步的逻辑，根据每个选项的选择进入不同的场景
+                        startgame()
                     }
+
                 }
             }
         }

@@ -1,9 +1,15 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
+import QtQuick.Shapes
 RowLayout{
     id:rowlayout
+     property double longs: rowlayout.width/15.5
     anchors.fill: parent
+    property double startx:_mainMapRectangle.width*0.31
+    property double starty: _mainMapRectangle.height*0.86
+    // 使用数组来存储地图上的颜色以便于切换主题
+    property var mapitemcolor:["#83c326","#db224e","#e77918","#76c5f0"]
     Rectangle{
         id:_mainMapRectangle
         // 在layout中设置填满父对象以及其首选宽度
@@ -12,6 +18,7 @@ RowLayout{
         Layout.preferredWidth: parent.width*0.8
         // source:"qrc:/images/background.jpg"
         color: "#fffdca"
+        // color:"blue"
         Rectangle{
             id:_greenscreen
             anchors.left: parent.left
@@ -35,11 +42,11 @@ RowLayout{
                             Layout.preferredHeight: width
                             radius: width*0.5
                             color: "#c5de69"
-
                             // 修改这个可以放飞机
-                            Text {
+                            Image {
                                 anchors.centerIn: parent // 居中对齐
-                                text: index + 1
+                                anchors.fill: parent
+                                source:"qrc:/images/plane_green_b.png"
                             }
                         }
                     }
@@ -71,9 +78,10 @@ RowLayout{
                             color: "#f09abd"
 
                             // 修改这个可以放飞机
-                            Text {
+                            Image {
                                 anchors.centerIn: parent // 居中对齐
-                                text: index + 1
+                                anchors.fill: parent
+                                source:"qrc:/images/plane_red_b.png"
                             }
                         }
                     }
@@ -106,9 +114,10 @@ RowLayout{
                             color: "#fff500"
 
                             // 修改这个可以放飞机
-                            Text {
+                            Image {
                                 anchors.centerIn: parent // 居中对齐
-                                text: index + 1
+                                anchors.fill: parent
+                                source:"qrc:/images/plane_yellow_b.png"
                             }
                         }
                     }
@@ -141,9 +150,10 @@ RowLayout{
                             color: "#c5e5fa"
 
                             // 修改这个可以放飞机
-                            Text {
+                            Image {
                                 anchors.centerIn: parent // 居中对齐
-                                text: index + 1
+                                anchors.fill: parent
+                                source:"qrc:/images/plane_blue_b.png"
                             }
                         }
                     }
@@ -151,9 +161,797 @@ RowLayout{
 
         }
         Triangle{
-            // startX: 90
+            fcolor:mapitemcolor[3]
+            longs:rowlayout.longs
+            x:startx
+            y:starty
+
+        }
+        MapRectangle{
+            x:startx+longs
+            y:starty
+            width: longs/2
+            height: longs
+            color:mapitemcolor[1]
+
+        }
+        MapRectangle{
+            x:startx+longs*3/2
+            y:starty
+            width: longs/2
+            height: longs
+            color:mapitemcolor[0]
+
         }
 
+        MapRectangle{
+            x:startx+longs*2
+            y:starty
+            width: longs/2
+            height: longs
+            color:mapitemcolor[2]
+        }
+        MapRectangle{
+            x:startx+longs*5/2
+            y:starty
+            width: longs/2
+            height: longs
+            color:mapitemcolor[3]
+        }
+        MapRectangle{
+            x:startx+longs*3
+            y:starty
+            width: longs/2
+            height: longs
+            color: mapitemcolor[1]
+        }
+        Triangle{
+            longs:rowlayout.longs
+            x:startx+longs*7/2
+            y:starty
+            rotation: 0
+            fcolor:mapitemcolor[0]
+
+        }
+        MapRectangle{
+            x:startx+longs*7/2
+            y:starty-longs/2
+            width: longs
+            height: longs/2
+            color: mapitemcolor[2]
+        }
+        MapRectangle{
+            x:startx+longs*7/2
+            y:starty-longs
+            width: longs
+            height: longs/2
+            color: mapitemcolor[3]
+        }
+        Triangle{
+            longs:rowlayout.longs
+            x:startx+longs*7/2
+            y:starty-longs*2
+            rotation: 270
+            fcolor:mapitemcolor[1]
+
+        }
+        Triangle{
+            longs:rowlayout.longs
+            x:startx+longs*7/2
+            y:starty-longs*2
+            rotation: 90
+            fcolor:mapitemcolor[0]
+
+        }
+        MapRectangle{
+            x:startx+longs*9/2
+            y:starty-longs*2
+            width:  longs/2
+            height: longs
+            color: mapitemcolor[2]
+        }
+        MapRectangle{
+            x:startx+longs*5
+            y:starty-longs*2
+            width: longs/2
+            height: longs
+            color: mapitemcolor[3]
+        }
+        Triangle{
+            longs:rowlayout.longs
+            x:startx+longs*11/2
+            y:starty-longs*2
+            rotation: 0
+            fcolor:mapitemcolor[1]
+
+        }
+        MapRectangle{
+            x:startx+longs*11/2
+            y:starty-longs*5/2
+            width: longs
+            height: longs/2
+            color: mapitemcolor[0]
+        }
+        MapRectangle{
+            x:startx+longs*11/2
+            y:starty-longs*3
+            width: longs
+            height: longs/2
+            color: mapitemcolor[2]
+        }
+        MapRectangle{
+            x:startx+longs*11/2
+            y:starty-longs*7/2
+            width: longs
+            height: longs/2
+            color: mapitemcolor[3]
+        }
+        MapRectangle{
+            x:startx+longs*11/2
+            y:starty-longs*4
+            width: longs
+            height: longs/2
+            color: mapitemcolor[1]
+        }
+        MapRectangle{
+            x:startx+longs*11/2
+            y:starty-longs*9/2
+            width: longs
+            height: longs/2
+            color: mapitemcolor[0]
+        }
+        Triangle{
+            longs:rowlayout.longs
+            x:startx+longs*11/2
+            y:starty-longs*11/2
+            rotation: 270
+            fcolor:mapitemcolor[2]
+
+        }
+        MapRectangle{
+            x:startx+longs*5
+            y:starty-longs*11/2
+            width: longs/2
+            height: longs
+            color: mapitemcolor[3]
+        }
+        MapRectangle{
+            x:startx+longs*9/2
+            y:starty-longs*11/2
+            width: longs/2
+            height: longs
+            color: mapitemcolor[1]
+        }
+        Triangle{
+            longs:rowlayout.longs
+            x:startx+longs*7/2
+            y:starty-longs*11/2
+            rotation: 180
+            fcolor:mapitemcolor[0]
+        }
+        Triangle{
+            longs:rowlayout.longs
+            x:startx+longs*7/2
+            y:starty-longs*11/2
+            rotation: 0
+            fcolor:mapitemcolor[2]
+        }
+        MapRectangle{
+            x:startx+longs*7/2
+            y:starty-longs*6
+            width: longs
+            height: longs/2
+            color: mapitemcolor[3]
+        }
+        MapRectangle{
+            x:startx+longs*7/2
+            y:starty-longs*13/2
+            width: longs
+            height: longs/2
+            color: mapitemcolor[1]
+        }
+        Triangle{
+            longs:rowlayout.longs
+            x:startx+longs*7/2
+            y:starty-longs*15/2
+            rotation: 270
+            fcolor:mapitemcolor[0]
+        }
+        MapRectangle{
+            x:startx+longs*3
+            y:starty-longs*15/2
+            width: longs/2
+            height: longs
+            color: mapitemcolor[2]
+        }
+        MapRectangle{
+            x:startx+longs*5/2
+            y:starty-longs*15/2
+            width: longs/2
+            height: longs
+            color: mapitemcolor[3]
+        }
+        MapRectangle{
+            x:startx+longs*2
+            y:starty-longs*15/2
+            width: longs/2
+            height: longs
+            color: mapitemcolor[1]
+        }
+        MapRectangle{
+            x:startx+longs*3/2
+            y:starty-longs*15/2
+            width: longs/2
+            height: longs
+            color: mapitemcolor[0]
+        }
+        MapRectangle{
+            x:startx+longs
+            y:starty-longs*15/2
+            width: longs/2
+            height: longs
+            color: mapitemcolor[2]
+        }
+        Triangle{
+            longs:rowlayout.longs
+            x:startx
+            y:starty-longs*15/2
+            rotation: 180
+            fcolor:mapitemcolor[3]
+        }
+        MapRectangle{
+            x:startx
+            y:starty-longs*13/2
+            width: longs
+            height: longs/2
+            color: mapitemcolor[1]
+        }
+        MapRectangle{
+            x:startx
+            y:starty-longs*6
+            width: longs
+            height: longs/2
+            color: mapitemcolor[0]
+        }
+        Triangle{
+            longs:rowlayout.longs
+            x:startx
+            y:starty-longs*11/2
+            rotation: 90
+            fcolor:mapitemcolor[2]
+        }
+        Triangle{
+            longs:rowlayout.longs
+            x:startx
+            y:starty-longs*11/2
+            rotation: 270
+            fcolor:mapitemcolor[3]
+        }
+        MapRectangle{
+            x:startx-longs/2
+            y:starty-longs*11/2
+            width: longs/2
+            height: longs
+            color: mapitemcolor[1]
+        }
+        MapRectangle{
+            x:startx-longs
+            y:starty-longs*11/2
+            width: longs/2
+            height: longs
+            color: mapitemcolor[0]
+        }
+        Triangle{
+            longs:rowlayout.longs
+            x:startx-longs*2
+            y:starty-longs*11/2
+            rotation: 180
+            fcolor:mapitemcolor[2]
+        }
+        MapRectangle{
+            x:startx-longs*2
+            y:starty-longs*9/2
+            width: longs
+            height: longs/2
+            color: mapitemcolor[3]
+        }
+        MapRectangle{
+            x:startx-longs*2
+            y:starty-longs*4
+            width: longs
+            height: longs/2
+            color: mapitemcolor[1]
+        }
+        MapRectangle{
+            x:startx-longs*2
+            y:starty-longs*7/2
+            width: longs
+            height: longs/2
+            color: mapitemcolor[0]
+        }
+        MapRectangle{
+            x:startx-longs*2
+            y:starty-longs*3
+            width: longs
+            height: longs/2
+            color: mapitemcolor[2]
+        }
+        MapRectangle{
+            x:startx-longs*2
+            y:starty-longs*5/2
+            width: longs
+            height: longs/2
+            color: mapitemcolor[3]
+        }
+        Triangle{
+            longs:rowlayout.longs
+            x:startx-longs*2
+            y:starty-longs*2
+            rotation: 90
+            fcolor:mapitemcolor[1]
+        }
+        MapRectangle{
+            x:startx-longs
+            y:starty-longs*2
+            width: longs/2
+            height: longs
+            color: mapitemcolor[0]
+        }
+        MapRectangle{
+            x:startx-longs/2
+            y:starty-longs*2
+            width: longs/2
+            height: longs
+            color: mapitemcolor[2]
+        }
+        Triangle{
+            longs:rowlayout.longs
+            x:startx
+            y:starty-longs*2
+            rotation:0
+            fcolor:mapitemcolor[3]
+        }
+        Triangle{
+            longs:rowlayout.longs
+            x:startx
+            y:starty-longs*2
+            rotation:180
+            fcolor:mapitemcolor[1]
+        }
+        MapRectangle{
+            x:startx
+            y:starty-longs
+            width: longs
+            height: longs/2
+            color: mapitemcolor[0]
+        }
+        MapRectangle{
+            x:startx
+            y:starty-longs/2
+            width: longs
+            height: longs/2
+            color: mapitemcolor[2]
+        }
+
+
+        // 飞机指向终点
+        // 橙色飞机
+        MapRectangle{
+            x:startx+longs*2
+            y:starty-longs/2
+            width: longs/2
+            height: longs/2
+            color: mapitemcolor[2]
+        }
+        MapRectangle{
+            x:startx+longs*2
+            y:starty-longs
+            width: longs/2
+            height: longs/2
+            color: mapitemcolor[2]
+        }
+        MapRectangle{
+            x:startx+longs*2
+            y:starty-longs*3/2
+            width: longs/2
+            height: longs/2
+            color: mapitemcolor[2]
+        }
+        MapRectangle{
+            x:startx+longs*2
+            y:starty-longs*2
+            width: longs/2
+            height: longs/2
+            color: mapitemcolor[2]
+        }
+        MapRectangle{
+            x:startx+longs*2
+            y:starty-longs*5/2
+            width: longs/2
+            height: longs/2
+            color: mapitemcolor[2]
+        }
+        Triangle{
+            // 使其等腰直角三角形与矩形的中心对齐,因为旋转导致位置有些偏离
+            x:startx+longs*2-longs/4
+            y:starty-longs*3
+            longs:rowlayout.longs
+            rotation: 45
+            fcolor:mapitemcolor[2]
+        }
+        // 蓝色飞机
+        MapRectangle{
+            x:startx+longs*5
+            y:starty-longs*7/2
+            width: longs/2
+            height: longs/2
+            color: mapitemcolor[3]
+        }
+        MapRectangle{
+            x:startx+longs*9/2
+            y:starty-longs*7/2
+            width: longs/2
+            height: longs/2
+            color: mapitemcolor[3]
+        }
+        MapRectangle{
+            x:startx+longs*4
+            y:starty-longs*7/2
+            width: longs/2
+            height: longs/2
+            color: mapitemcolor[3]
+        }
+        MapRectangle{
+            x:startx+longs*7/2
+            y:starty-longs*7/2
+            width: longs/2
+            height: longs/2
+            color: mapitemcolor[3]
+        }
+        MapRectangle{
+            x:startx+longs*3
+            y:starty-longs*7/2
+            width: longs/2
+            height: longs/2
+            color: mapitemcolor[3]
+        }
+        Triangle{
+            // 使其等腰直角三角形与矩形的中心对齐,因为旋转导致位置有些偏离
+            x:startx+longs*5/2
+            y:starty-longs*7/2-longs/4
+            longs:rowlayout.longs
+            rotation: 315
+            fcolor:mapitemcolor[3]
+        }
+        // 红色矩形
+        MapRectangle{
+            x:startx+longs*2
+            y:starty-longs*13/2
+            width: longs/2
+            height: longs/2
+            color: mapitemcolor[1]
+        }
+        MapRectangle{
+            x:startx+longs*2
+            y:starty-longs*6
+            width: longs/2
+            height: longs/2
+            color: mapitemcolor[1]
+        }
+        MapRectangle{
+            x:startx+longs*2
+            y:starty-longs*11/2
+            width: longs/2
+            height: longs/2
+            color: mapitemcolor[1]
+        }
+        MapRectangle{
+            x:startx+longs*2
+            y:starty-longs*5
+            width: longs/2
+            height: longs/2
+            color: mapitemcolor[1]
+        }
+        MapRectangle{
+            x:startx+longs*2
+            y:starty-longs*9/2
+            width: longs/2
+            height: longs/2
+            color: mapitemcolor[1]
+        }
+        Triangle{
+            // 使其等腰直角三角形与矩形的中心对齐,因为旋转导致位置有些偏离
+            x:startx+longs*2-longs/4
+             y:starty-longs*9/2
+            longs:rowlayout.longs
+            rotation: 225
+            fcolor:mapitemcolor[1]
+        }
+
+        // 绿色飞机
+        // 绘制的时候都是向下绘制的
+        MapRectangle{
+            x:startx-longs
+            y:starty-longs*7/2
+            width: longs/2
+            height: longs/2
+            color: mapitemcolor[0]
+        }
+        MapRectangle{
+            x:startx-longs/2
+            y:starty-longs*7/2
+            width: longs/2
+            height: longs/2
+            color: mapitemcolor[0]
+        }
+        MapRectangle{
+            x:startx
+            y:starty-longs*7/2
+            width: longs/2
+            height: longs/2
+            color: mapitemcolor[0]
+        }
+        MapRectangle{
+            x:startx+longs/2
+            y:starty-longs*7/2
+            width: longs/2
+            height: longs/2
+            color: mapitemcolor[0]
+        }
+        MapRectangle{
+            x:startx+longs
+            y:starty-longs*7/2
+            width: longs/2
+            height: longs/2
+            color: mapitemcolor[0]
+        }
+        Triangle{
+            // 使其等腰直角三角形与矩形的中心对齐,因为旋转导致位置有些偏离
+            x:startx+longs
+            y:starty-longs*7/2-longs/4
+            longs:rowlayout.longs
+            rotation: 135
+            fcolor:mapitemcolor[0]
+        }
+
+        // 绘制地图中间的线段
+        // 蓝色线段
+        Item{
+            x:startx+longs/3
+            y:starty-longs*9/2
+            width:longs/4
+            height: longs/4
+            Shape{
+                // anchors.left: parent
+                ShapePath {
+                    strokeWidth: longs*0.03
+                    startX: 0
+                    startY: 0
+                    strokeColor: mapitemcolor[3]
+                    // 自定义的路径
+                    PathLine { x: 0; y:longs*5/2}
+                    // 设置样式是虚线
+                    strokeStyle: ShapePath.DashLine
+                    dashPattern:[1,4]
+                }
+            }
+        }
+        Item{
+            x:startx+longs/5
+            y:starty-longs*9/2
+            width:longs/4
+            height: longs/4
+            Shape{
+                ShapePath {
+                    strokeWidth: longs*0.03
+                    startX: 0
+                    startY: 0
+                    strokeColor: mapitemcolor[3]
+                    // 自定义的路径
+                    PathLine { x: 0; y:longs*5/2}
+                    // 设置样式是虚线
+                    strokeStyle: ShapePath.DashLine
+                    dashPattern:[1,4]
+                }
+            }
+        }
+
+        // 橙色线段
+        Item{
+            x:startx+longs
+            y:starty-longs*9/2-longs*2/3
+            width:longs/4
+            height: longs/4
+            Shape{
+                ShapePath {
+                    strokeWidth: longs*0.03
+                    startX: 0
+                    startY: 0
+                    strokeColor: mapitemcolor[2]
+                    // 自定义的路径
+                    PathLine { x: longs*5/2; y:0}
+                    // 设置样式是虚线
+                    strokeStyle: ShapePath.DashLine
+                    dashPattern:[1,4]
+                }
+            }
+        }
+
+        Item{
+            x:startx+longs
+            y:starty-longs*9/2-longs*4/5
+            width:longs/4
+            height: longs/4
+            Shape{
+                ShapePath {
+                    strokeWidth: longs*0.03
+                    startX: 0
+                    startY: 0
+                    strokeColor: mapitemcolor[2]
+                    // 自定义的路径
+                    PathLine { x: longs*5/2; y:0}
+                    // 设置样式是虚线
+                    strokeStyle: ShapePath.DashLine
+                    dashPattern:[1,4]
+                }
+            }
+        }
+
+        // 绿色虚线
+        Item{
+            x:startx+longs*7/2+longs*2/3
+            y:starty-longs*9/2
+            width:longs/4
+            height: longs/4
+            Shape{
+                ShapePath {
+                    strokeWidth: longs*0.03
+                    startX: 0
+                    startY: 0
+                    strokeColor: mapitemcolor[0]
+                    // 自定义的路径
+                    PathLine { x:0 ; y:longs*5/2}
+                    // 设置样式是虚线
+                    strokeStyle: ShapePath.DashLine
+                    dashPattern:[1,4]
+                }
+            }
+        }
+        Item{
+            x:startx+longs*7/2+longs*4/5
+            y:starty-longs*9/2
+            width:longs/4
+            height: longs/4
+            Shape{
+                ShapePath {
+                    strokeWidth: longs*0.03
+                    startX: 0
+                    startY: 0
+                    strokeColor: mapitemcolor[0]
+                    // 自定义的路径
+                    PathLine { x:0 ; y:longs*5/2}
+                    // 设置样式是虚线
+                    strokeStyle: ShapePath.DashLine
+                    dashPattern:[1,4]
+                }
+            }
+        }
+
+        // 红色虚线
+        Item{
+            x:startx+longs
+            y:starty-longs*2+longs*4/5
+            width:longs/4
+            height: longs/4
+            Shape{
+                ShapePath {
+                    strokeWidth: longs*0.03
+                    startX: 0
+                    startY: 0
+                    strokeColor: mapitemcolor[1]
+                    // 自定义的路径
+                    PathLine { x:longs*5/2 ; y:0}
+                    // 设置样式是虚线
+                    strokeStyle: ShapePath.DashLine
+                    dashPattern:[1,4]
+                }
+            }
+        }
+        Item{
+            x:startx+longs
+            y:starty-longs*2+longs*2/3
+            width:longs/4
+            height: longs/4
+            Shape{
+                ShapePath {
+                    strokeWidth: longs*0.03
+                    startX: 0
+                    startY: 0
+                    strokeColor: mapitemcolor[1]
+                    // 自定义的路径
+                    PathLine { x:longs*5/2 ; y:0}
+                    // 设置样式是虚线
+                    strokeStyle: ShapePath.DashLine
+                    dashPattern:[1,4]
+                }
+            }
+        }
+
+        // 地图飞机起飞区域
+        Rectangle{
+            width: longs+longs/4
+            height: longs
+            x:startx+longs*11/2
+            y:starty-longs*2
+            color:"transparent"
+            Text{
+                anchors.bottom: parent.bottom
+                anchors.right: parent.right
+                text: "ready"
+                font.family :"Helvetica"
+                font.pointSize: longs*0.25
+                font.italic:true
+                color: mapitemcolor[3]
+
+            }
+
+        }
+
+        Rectangle{
+            z:3
+            width: longs+longs/4
+            height: longs
+            x:startx-longs*3
+            y:starty-longs*2
+            color:"transparent"
+            Text{
+                anchors.bottom: parent.bottom
+                anchors.right: parent.right
+                text: "ready"
+                font.family :"Helvetica"
+                font.pointSize: longs*0.25
+                font.italic:true
+                color: mapitemcolor[2]
+
+            }
+
+        }
+        Rectangle{
+            width: longs+longs/4
+            height: longs
+            x:startx-longs*5/2
+            y:starty-longs*11/2
+            color:"transparent"
+            Text{
+                anchors.top: parent.top
+                anchors.left: parent.left
+                text: "ready"
+                font.family :"Helvetica"
+                font.pointSize: longs*0.25
+                font.italic:true
+                color: mapitemcolor[0]
+
+            }
+
+        }
+        Rectangle{
+            width: longs+longs/4
+            height: longs
+            x:startx+longs*11/2
+            y:starty-longs*11/2
+            color:"transparent"
+            Text{
+                anchors.top: parent.top
+                anchors.right: parent.right
+                text: "ready"
+                font.family :"Helvetica"
+                font.pointSize: longs*0.25
+                font.italic:true
+                color: mapitemcolor[1]
+
+            }
+
+        }
 
     }
 
@@ -162,14 +960,11 @@ RowLayout{
         onTapped: (eventPoint)=> {
                       // x:28.4 654.5
                       // 102  139.3
-                 console.log( eventPoint.scenePosition.x)
-                console.log(_mainMapRectangle.width)
+                 console.log( eventPoint.scenePosition.y)
+                console.log(_mainMapRectangle.height)
                   }
-
     }
-
-
-        // 使用组布局设置每行每列显示的个数
+    TextArea{}
 
 
 }

@@ -1,16 +1,13 @@
 import QtQuick
-
+import QtQuick.Dialogs
 Item {
-    id: content
-    anchors.fill: parent
-
-    Loader {
-        id: contentLoader
-        source: "2.qml"
-        anchors.fill: parent
-    }
-
-    Component.onCompleted: {
-        console.log("Content loaded")
+    property  alias about:_about
+    MessageDialog{
+        id:_about
+        modality: Qt.WindowModal
+        buttons:MessageDialog.Ok
+        text:"Plane"
+        informativeText:"445"
+        detailedText:"655"
     }
 }
