@@ -1,8 +1,9 @@
 import QtQuick
 import QtMultimedia
 Item {
+    property alias bgm: _bgm
     MediaPlayer {
-        id:bgm
+        id:_bgm
            audioOutput:AudioOutput
            {
                            volume:0.5
@@ -12,6 +13,6 @@ Item {
            source: "qrc:/images/bgm.mp3";
     }
     TapHandler{
-        onTapped: ()=>{bgm.playbackState===MediaPlayer.playbackState?_bgm.sause():_bgm.play();}
+        onTapped:{bgm.playbackState===MediaPlayer.playbackState?bgm.sause():bgm.play();}
     }
 }

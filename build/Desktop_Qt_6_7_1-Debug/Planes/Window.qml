@@ -24,8 +24,16 @@ ApplicationWindow {
             // 在菜单中再次添加一个菜单
             Menu {
                 title: "设置"
-                MenuItem {
-                    action: actions.music
+                Menu {
+                    title: "音乐"
+                    MenuItem{
+                        text: "播放/暂停"
+                        anchors.bottom: parent.bottom
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        onClicked: {
+                            music.bgm.playbackState === MediaPlayer.PlayingState ? music.bgm.pause() :music.bgm.play();
+                        }
+                    }
                 }
             }
             MenuItem {
@@ -40,7 +48,9 @@ ApplicationWindow {
 
     MusicPlay{
         id:music
+         anchors.centerIn: parent
     }
+
     Content{
         id:content
     }
@@ -48,7 +58,10 @@ ApplicationWindow {
         Controller.init()
 
     }
+    // Button {
 
+    // }
     // 定义 Actions 组件
 
 }
+
