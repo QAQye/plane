@@ -20,5 +20,6 @@
         <file>images/yellow.png</file>
         <file>images/2background.png</file>
         <file>images/background.jpg</file>
+        <file>images/bgm.mp3</file>
     </qresource>
 </RCC>

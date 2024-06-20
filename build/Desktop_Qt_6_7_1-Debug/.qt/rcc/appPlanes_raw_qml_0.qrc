@@ -1,0 +1,17 @@
+<RCC>
+  <qresource prefix="/qt/qml/Planes/">
+    <file alias="Window.qml">/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/Window.qml</file>
+    <file alias="Content.qml">/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/Content.qml</file>
+    <file alias="Dialogs.qml">/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/Dialogs.qml</file>
+    <file alias="Actions.qml">/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/Actions.qml</file>
+    <file alias="MainMap.qml">/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/MainMap.qml</file>
+    <file alias="FirstWindow.qml">/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/FirstWindow.qml</file>
+    <file alias="SecondWindow.qml">/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/SecondWindow.qml</file>
+    <file alias="Triangle.qml">/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/Triangle.qml</file>
+    <file alias="Control.js">/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/Control.js</file>
+    <file alias="MapRectangle.qml">/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/MapRectangle.qml</file>
+    <file alias="MusicPlay.qml">/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/MusicPlay.qml</file>
+    <file alias="imges.qrc">/run/media/root/80956fe8-46ba-4275-b756-938112712987/qt/Fly/plane/imges.qrc</file>
+  </qresource>
+</RCC>
+

@@ -38,7 +38,8 @@ qt_add_qml_module(
   QML_FILES Control.js
   QML_FILES
   QML_FILES MapRectangle.qml
-  QML_FILES  )
+  QML_FILES
+  QML_FILES MusicPlay.qml  )
 
 target_compile_features(appPlanes PRIVATE cxx_std_20)
 

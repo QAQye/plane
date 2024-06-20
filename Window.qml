@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+import QtMultimedia
 import "Control.js" as Controller
 
 ApplicationWindow {
@@ -35,6 +36,10 @@ ApplicationWindow {
     Actions{
         id:actions
         about.onTriggered: content.dialogs.aboutDialog.open()
+    }
+
+    MusicPlay{
+        id:music
     }
     Content{
         id:content
