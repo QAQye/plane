@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
+import QtQuick.Shapes
 RowLayout{
     id:rowlayout
      property double longs: rowlayout.width/15.5
@@ -713,6 +714,244 @@ RowLayout{
             fcolor:mapitemcolor[0]
         }
 
+        // 绘制地图中间的线段
+        // 蓝色线段
+        Item{
+            x:startx+longs/3
+            y:starty-longs*9/2
+            width:longs/4
+            height: longs/4
+            Shape{
+                // anchors.left: parent
+                ShapePath {
+                    strokeWidth: longs*0.03
+                    startX: 0
+                    startY: 0
+                    strokeColor: mapitemcolor[3]
+                    // 自定义的路径
+                    PathLine { x: 0; y:longs*5/2}
+                    // 设置样式是虚线
+                    strokeStyle: ShapePath.DashLine
+                    dashPattern:[1,4]
+                }
+            }
+        }
+        Item{
+            x:startx+longs/5
+            y:starty-longs*9/2
+            width:longs/4
+            height: longs/4
+            Shape{
+                ShapePath {
+                    strokeWidth: longs*0.03
+                    startX: 0
+                    startY: 0
+                    strokeColor: mapitemcolor[3]
+                    // 自定义的路径
+                    PathLine { x: 0; y:longs*5/2}
+                    // 设置样式是虚线
+                    strokeStyle: ShapePath.DashLine
+                    dashPattern:[1,4]
+                }
+            }
+        }
+
+        // 橙色线段
+        Item{
+            x:startx+longs
+            y:starty-longs*9/2-longs*2/3
+            width:longs/4
+            height: longs/4
+            Shape{
+                ShapePath {
+                    strokeWidth: longs*0.03
+                    startX: 0
+                    startY: 0
+                    strokeColor: mapitemcolor[2]
+                    // 自定义的路径
+                    PathLine { x: longs*5/2; y:0}
+                    // 设置样式是虚线
+                    strokeStyle: ShapePath.DashLine
+                    dashPattern:[1,4]
+                }
+            }
+        }
+
+        Item{
+            x:startx+longs
+            y:starty-longs*9/2-longs*4/5
+            width:longs/4
+            height: longs/4
+            Shape{
+                ShapePath {
+                    strokeWidth: longs*0.03
+                    startX: 0
+                    startY: 0
+                    strokeColor: mapitemcolor[2]
+                    // 自定义的路径
+                    PathLine { x: longs*5/2; y:0}
+                    // 设置样式是虚线
+                    strokeStyle: ShapePath.DashLine
+                    dashPattern:[1,4]
+                }
+            }
+        }
+
+        // 绿色虚线
+        Item{
+            x:startx+longs*7/2+longs*2/3
+            y:starty-longs*9/2
+            width:longs/4
+            height: longs/4
+            Shape{
+                ShapePath {
+                    strokeWidth: longs*0.03
+                    startX: 0
+                    startY: 0
+                    strokeColor: mapitemcolor[0]
+                    // 自定义的路径
+                    PathLine { x:0 ; y:longs*5/2}
+                    // 设置样式是虚线
+                    strokeStyle: ShapePath.DashLine
+                    dashPattern:[1,4]
+                }
+            }
+        }
+        Item{
+            x:startx+longs*7/2+longs*4/5
+            y:starty-longs*9/2
+            width:longs/4
+            height: longs/4
+            Shape{
+                ShapePath {
+                    strokeWidth: longs*0.03
+                    startX: 0
+                    startY: 0
+                    strokeColor: mapitemcolor[0]
+                    // 自定义的路径
+                    PathLine { x:0 ; y:longs*5/2}
+                    // 设置样式是虚线
+                    strokeStyle: ShapePath.DashLine
+                    dashPattern:[1,4]
+                }
+            }
+        }
+
+        // 红色虚线
+        Item{
+            x:startx+longs
+            y:starty-longs*2+longs*4/5
+            width:longs/4
+            height: longs/4
+            Shape{
+                ShapePath {
+                    strokeWidth: longs*0.03
+                    startX: 0
+                    startY: 0
+                    strokeColor: mapitemcolor[1]
+                    // 自定义的路径
+                    PathLine { x:longs*5/2 ; y:0}
+                    // 设置样式是虚线
+                    strokeStyle: ShapePath.DashLine
+                    dashPattern:[1,4]
+                }
+            }
+        }
+        Item{
+            x:startx+longs
+            y:starty-longs*2+longs*2/3
+            width:longs/4
+            height: longs/4
+            Shape{
+                ShapePath {
+                    strokeWidth: longs*0.03
+                    startX: 0
+                    startY: 0
+                    strokeColor: mapitemcolor[1]
+                    // 自定义的路径
+                    PathLine { x:longs*5/2 ; y:0}
+                    // 设置样式是虚线
+                    strokeStyle: ShapePath.DashLine
+                    dashPattern:[1,4]
+                }
+            }
+        }
+
+        // 地图飞机起飞区域
+        Rectangle{
+            width: longs+longs/4
+            height: longs
+            x:startx+longs*11/2
+            y:starty-longs*2
+            color:"transparent"
+            Text{
+                anchors.bottom: parent.bottom
+                anchors.right: parent.right
+                text: "ready"
+                font.family :"Helvetica"
+                font.pointSize: longs*0.25
+                font.italic:true
+                color: mapitemcolor[3]
+
+            }
+
+        }
+
+        Rectangle{
+            z:3
+            width: longs+longs/4
+            height: longs
+            x:startx-longs*3
+            y:starty-longs*2
+            color:"transparent"
+            Text{
+                anchors.bottom: parent.bottom
+                anchors.right: parent.right
+                text: "ready"
+                font.family :"Helvetica"
+                font.pointSize: longs*0.25
+                font.italic:true
+                color: mapitemcolor[2]
+
+            }
+
+        }
+        Rectangle{
+            width: longs+longs/4
+            height: longs
+            x:startx-longs*5/2
+            y:starty-longs*11/2
+            color:"transparent"
+            Text{
+                anchors.top: parent.top
+                anchors.left: parent.left
+                text: "ready"
+                font.family :"Helvetica"
+                font.pointSize: longs*0.25
+                font.italic:true
+                color: mapitemcolor[0]
+
+            }
+
+        }
+        Rectangle{
+            width: longs+longs/4
+            height: longs
+            x:startx+longs*11/2
+            y:starty-longs*11/2
+            color:"transparent"
+            Text{
+                anchors.top: parent.top
+                anchors.right: parent.right
+                text: "ready"
+                font.family :"Helvetica"
+                font.pointSize: longs*0.25
+                font.italic:true
+                color: mapitemcolor[1]
+
+            }
+
+        }
 
     }
 
@@ -724,10 +963,8 @@ RowLayout{
                  console.log( eventPoint.scenePosition.y)
                 console.log(_mainMapRectangle.height)
                   }
-
     }
-
-
+    TextArea{}
 
 
 }

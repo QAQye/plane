@@ -3,6 +3,7 @@ import QtQuick.Layouts
 import QtQuick.Controls
 
 Rectangle {
+    z:2
     width:50
     height: 50
     color:"red"

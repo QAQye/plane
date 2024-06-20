@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Shapes
 // 这个类用于绘制三角形
 Item{
+    z:2
     // 通过外层的对象来调整三角形的位置
     x:200
     y:200

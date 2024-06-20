@@ -1,7 +1,8 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
-import "Control.js" as Control
+import "Control.js" as Controller
+
 ApplicationWindow {
     id:appWindow
     visible: true
@@ -17,7 +18,7 @@ ApplicationWindow {
                 action: actions.stopAction
             }
             MenuItem {
-                action:actions.exitAction
+                action:actions.exit
             }
             // 在菜单中再次添加一个菜单
             Menu {
@@ -27,19 +28,19 @@ ApplicationWindow {
                 }
             }
             MenuItem {
-                action: actions.aboutAction
+                action: actions.about
             }
         }
     }
     Actions{
         id:actions
-        aboutAction.onTriggered: content.dialogs.aboutDialog.open()
+        about.onTriggered: content.dialogs.aboutDialog.open()
     }
     Content{
         id:content
     }
     Component.onCompleted: {
-        Control.init()
+        Controller.init()
 
     }
 
