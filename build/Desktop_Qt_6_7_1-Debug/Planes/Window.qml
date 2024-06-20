@@ -58,9 +58,7 @@ ApplicationWindow {
         Controller.init()
 
     }
-    // Button {
 
-    // }
     // 定义 Actions 组件
 
 }
