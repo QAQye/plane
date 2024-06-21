@@ -23,5 +23,6 @@
         <file>images/se4.png</file>
         <file>images/se1.png</file>
         <file>images/se5.png</file>
+        <file>images/bgm.mp3</file>
     </qresource>
 </RCC>

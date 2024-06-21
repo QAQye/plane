@@ -1,9 +1,9 @@
 import QtQuick
 import QtQuick.Dialogs
 Item {
-    property  alias aboutDialog:_aboutDialog
+    property  alias about:_about
     MessageDialog{
-        id:_aboutDialog
+        id:_about
         modality: Qt.WindowModal
         buttons:MessageDialog.Ok
         text:"Plane"

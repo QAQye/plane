@@ -1,7 +1,9 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
-import "Control.js" as Control
+import QtMultimedia
+import "Control.js" as Controller
+
 ApplicationWindow {
     id:appWindow
     visible: true
@@ -17,32 +19,47 @@ ApplicationWindow {
                 action: actions.stopAction
             }
             MenuItem {
-                action:actions.exitAction
+                action:actions.exit
             }
             // 在菜单中再次添加一个菜单
             Menu {
                 title: "设置"
-                MenuItem {
-                    action: actions.music
+                Menu {
+                    title: "音乐"
+                    MenuItem{
+                        text: "播放/暂停"
+                        anchors.bottom: parent.bottom
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        onClicked: {
+                            music.bgm.playbackState === MediaPlayer.PlayingState ? music.bgm.pause() :music.bgm.play();
+                        }
+                    }
                 }
             }
             MenuItem {
-                action: actions.aboutAction
+                action: actions.about
             }
         }
     }
     Actions{
         id:actions
-        aboutAction.onTriggered: content.dialogs.aboutDialog.open()
+        about.onTriggered: content.dialogs.aboutDialog.open()
     }
+
+    MusicPlay{
+        id:music
+         anchors.centerIn: parent
+    }
+
     Content{
         id:content
     }
     Component.onCompleted: {
-        Control.init()
+        Controller.init()
 
     }
 
     // 定义 Actions 组件
 
 }
+

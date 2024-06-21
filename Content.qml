@@ -12,7 +12,7 @@ Item {
 
    FirstWindow{
        id:_firstwindow
-        visible: false
+        // visible: false
    }
    SecondWindow{
        id:_secondwindow
@@ -20,7 +20,7 @@ Item {
    }
    MainMap{
        id:_gamewindow
-       // visible: false
+       visible: false
    }
 }
 

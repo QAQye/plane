@@ -1,8 +1,9 @@
+//hyf
 import QtQuick
 import QtQuick.Controls
 Item {
-    property  alias exitAction: _exitAction
-    property  alias aboutAction: _aboutAction
+    property  alias exit: _exitAction
+    property  alias about: _aboutAction
     property  alias stopAction: _stopAction
     property   alias music: _music
     Action{
