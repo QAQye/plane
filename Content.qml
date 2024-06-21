@@ -16,11 +16,11 @@ Item {
    }
    SecondWindow{
        id:_secondwindow
-       // visible: false
+       visible: false
    }
    MainMap{
        id:_gamewindow
-       visible: false
+       // visible: false
    }
 }
 
