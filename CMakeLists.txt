@@ -43,7 +43,10 @@ qt_add_qml_module(
   MapRectangle.qml
   QML_FILES
   QML_FILES
-  MusicPlay.qml)
+  MusicPlay.qml
+  QML_FILES Plane.qml
+  QML_FILES PlaneController.js
+  QML_FILES GameMap.qml)
 
 target_compile_features(appPlanes PRIVATE cxx_std_20)
 

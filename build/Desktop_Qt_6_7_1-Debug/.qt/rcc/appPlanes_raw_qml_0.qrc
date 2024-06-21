@@ -1,0 +1,20 @@
+<RCC>
+  <qresource prefix="/qt/qml/Planes/">
+    <file alias="Window.qml">/root/Planes/Window.qml</file>
+    <file alias="Content.qml">/root/Planes/Content.qml</file>
+    <file alias="Dialogs.qml">/root/Planes/Dialogs.qml</file>
+    <file alias="Actions.qml">/root/Planes/Actions.qml</file>
+    <file alias="MainMap.qml">/root/Planes/MainMap.qml</file>
+    <file alias="FirstWindow.qml">/root/Planes/FirstWindow.qml</file>
+    <file alias="SecondWindow.qml">/root/Planes/SecondWindow.qml</file>
+    <file alias="Triangle.qml">/root/Planes/Triangle.qml</file>
+    <file alias="Control.js">/root/Planes/Control.js</file>
+    <file alias="MapRectangle.qml">/root/Planes/MapRectangle.qml</file>
+    <file alias="MusicPlay.qml">/root/Planes/MusicPlay.qml</file>
+    <file alias="Plane.qml">/root/Planes/Plane.qml</file>
+    <file alias="PlaneController.js">/root/Planes/PlaneController.js</file>
+    <file alias="GameMap.qml">/root/Planes/GameMap.qml</file>
+    <file alias="imges.qrc">/root/Planes/imges.qrc</file>
+  </qresource>
+</RCC>
+
