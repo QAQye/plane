@@ -81,7 +81,7 @@ RowLayout{
     property alias item67:mapitem67
     property alias item68:mapitem68
     property alias item69:mapitem69
-    property alias item70:mapitem60
+    property alias item70:mapitem70
     property alias item71:mapitem71
     property alias item72:mapitem72
     property alias item73:mapitem73

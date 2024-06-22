@@ -4,6 +4,7 @@ Rectangle {
     id: plane
     z: 3
     // 判断棋子是否到该回合是否可以移动
+    property var planepath:[]
     signal ismoveed()
     property bool ismove
     property double longs
@@ -43,12 +44,5 @@ Rectangle {
         }
     }
 
-    Component.onCompleted: {
-        console.log("*********************")
-        console.log(x , startplanex)
-        console.log(y , startplaney)
-        console.log("*********************")
-
-    }
 
 }

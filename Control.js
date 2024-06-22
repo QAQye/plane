@@ -2,7 +2,7 @@ let greenstartx
 let greenstarty
 // 用于存放路径
 let paths=[]
-let items=[]
+let greenpath=[]
 let longs
 let nextposition
 function init(){
@@ -22,11 +22,13 @@ function initmap(){
     content.secondwindow.visible=false
     longs=content.gamewindow.mainmaps.longs
     greenstartx=content.gamewindow.green1.startplanex
-    console.log(greenstartx)
     greenstarty=content.gamewindow.green1.startplaney
-    console.log(greenstarty)
     let a={"x":greenstartx,"y":greenstarty}
     paths.push(a)
+
+
+
+
 
 // 蓝色的三角形
     let item1=content.gamewindow.mainmaps.item1
@@ -192,19 +194,103 @@ function initmap(){
         a={"x":item.x+item.width/4,"y":item.y}
         paths.push(a)
     }
+    // 橙色飞机终点预备区域
+    for(let i=53;i<=57;i++){
+            let itemname="item"+i
+            // 动态用于匹配对应的属性值
+            let item=content.gamewindow.mainmaps[itemname]
+            a={"x":item.x,"y":item.y}
+            console.log("*******")
+            console.log(a.x)
+            console.log("*******")
+            paths.push(a)
+        }
+    // 橙色飞机终点
+    let item17=content.gamewindow.mainmaps.item58
+    a={"x":item17.x+longs*7/30,"y":item17.y-longs/15}
+    paths.push(a)
+
+    // 蓝色飞机终点预备区域
+    for(let i=59;i<=63;i++){
+            let itemname="item"+i
+            // 动态用于匹配对应的属性值
+            let item=content.gamewindow.mainmaps[itemname]
+            a={"x":item.x,"y":item.y}
+            console.log("*******")
+            console.log(a.x)
+            console.log("*******")
+            paths.push(a)
+        }
+    // 蓝色飞机终点
+    let item18=content.gamewindow.mainmaps.item64
+    a={"x":item18.x-longs/15,"y":item18.y+longs*7/30}
+    paths.push(a)
+
+    // 红色飞机终点预备区域
+    for(let i=65;i<=69;i++){
+            let itemname="item"+i
+            // 动态用于匹配对应的属性值
+            let item=content.gamewindow.mainmaps[itemname]
+            a={"x":item.x,"y":item.y}
+            console.log("*******")
+            console.log(a.x)
+            console.log("*******")
+            paths.push(a)
+        }
+    // 红色飞机终点
+    let item19=content.gamewindow.mainmaps.item70
+    a={"x":item19.x+longs*7/30,"y":item19.y+longs*8/15}
+    paths.push(a)
+
+    // 绿色飞机终点预备区域
+    for(let i=71;i<=75;i++){
+            let itemname="item"+i
+            // 动态用于匹配对应的属性值
+            let item=content.gamewindow.mainmaps[itemname]
+            a={"x":item.x,"y":item.y}
+            paths.push(a)
+        }
+    // 绿色飞机终点
+    let item20=content.gamewindow.mainmaps.item76
+    a={"x":item20.x+longs*8/15,"y":item20.y+longs*8/30}
+    paths.push(a)
+
+    // 存入第一架飞机的起始点
+    a={"x":content.gamewindow.green1.startplanex,"y":content.gamewindow.green1.startplanex}
+    greenpath.push(a)
+    a={"x":content.gamewindow.green1.startplanex,"y":content.gamewindow.green1.startplanex+longs*2}
+    greenpath.push(a)
+    content.gamewindow.green1.planepath=greenpath
+    console.log("*******")
+    console.log("*******")
+    console.log(greenpath[1].y)
+    console.log(greenpath[1].x)
+    console.log("*******")
+    console.log("*******")
+    for(let i=40;i>=1;i--){
+        greenpath[42-i]=paths[i]
+    }
+    for(let i=52;i>=43;i--){
+        greenpath[94-i]=paths[i]
+    }
+    for(let i=75;i>=71;i--){
+        greenpath[127-i]=paths[i]
+    }
+    greenpath.push(item20)
+
+
+
 
 
 
 
     content.gamewindow.green1.ismoveed.connect(()=>{
-                                                   console.log("被点击")
+                                                 //   console.log("被点击")
                                                  content.gamewindow.green1.nextposition=content.gamewindow.green1.currentposition+1
                                                  nextposition=content.gamewindow.green1.nextposition
                                                  content.gamewindow.green1.currentposition=nextposition
-                                                 content.gamewindow.green1.x=paths[nextposition].x
-                                                 content.gamewindow.green1.y=paths[nextposition].y
-
-
+                                                 content.gamewindow.green1.x=greenpath[nextposition].x
+                                                 content.gamewindow.green1.y=greenpath[nextposition].y
 
                                              })
 
