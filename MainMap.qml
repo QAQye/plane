@@ -8,6 +8,7 @@ RowLayout{
     property double startx:_mainMapRectangle.width*0.31
     property double starty: _mainMapRectangle.height*0.86
     property var items:[]
+    property alias textarea:_textarea
     property alias orangescreen: _orangescreen
     property alias bluescreen: _bluescreen
     property alias redscreen:_redscreen
@@ -1138,6 +1139,9 @@ RowLayout{
                   }
     }
     TextArea{
+        color:"black"
+        text: "aaaaa"
+        id:_textarea
         background: Rectangle {
             color: "white"
             anchors.fill: parent

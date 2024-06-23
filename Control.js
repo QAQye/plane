@@ -3,6 +3,8 @@ let greenstarty
 // 用于存放路径
 let paths=[]
 let greenpath=[]
+let greenjump=[]
+let greenfly=[]
 let longs
 let nextposition
 function init(){
@@ -18,6 +20,7 @@ function init(){
 }
 function initmap(){
     // 初始化地图的所有元素
+    // let text= content.gamewindow.mainmaps.textarea.text
     content.gamewindow.visible=true
     content.secondwindow.visible=false
     longs=content.gamewindow.mainmaps.longs
@@ -273,10 +276,14 @@ function initmap(){
     for(let i=52;i>=43;i--){
         greenpath[94-i]=paths[i]
     }
-    for(let i=75;i>=71;i--){
-        greenpath[127-i]=paths[i]
+    for(let i=71;i<=76;i++){
+        greenpath[i-19]=paths[i]
     }
-    greenpath.push(item20)
+    // 加入跳格子
+    for(let i=3;i<=51;i=i+4){
+        greenjump.push(greenpath[i])
+    }
+    greenfly.push(greenpath[19])
 
 
 
@@ -286,8 +293,25 @@ function initmap(){
 
     content.gamewindow.green1.ismoveed.connect(()=>{
                                                  //   console.log("被点击")
-                                                 content.gamewindow.green1.nextposition=content.gamewindow.green1.currentposition+1
+                                                   const randomNum = Math.floor(Math.random() * 6) + 1;
+                                                   content.gamewindow.mainmaps.textarea.text="摇的骰子数是"+randomNum
+                                                  // 输出: 一个介于1到6之间的随机整数
+                                                   // 可以通过随机数来模拟投掷骰子
+
+                                                 content.gamewindow.green1.nextposition=content.gamewindow.green1.currentposition+randomNum
                                                  nextposition=content.gamewindow.green1.nextposition
+
+                                                for(let i=0;i<greenjump.length;i++){
+
+                                                       if(greenpath[nextposition]===greenjump[i]&&nextposition<51){
+                                                           nextposition+=4
+                                                           break;
+                                                       }
+                                                   }
+                                                   if(greenpath[nextposition]===greenfly[0]){
+                                                       nextposition=31
+                                                   }
+
                                                  content.gamewindow.green1.currentposition=nextposition
                                                  content.gamewindow.green1.x=greenpath[nextposition].x
                                                  content.gamewindow.green1.y=greenpath[nextposition].y
