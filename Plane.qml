@@ -5,9 +5,15 @@ Rectangle {
     z: 3
     // 判断棋子是否到该回合是否可以移动
     property var planepath:[]
+    // 飞机是否到终点
+    property bool isfly: false
+    // 飞机的移动
     signal ismoveed()
     property bool ismove
+    // 飞机的大小
     property double longs
+    // 飞机是否达到终点
+    property bool isend:false
     property alias planesource: mapplanes.source
     // 判断当前的位置
     property int currentposition:0
