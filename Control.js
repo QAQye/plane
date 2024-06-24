@@ -311,11 +311,9 @@ function initmap(){
                                                    if(greenpath[nextposition]===greenfly[0]){
                                                        nextposition=31
                                                    }
-
-                                                 content.gamewindow.green1.currentposition=nextposition
-                                                 content.gamewindow.green1.x=greenpath[nextposition].x
-                                                 content.gamewindow.green1.y=greenpath[nextposition].y
-
+                                                   content.gamewindow.green1.currentposition=nextposition
+                                                   content.gamewindow.green1.x=greenpath[nextposition].x
+                                                   content.gamewindow.green1.y=greenpath[nextposition].y
                                              })
 
 
