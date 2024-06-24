@@ -1,5 +1,6 @@
-import QtQuick 2.15
-
+import QtQuick
+import QtMultimedia
+import QtQuick.Controls
 Rectangle {
     id: plane
     z: 3
@@ -40,15 +41,30 @@ Rectangle {
         HoverHandler {
             cursorShape: Qt.PointingHandCursor
         }
+        MediaPlayer{
+            id: _fly
+            audioOutput:AudioOutput
+            {
+                volume:1.0
+            }
+            source: "qrc:/images/fly.mp3"
+
+        }
         anchors.fill: parent
         TapHandler {
             onTapped: {
+                _fly.play()
+
                 planesize = longs / 2
+
                 ismoveed()
                 // console.log(planesize)
+                if(_fly.source)
+                {
+                    console.log("open music")
+                }
+
             }
         }
     }
-
-
 }

@@ -24,5 +24,8 @@
         <file>images/se1.png</file>
         <file>images/se5.png</file>
         <file>images/bgm.mp3</file>
+        <file>images/fly.mp3</file>
+        <file>images/dice.mp3</file>
+        <file>images/dicing.gif</file>
     </qresource>
 </RCC>
