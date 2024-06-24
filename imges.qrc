@@ -27,5 +27,6 @@
         <file>images/fly.mp3</file>
         <file>images/dice.mp3</file>
         <file>images/dicing.gif</file>
+        <file>images/fly.wav</file>
     </qresource>
 </RCC>

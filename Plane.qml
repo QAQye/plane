@@ -47,7 +47,7 @@ Rectangle {
             {
                 volume:1.0
             }
-            source: "qrc:/images/fly.mp3"
+            source: "qrc:/images/fly.wav"
 
         }
         anchors.fill: parent

@@ -89,7 +89,7 @@ RowLayout{
     property alias item74:mapitem74
     property alias item75:mapitem75
     property alias item76:mapitem76
-
+    property alias dice:_dice
     // 使用数组来存储地图上的颜色以便于切换主题
     property var mapitemcolor:["#83c326","#db224e","#e77918","#76c5f0"]
     // property var mappositioin:[]
@@ -1124,8 +1124,26 @@ RowLayout{
             }
 
         }
+// 骰子的图片
+        Component.onCompleted: {
+                content.gamewindow.green1.ismoveed.connect(() => {
+                    randomNum = Math.floor(Math.random() * 6) + 1;
+                    console.log("Generated Random Number:", randomNum);
+                });
+            }
 
+        Image {
+              id: _dice
+              property int randomNum
+              z: 1
+              anchors.left: parent.left
+              anchors.leftMargin: parent.width / 15
+              anchors.top: parent.top
+              anchors.topMargin: parent.height / 2 - height / 2
+              source: "qrc:/images/" + randomNum + ".png"
+              visible: randomNumber > 0
 
+          }
 
     }
 

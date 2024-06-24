@@ -296,6 +296,7 @@ function initmap(){
                                                    const randomNum = Math.floor(Math.random() * 6) + 1;
                                                    content.gamewindow.mainmaps.textarea.text="摇的骰子数是"+randomNum
                                                   // 输出: 一个介于1到6之间的随机整数
+                                                   content.gamewindow.mainmaps.dice.randomNum = randomNum
                                                    // 可以通过随机数来模拟投掷骰子
                                                    // 判断是否能够起飞以及是否达到了终点
                                                    if(content.gamewindow.green1.isfly===true&&content.gamewindow.green1.isend===false){
