@@ -28,5 +28,6 @@
         <file>images/dice.mp3</file>
         <file>images/dicing.gif</file>
         <file>images/fly.wav</file>
+        <file>images/骰子.png</file>
     </qresource>
 </RCC>

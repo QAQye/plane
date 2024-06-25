@@ -15,6 +15,9 @@ let orangefly=[]
 
 let longs
 let nextposition
+let greenplane=[]
+ let randomNum
+let type=1
 function init(){
     content.firstwindow.isclicked.connect(()=>{
                                                           appWindow.showFullScreen();
@@ -269,7 +272,7 @@ function initmap(){
 
 
     // 绿色飞机
-    let greenplane=[ content.gamewindow.green1, content.gamewindow.green2, content.gamewindow.green3, content.gamewindow.green4]
+    greenplane=[ content.gamewindow.green1, content.gamewindow.green2, content.gamewindow.green3, content.gamewindow.green4]
     // 存入第一架飞机的起始点
     a={"x":content.gamewindow.green1.startplanex,"y":content.gamewindow.green1.startplanex}
     greenpath.push(a)
@@ -301,60 +304,36 @@ function initmap(){
     greenfly.push(greenpath[19])
 
 
+     // content.firstwindow.isclicked.connect((
+    content.gamewindow.mainmaps.dicebutton.randomchanged.connect(()=>{
+                                                                     randomNum=  randomNum=content.gamewindow.mainmaps.dicebutton.lastrandom
+                                                                    content.gamewindow.mainmaps.textarea.text="摇的骰子数是"+randomNum
+                                                                     let clickdoule= content.gamewindow.mainmaps.dicebutton.clickdoule
+                                                                     if(clickdoule%4===1){
+                                                                         type=1
+                                                                        resetPlanesgreen()
+                                                                     }
+                                                                     else if(clickdoule%4===2){
+                                                                         type=2
+                                                                     }
+                                                                     else if(clickdoule%4===3){
+                                                                         type=3
+                                                                     }
+                                                                     else{
+                                                                         type=4
+                                                                     }
+                                                                     console.log("刷新")
+                                                                 })
 
     for(let j=0;j<4;j++){
         greenplane[j].ismoveed.connect(()=>{
-                                                     //   console.log("被点击")
-                                                       const randomNum = Math.floor(Math.random() * 6) + 1;
-                                                       content.gamewindow.mainmaps.textarea.text="摇的骰子数是"+randomNum
-                                                      // 输出: 一个介于1到6之间的随机整数
-                                                       content.gamewindow.mainmaps.dice.randomNum = randomNum
-                                                       // 可以通过随机数来模拟投掷骰子
-                                                       // 判断是否能够起飞以及是否达到了终点
-                                                       if(greenplane[j].isfly===true&&greenplane[j].isend===false){
-                                                           greenplane[j].nextposition=greenplane[j].currentposition+randomNum
-                                                           nextposition=greenplane[j].nextposition
-                                                           // 判断下一次摇的骰子是否达到了终点
+                                           for(let k=0;k<4;k++){
+                                               if(k!==j){
+                                                   greenplane[k].ismove=false
+                                               }
+                                           }
+                                           moveplane(j)
 
-                                                          for(let i=0;i<greenjump.length;i++){
-
-
-                                                                 if(greenpath[nextposition]===greenjump[i]&&nextposition<51){
-                                                                     nextposition+=4
-                                                                     break;
-                                                                 }
-                                                               if(greenpath[nextposition]===greenfly[0]){
-                                                                   nextposition=31
-                                                                   break;
-                                                               }
-
-                                                             }
-                                                           // 实现二次跳跃
-                                                           if(greenpath[nextposition]===greenfly[0]){
-                                                               nextposition=31
-                                                           }
-                                                           if(nextposition>=57){
-                                                               nextposition=57
-                                                               greenplane[j].isend=true
-                                                           }
-
-
-
-
-                                                          greenplane[j].currentposition=nextposition
-                                                           greenplane[j].x=greenpath[nextposition].x
-                                                           greenplane[j].y=greenpath[nextposition].y
-
-                                                       }
-                                                       // 判断飞机是否能够起飞只有摇骰子摇到六点才能起飞
-                                                       if(greenplane[j].isfly===false&&randomNum===6){
-                                                           greenplane[j].nextposition=greenplane[j].currentposition+1
-                                                           nextposition=greenplane[j].nextposition
-                                                           greenplane[j].currentposition=nextposition
-                                                           greenplane[j].x=greenpath[nextposition].x
-                                                          greenplane[j].y=greenpath[nextposition].y
-                                                           greenplane[j].isfly=true
-                                                       }
                                                  })
     }
 //橙色飞机
@@ -376,4 +355,75 @@ function initmap(){
     console.log("*******")
 
 
+}
+// 用于重置所有飞机的状态
+function resetPlanesgreen(){
+    for (let i=0;i<greenplane.length;i++) {
+        greenplane[i].ismove=true
+    }
+}
+function cantPlanesgreen(){
+    for (let i=0;i<greenplane.length;i++) {
+        greenplane[i].ismove=false
+    }
+}
+// 移动飞机
+function moveplane(j){
+    if(type==1){console.log("绿色飞机")}
+     // 判断是否能够起飞以及是否达到了终点和判断这个飞机是否可以移动
+    if(greenplane[j].isfly===true&&greenplane[j].isend===false&&greenplane[j].ismove===true&&type===1){
+        greenplane[j].nextposition=greenplane[j].currentposition+randomNum
+        nextposition=greenplane[j].nextposition
+        // 判断下一次摇的骰子是否达到了终点
+
+       for(let i=0;i<greenjump.length;i++){
+
+
+              if(greenpath[nextposition]===greenjump[i]&&nextposition<51){
+                  nextposition+=4
+                  break;
+              }
+            if(greenpath[nextposition]===greenfly[0]){
+                nextposition=31
+                break;
+            }
+
+          }
+        // 实现二次跳跃
+        if(greenpath[nextposition]===greenfly[0]){
+            nextposition=31
+        }
+        if(nextposition>=57){
+            nextposition=57
+            greenplane[j].isend=true
+        }
+
+
+
+
+       greenplane[j].currentposition=nextposition
+        greenplane[j].x=greenpath[nextposition].x
+        greenplane[j].y=greenpath[nextposition].y
+
+    }
+    // 判断飞机是否能够起飞只有摇骰子摇到六点才能起飞
+    if(greenplane[j].isfly===false&&randomNum===6&&greenplane[j].ismove===true&&type===1){
+        greenplane[j].nextposition=greenplane[j].currentposition+1
+        nextposition=greenplane[j].nextposition
+        greenplane[j].currentposition=nextposition
+        greenplane[j].x=greenpath[nextposition].x
+       greenplane[j].y=greenpath[nextposition].y
+        greenplane[j].isfly=true
+    }
+    // 此时场上有同颜色飞机处于起飞状态但是没有摇到点数6选择了未起飞状态的飞机
+     if(greenplane[j].isfly===false&&type===1){
+         for(let k=0;k<3;k++){
+             if(greenplane[k].isfly){
+                     // 如果飞机不能起飞但是选择了那么需要重新进行选择
+                     greenplane[k].ismove=true
+                 }
+             }
+     }
+    // 只能走一次
+    greenplane[j].ismove=false
 }

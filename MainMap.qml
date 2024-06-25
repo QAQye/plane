@@ -4,6 +4,7 @@ import QtQuick.Controls
 import QtQuick.Shapes
 RowLayout{
     id:rowlayout
+    property alias dicebutton:_dicebutton
     property double longs: rowlayout.width/15.5
     property double startx:_mainMapRectangle.width*0.31
     property double starty: _mainMapRectangle.height*0.86
@@ -1126,17 +1127,78 @@ RowLayout{
         }
 // 骰子的图片
 
-        Image {
-              id: _dice
-              property int randomNum:1
-              z: 1
-              anchors.left: parent.left
-              anchors.leftMargin: parent.width / 15
-              anchors.top: parent.top
-              anchors.topMargin: parent.height / 2 - height / 2
-              source: "qrc:/images/" + randomNum + ".png"
+        Rectangle{
+            id: _dice
+            // property int randomNum:1
+            z: 1
+            anchors.left: parent.left
+            anchors.leftMargin: parent.width / 18
+            anchors.top: parent.top
+            anchors.topMargin: parent.height /2.2
+            property int lastrandom:1
+            Image {
+                id:_diceimg
+                  source: "qrc:/images/" + _dice.lastrandom + ".png"
+              }
+            Timer{
+                // property alias randomNum : randomNum
+                  id:timers
+                  interval: 1
+                  running: false
+                  repeat: true
+                  onTriggered: {
+                      const randomNum = Math.floor(Math.random() * 6) + 1;
+                      _dice.lastrandom=randomNum
+                      _diceimg.source="qrc:/images/" + randomNum + ".png"
 
-          }
+                  }
+            }
+        }
+        Button{
+            signal randomchanged()
+            property int click:0
+            property int clickdoule:0
+            width: longs
+            height: longs
+            id:_dicebutton
+            z:1
+            anchors.top: parent.top
+            anchors.right: parent.right
+            anchors.rightMargin: parent.width / 15
+            anchors.topMargin: parent.height /2- height / 2
+            flat : true
+            highlighted : true
+            property int lastrandom:1
+            background: Rectangle{
+                Image {
+                    anchors.fill: parent
+                    id: _dizeimage
+                    source: "qrc:/images/骰子.png"
+
+                }
+                width:parent.width
+                height: width
+                radius: width/2
+            }
+            HoverHandler {
+                cursorShape: Qt.PointingHandCursor
+            }
+            onClicked: {
+                click++
+                if(click%2==0){
+                    timers.stop()
+                    clickdoule++
+                    lastrandom=_dice.lastrandom
+                    randomchanged()
+                    // console.log(lastrandom)
+                }
+                else{
+                 timers.start()
+                }
+
+            }
+        }
+
 
     }
 

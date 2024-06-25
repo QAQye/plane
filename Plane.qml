@@ -1,7 +1,11 @@
 import QtQuick
 import QtMultimedia
 import QtQuick.Controls
-Rectangle {
+Control{
+    topInset: -2
+    leftInset: -2
+    rightInset: -6
+    bottomInset: -6
     id: plane
     z: 3
     // 判断棋子是否到该回合是否可以移动
@@ -10,7 +14,7 @@ Rectangle {
     property bool isfly: false
     // 飞机的移动
     signal ismoveed()
-    property bool ismove
+    property bool ismove:true
     // 飞机的大小
     property double longs
     // 飞机是否达到终点
@@ -25,46 +29,44 @@ Rectangle {
     property bool isExist: true
     // 定义这个棋子的大小
     property double planesize
-    width: planesize
-    height: planesize
-    radius: width / 2
     property double startplanex
     property double startplaney
     x: startplanex
     y: startplaney
+    background:   Rectangle {
+        width: planesize
+        height: planesize
+        radius: width / 2
+        Image {
+            id: mapplanes
+            // 通过修改飞机的位置实现移动
+            source: "qrc:/images/plane_green_b.png"
 
-    Image {
-        id: mapplanes
-        // 通过修改飞机的位置实现移动
-        source: "qrc:/images/plane_green_b.png"
-
-        HoverHandler {
-            cursorShape: Qt.PointingHandCursor
-        }
-        MediaPlayer{
-            id: _fly
-            audioOutput:AudioOutput
-            {
-                volume:1.0
+            HoverHandler {
+                cursorShape: Qt.PointingHandCursor
             }
-            source: "qrc:/images/fly.wav"
-
-        }
-        anchors.fill: parent
-        TapHandler {
-            onTapped: {
-                _fly.play()
-
-                planesize = longs / 2
-
-                ismoveed()
-                // console.log(planesize)
-                if(_fly.source)
+            // 点击飞机的时候播放音乐
+            MediaPlayer{
+                id: _fly
+                audioOutput:AudioOutput
                 {
-                    console.log("open music")
+                    volume:1.0
                 }
+                source: "qrc:/images/fly.wav"
 
+            }
+            anchors.fill: parent
+            TapHandler {
+
+                onTapped: {
+                    _fly.play()
+                    planesize = longs / 2
+                    ismoveed()
+
+                }
             }
         }
     }
+
+
 }
