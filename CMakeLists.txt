@@ -9,7 +9,8 @@ find_package(Qt6 6.5 REQUIRED COMPONENTS Quick)
 
 qt_standard_project_setup(REQUIRES 6.7)
 
-qt_add_executable(appPlanes main.cpp)
+qt_add_executable(appPlanes main.cpp ${Qt6_QML_MODULE_FILES}
+                  ${Qt6_QML_MODULE_SOURCES})
 
 qt_add_qml_module(
   appPlanes
@@ -44,9 +45,20 @@ qt_add_qml_module(
   QML_FILES
   QML_FILES
   MusicPlay.qml
-  QML_FILES Plane.qml
-  QML_FILES PlaneController.js
-  QML_FILES GameMap.qml)
+  QML_FILES
+  Plane.qml
+  QML_FILES
+  PlaneController.js
+  QML_FILES
+  GameMap.qml
+  SOURCES
+  connect.h
+  SOURCES
+  server.cpp
+  SOURCES
+  server.h
+  SOURCES
+  connect.cpp)
 
 target_compile_features(appPlanes PRIVATE cxx_std_20)
 
@@ -65,6 +77,7 @@ target_link_libraries(appPlanes PRIVATE Qt6::Quick)
 include(GNUInstallDirs)
 install(
   TARGETS appPlanes
+  DESTINATION bin
   BUNDLE DESTINATION .
   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
   RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
