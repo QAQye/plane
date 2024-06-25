@@ -5,18 +5,19 @@ let paths=[]
 let greenpath=[]
 let greenjump=[]
 let greenfly=[]
+let greenplane=[]
 
 let orangestartx
 let orangestarty
 let orangepath=[]
 let orangejump=[]
 let orangefly=[]
-
+let orangeplane=[]
 
 let longs
 let nextposition
-let greenplane=[]
- let randomNum
+
+let randomNum
 let type=1
 function init(){
     content.firstwindow.isclicked.connect(()=>{
@@ -303,8 +304,34 @@ function initmap(){
     }
     greenfly.push(greenpath[19])
 
+    //橙色飞机
+        orangeplane=[ content.gamewindow.orange1, content.gamewindow.orange2, content.gamewindow.orange3, content.gamewindow.orange4]
+        // 存入第一架飞机的起始点
+        a={"x":content.gamewindow.orange1.startplanex,"y":content.gamewindow.orange1.startplaney}
+        orangepath.push(a)
+        a={"x":content.gamewindow.orange1.startplanex,"y":content.gamewindow.orange1.startplaney+longs*2}
+        orangepath.push(a)
+        content.gamewindow.orange1.planepath=orangepath
+        content.gamewindow.orange2.planepath=orangepath
+        content.gamewindow.orange3.planepath=orangepath
+        content.gamewindow.orange4.planepath=orangepath
+        orangepath[2]=paths[1]
+    for(let i=52;i>=4;i--){
+        orangepath[55-i]=paths[i]
+    }
+    for(let i=53;i<=58;i++){
+        orangepath[i-1]=paths[i]
+    }
+    for(let i=3;i<=51;i=i+4){
+        orangejump.push(orangepath[i])
+    }
+     orangefly.push(orangepath[19])
 
-     // content.firstwindow.isclicked.connect((
+
+
+
+
+
     content.gamewindow.mainmaps.dicebutton.randomchanged.connect(()=>{
                                                                      randomNum=  randomNum=content.gamewindow.mainmaps.dicebutton.lastrandom
                                                                     content.gamewindow.mainmaps.textarea.text="摇的骰子数是"+randomNum
@@ -315,6 +342,7 @@ function initmap(){
                                                                      }
                                                                      else if(clickdoule%4===2){
                                                                          type=2
+                                                                         resetPlanesorange()
                                                                      }
                                                                      else if(clickdoule%4===3){
                                                                          type=3
@@ -336,23 +364,20 @@ function initmap(){
 
                                                  })
     }
-//橙色飞机
-    let orangeplane=[ content.gamewindow.orange1, content.gamewindow.orange2, content.gamewindow.orange3, content.gamewindow.orange4]
-    // 存入第一架飞机的起始点
-    a={"x":content.gamewindow.orange1.startplanex,"y":content.gamewindow.orange1.startplanex}
-    orangepath.push(a)
-    a={"x":content.gamewindow.orange1.startplanex,"y":content.gamewindow.orange1.startplanex+longs*2}
-    orangepath.push(a)
-    content.gamewindow.orange1.planepath=orangepath
-    content.gamewindow.orange2.planepath=orangepath
-    content.gamewindow.orange3.planepath=orangepath
-    content.gamewindow.orange4.planepath=orangepath
-    console.log("*******")
-    console.log("*******")
-    console.log(orangepath[1].y)
-    console.log(orangepath[1].x)
-    console.log("*******")
-    console.log("*******")
+
+
+    for(let j=0;j<4;j++){
+        orangeplane[j].ismoveed.connect(()=>{
+                                           for(let k=0;k<4;k++){
+                                               if(k!==j){
+                                                  orangeplane[k].ismove=false
+                                               }
+                                           }
+                                           moveorangeplane(j)
+
+                                                 })
+    }
+
 
 
 }
@@ -360,6 +385,11 @@ function initmap(){
 function resetPlanesgreen(){
     for (let i=0;i<greenplane.length;i++) {
         greenplane[i].ismove=true
+    }
+}
+function resetPlanesorange(){
+    for (let i=0;i<orangeplane.length;i++) {
+       orangeplane[i].ismove=true
     }
 }
 function cantPlanesgreen(){
@@ -426,4 +456,65 @@ function moveplane(j){
      }
     // 只能走一次
     greenplane[j].ismove=false
+}
+
+
+function  moveorangeplane(j){
+    if(type==2){console.log("橙色飞机")}
+     // 判断是否能够起飞以及是否达到了终点和判断这个飞机是否可以移动
+    if(orangeplane[j].isfly===true&&orangeplane[j].isend===false&&orangeplane[j].ismove===true&&type===2){
+       orangeplane[j].nextposition=orangeplane[j].currentposition+randomNum
+        nextposition=orangeplane[j].nextposition
+        // 判断下一次摇的骰子是否达到了终点
+
+       for(let i=0;i<orangejump.length;i++){
+
+
+              if(orangepath[nextposition]===orangejump[i]&&nextposition<51){
+                  nextposition+=4
+                  break;
+              }
+            if(orangepath[nextposition]===orangefly[0]){
+                nextposition=31
+                break;
+            }
+
+          }
+        // 实现二次跳跃
+        if(orangepath[nextposition]===orangefly[0]){
+            nextposition=31
+        }
+        if(nextposition>=57){
+            nextposition=57
+            orangeplane[j].isend=true
+        }
+
+
+
+
+       orangeplane[j].currentposition=nextposition
+        orangeplane[j].x=orangepath[nextposition].x
+        orangeplane[j].y=orangepath[nextposition].y
+
+    }
+    // 判断飞机是否能够起飞只有摇骰子摇到六点才能起飞
+    if(orangeplane[j].isfly===false&&randomNum===6&&orangeplane[j].ismove===true&&type===2){
+       orangeplane[j].nextposition=orangeplane[j].currentposition+1
+        nextposition=orangeplane[j].nextposition
+        orangeplane[j].currentposition=nextposition
+        orangeplane[j].x=orangepath[nextposition].x
+       orangeplane[j].y=orangepath[nextposition].y
+        orangeplane[j].isfly=true
+    }
+    // 此时场上有同颜色飞机处于起飞状态但是没有摇到点数6选择了未起飞状态的飞机
+     if(orangeplane[j].isfly===false&&type===2){
+         for(let k=0;k<3;k++){
+             if(orangeplane[k].isfly){
+                     // 如果飞机不能起飞但是选择了那么需要重新进行选择
+                     orangeplane[k].ismove=true
+                 }
+             }
+     }
+    // 只能走一次
+    orangeplane[j].ismove=false
 }
