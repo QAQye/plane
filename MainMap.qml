@@ -1073,8 +1073,8 @@ RowLayout{
             z:3
             width: longs+longs/4
             height: longs
-            x:startx-longs*3
-            y:starty-longs*2
+            x:startx-longs
+            y:starty
             color:"transparent"
             Text{
                 anchors.bottom: parent.bottom
@@ -1109,8 +1109,8 @@ RowLayout{
         Rectangle{
             width: longs+longs/4
             height: longs
-            x:startx+longs*11/2
-            y:starty-longs*11/2
+            x:startx+longs*4
+            y:starty-longs*15/2
             color:"transparent"
             Text{
                 anchors.top: parent.top
@@ -1125,23 +1125,16 @@ RowLayout{
 
         }
 // 骰子的图片
-        Component.onCompleted: {
-                content.gamewindow.green1.ismoveed.connect(() => {
-                    randomNum = Math.floor(Math.random() * 6) + 1;
-                    console.log("Generated Random Number:", randomNum);
-                });
-            }
 
         Image {
               id: _dice
-              property int randomNum
+              property int randomNum:1
               z: 1
               anchors.left: parent.left
               anchors.leftMargin: parent.width / 15
               anchors.top: parent.top
               anchors.topMargin: parent.height / 2 - height / 2
               source: "qrc:/images/" + randomNum + ".png"
-              visible: randomNumber > 0
 
           }
 

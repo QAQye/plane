@@ -258,12 +258,19 @@ function initmap(){
     a={"x":item20.x+longs*8/15,"y":item20.y+longs*8/30}
     paths.push(a)
 
+
+
+    // 绿色飞机
+    let greenplane=[ content.gamewindow.green1, content.gamewindow.green2, content.gamewindow.green3, content.gamewindow.green4]
     // 存入第一架飞机的起始点
     a={"x":content.gamewindow.green1.startplanex,"y":content.gamewindow.green1.startplanex}
     greenpath.push(a)
     a={"x":content.gamewindow.green1.startplanex,"y":content.gamewindow.green1.startplanex+longs*2}
     greenpath.push(a)
     content.gamewindow.green1.planepath=greenpath
+    content.gamewindow.green2.planepath=greenpath
+    content.gamewindow.green3.planepath=greenpath
+    content.gamewindow.green4.planepath=greenpath
     console.log("*******")
     console.log("*******")
     console.log(greenpath[1].y)
@@ -287,63 +294,63 @@ function initmap(){
 
 
 
+    for(let j=0;j<4;j++){
+        greenplane[j].ismoveed.connect(()=>{
+                                                     //   console.log("被点击")
+                                                       const randomNum = Math.floor(Math.random() * 6) + 1;
+                                                       content.gamewindow.mainmaps.textarea.text="摇的骰子数是"+randomNum
+                                                      // 输出: 一个介于1到6之间的随机整数
+                                                       content.gamewindow.mainmaps.dice.randomNum = randomNum
+                                                       // 可以通过随机数来模拟投掷骰子
+                                                       // 判断是否能够起飞以及是否达到了终点
+                                                       if(greenplane[j].isfly===true&&greenplane[j].isend===false){
+                                                           greenplane[j].nextposition=greenplane[j].currentposition+randomNum
+                                                           nextposition=greenplane[j].nextposition
+                                                           // 判断下一次摇的骰子是否达到了终点
+
+                                                          for(let i=0;i<greenjump.length;i++){
 
 
+                                                                 if(greenpath[nextposition]===greenjump[i]&&nextposition<51){
+                                                                     nextposition+=4
+                                                                     break;
+                                                                 }
+                                                               if(greenpath[nextposition]===greenfly[0]){
+                                                                   nextposition=31
+                                                                   break;
+                                                               }
 
-
-    content.gamewindow.green1.ismoveed.connect(()=>{
-                                                 //   console.log("被点击")
-                                                   const randomNum = Math.floor(Math.random() * 6) + 1;
-                                                   content.gamewindow.mainmaps.textarea.text="摇的骰子数是"+randomNum
-                                                  // 输出: 一个介于1到6之间的随机整数
-                                                   content.gamewindow.mainmaps.dice.randomNum = randomNum
-                                                   // 可以通过随机数来模拟投掷骰子
-                                                   // 判断是否能够起飞以及是否达到了终点
-                                                   if(content.gamewindow.green1.isfly===true&&content.gamewindow.green1.isend===false){
-                                                       content.gamewindow.green1.nextposition=content.gamewindow.green1.currentposition+randomNum
-                                                       nextposition=content.gamewindow.green1.nextposition
-                                                       // 判断下一次摇的骰子是否达到了终点
-
-                                                      for(let i=0;i<greenjump.length;i++){
-
-
-                                                             if(greenpath[nextposition]===greenjump[i]&&nextposition<51){
-                                                                 nextposition+=4
-                                                                 break;
                                                              }
+                                                           // 实现二次跳跃
                                                            if(greenpath[nextposition]===greenfly[0]){
                                                                nextposition=31
-                                                               break;
+                                                           }
+                                                           if(nextposition>=57){
+                                                               nextposition=57
+                                                               greenplane[j].isend=true
                                                            }
 
-                                                         }
-                                                       // 实现二次跳跃
-                                                       if(greenpath[nextposition]===greenfly[0]){
-                                                           nextposition=31
+
+
+
+                                                          greenplane[j].currentposition=nextposition
+                                                           greenplane[j].x=greenpath[nextposition].x
+                                                           greenplane[j].y=greenpath[nextposition].y
+
                                                        }
-                                                       if(nextposition>=57){
-                                                           nextposition=57
-                                                           content.gamewindow.green1.isend=true
+                                                       // 判断飞机是否能够起飞只有摇骰子摇到六点才能起飞
+                                                       if(greenplane[j].isfly===false&&randomNum===6){
+                                                           greenplane[j].nextposition=greenplane[j].currentposition+1
+                                                           nextposition=greenplane[j].nextposition
+                                                           greenplane[j].currentposition=nextposition
+                                                           greenplane[j].x=greenpath[nextposition].x
+                                                          greenplane[j].y=greenpath[nextposition].y
+                                                           greenplane[j].isfly=true
                                                        }
+                                                 })
+    }
 
 
-
-
-                                                       content.gamewindow.green1.currentposition=nextposition
-                                                       content.gamewindow.green1.x=greenpath[nextposition].x
-                                                       content.gamewindow.green1.y=greenpath[nextposition].y
-
-                                                   }
-                                                   // 判断飞机是否能够起飞只有摇骰子摇到六点才能起飞
-                                                   if(content.gamewindow.green1.isfly===false&&randomNum===6){
-                                                       content.gamewindow.green1.nextposition=content.gamewindow.green1.currentposition+1
-                                                       nextposition=content.gamewindow.green1.nextposition
-                                                       content.gamewindow.green1.currentposition=nextposition
-                                                       content.gamewindow.green1.x=greenpath[nextposition].x
-                                                       content.gamewindow.green1.y=greenpath[nextposition].y
-                                                       content.gamewindow.green1.isfly=true
-                                                   }
-                                             })
 
 
 }
