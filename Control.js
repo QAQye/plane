@@ -5,6 +5,14 @@ let paths=[]
 let greenpath=[]
 let greenjump=[]
 let greenfly=[]
+
+let orangestartx
+let orangestarty
+let orangepath=[]
+let orangejump=[]
+let orangefly=[]
+
+
 let longs
 let nextposition
 function init(){
@@ -349,8 +357,23 @@ function initmap(){
                                                        }
                                                  })
     }
-
-
+//橙色飞机
+    let orangeplane=[ content.gamewindow.orange1, content.gamewindow.orange2, content.gamewindow.orange3, content.gamewindow.orange4]
+    // 存入第一架飞机的起始点
+    a={"x":content.gamewindow.orange1.startplanex,"y":content.gamewindow.orange1.startplanex}
+    orangepath.push(a)
+    a={"x":content.gamewindow.orange1.startplanex,"y":content.gamewindow.orange1.startplanex+longs*2}
+    orangepath.push(a)
+    content.gamewindow.orange1.planepath=orangepath
+    content.gamewindow.orange2.planepath=orangepath
+    content.gamewindow.orange3.planepath=orangepath
+    content.gamewindow.orange4.planepath=orangepath
+    console.log("*******")
+    console.log("*******")
+    console.log(orangepath[1].y)
+    console.log(orangepath[1].x)
+    console.log("*******")
+    console.log("*******")
 
 
 }
