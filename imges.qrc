@@ -25,5 +25,6 @@
         <file>images/se5.png</file>
         <file>images/bgm.mp3</file>
         <file>images/dialog.png</file>
+        <file>CreatRoom.qml</file>
     </qresource>
 </RCC>

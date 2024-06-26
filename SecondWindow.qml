@@ -3,7 +3,9 @@ import QtQuick.Controls
 import QtQuick.Layouts
 
 Image {
-                signal startgame()
+    signal isclicked()
+    signal startgame()
+    signal creatroomscene()
                 id: _background
                 source: "qrc:/images/se5.png" // 外部背景图片
                 anchors.fill: parent
@@ -154,6 +156,7 @@ Image {
                                                       }
                                       onClicked: {
                                           console.log("创建房间");
+                                          creatroomscene()
                                           popup.close()
                                           // 这里可以添加进一步的逻辑，根据每个选项的选择进入不同的场景
 
@@ -192,8 +195,7 @@ Image {
                                            onClicked: {
                                                console.log("返回游戏");
                                                // 这里可以添加进一步的逻辑，根据每个选项的选择进入不同的场景
-                                                  popup.close()
-
+                                              popup.close()
                                            }
                                        }
                                    }

@@ -13,6 +13,12 @@ function init(){
                                                           content.firstwindow.visible=false
                                                           content.secondwindow.visible=true
                                                       })
+    content.secondwindow.creatroomscene.connect(()=>{
+                                                          // appWindow.showFullScreen();
+                                                          // content.firstwindow.visible=false
+                                                          content.secondwindow.visible=false
+                                              content.creatroom.visible=true
+                                                      })
     content.secondwindow.startgame.connect(initmap)
     // appWindow.showFullScreen();
 
@@ -23,6 +29,7 @@ function initmap(){
     // let text= content.gamewindow.mainmaps.textarea.text
     content.gamewindow.visible=true
     content.secondwindow.visible=false
+    content.creatroom.visible=false
     longs=content.gamewindow.mainmaps.longs
     greenstartx=content.gamewindow.green1.startplanex
     greenstarty=content.gamewindow.green1.startplaney

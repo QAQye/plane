@@ -59,7 +59,11 @@ qt_add_qml_module(
   server.h
   SOURCES
   connect.cpp
-  QML_FILES )
+  QML_FILES
+  QML_FILES
+  JoinRoom.qml
+  QML_FILES
+  CreatRoom.qml)
 
 target_compile_features(appPlanes PRIVATE cxx_std_20)
 

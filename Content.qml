@@ -5,6 +5,7 @@ Item {
     property alias firstwindow:_firstwindow
     property alias secondwindow:_secondwindow
     property alias gamewindow: _gamewindow
+    property alias creatroom: _creatroom
     anchors.fill: parent
     Dialogs{
         id:_dialogs
@@ -16,6 +17,10 @@ Item {
    }
    SecondWindow{
        id:_secondwindow
+       visible: false
+   }
+   CreatRoom{
+       id:_creatroom
        visible: false
    }
    GameMap{
