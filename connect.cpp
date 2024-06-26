@@ -68,6 +68,57 @@ void Connect::displayError(QAbstractSocket::SocketError)
 }
 
 // 以下是一系列getter和setter方法，用于访问和修改客户端的属性
+int Connect::getCol() const
+{
+    return col;
+}
+
+void Connect::setCol(int newCol)
+{
+    if (col == newCol)
+        return;
+    col = newCol;
+    emit colChanged();
+}
+
+int Connect::getRow() const
+{
+    return row;
+}
+
+void Connect::setRow(int newRow)
+{
+    if (row == newRow)
+        return;
+    row = newRow;
+    emit rowChanged();
+}
+
+int Connect::getFirstcol() const
+{
+    return firstcol;
+}
+
+void Connect::setFirstcol(int newFirstcol)
+{
+    if (firstcol == newFirstcol)
+        return;
+    firstcol = newFirstcol;
+    emit firstcolChanged();
+}
+
+int Connect::getFirstrow() const
+{
+    return firstrow;
+}
+
+void Connect::setFirstrow(int newFirstrow)
+{
+    if (firstrow == newFirstrow)
+        return;
+    firstrow = newFirstrow;
+    emit firstrowChanged();
+}
 
 // qml端可调用的向服务端发送棋子将要移动到的位置的方法
 void Connect::xyChangedSlot(int x, int y, int x1, int y1)

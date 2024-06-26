@@ -58,7 +58,8 @@ qt_add_qml_module(
   SOURCES
   server.h
   SOURCES
-  connect.cpp)
+  connect.cpp
+  QML_FILES )
 
 target_compile_features(appPlanes PRIVATE cxx_std_20)
 

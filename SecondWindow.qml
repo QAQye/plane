@@ -115,18 +115,101 @@ Image {
                         color: "transparent"
 
                     }
+
                     onClicked: {
-                        console.log("游戏开始");
+                        popup.open()
+                        console.log("对象");
                         // 这里可以添加进一步的逻辑，根据每个选项的选择进入不同的场景
-                        startgame()
+
                     }
+                }
+                Popup {
+                                       id: popup
+                                       visible: false
+                                       width: _background.width*0.4
+                                       height: _background.height * 0.8//弹窗大小
+                                       modal: true
+
+                                       // 设置弹窗的位置
+                                       x: _background.width * 0.4 // 按钮 x 坐标为图像宽度的%
+                                       y: _background.height * 0.06// 按钮 y 坐标为图像高度的%
+
+                                       contentItem: Column {
+                                           // anchors.centerIn: parent
+                                           Image {
+                                                      anchors.fill: parent
+                                                      source: "qrc:/images/dialog.png" // 确保图片路径正确
+                                                  }
+
+                        Button {
+                                    text: "创建房间"
+                                    width: popup.width*0.6
+                                    height: popup.height * 0.14//按钮大小
+                                    x: _background.width * 0.06 // 按钮 x 坐标为图像宽度的%
+                                    y: _background.height * 0.1 // 按钮 y 坐标为图像高度的%
+                                    font.pixelSize: _background.width * 0.03
+                                    font.bold: true // 设置
+                                      background: Rectangle {
+                                                color: "transparent"
+                                                      }
+                                      onClicked: {
+                                          console.log("创建房间");
+                                          popup.close()
+                                          // 这里可以添加进一步的逻辑，根据每个选项的选择进入不同的场景
+
+                                      }
+                                      }
+                       Button {
+                                    text: "加入房间"
+                                    width: popup.width*0.6
+                                    height: popup.height * 0.14//按钮大小
+                                    x: _background.width * 0.06 // 按钮 x 坐标为图像宽度的%
+                                    y: _background.height * 0.3 // 按钮 y 坐标为图像高度的%
+                                    font.pixelSize: _background.width * 0.03
+                                    font.bold: true // 设置
+                                    background: Rectangle {
+                                                    color: "transparent"
+                                                                         }
+                                    onClicked: {
+                                        console.log("加入房间");
+                                        // 这里可以添加进一步的逻辑，根据每个选项的选择进入不同的场景
+                                           popup.close()
+
+                                    }
+                                                                }
+                      Button {
+                                           text: "返回游戏"
+                                           width: popup.width*0.6
+                                           height: popup.height * 0.14//按钮大小
+                                           x: _background.width * 0.06 // 按钮 x 坐标为图像宽度的%
+                                           y: _background.height * 0.53 // 按钮 y 坐标为图像高度的%
+                                           font.pixelSize: _background.width * 0.03
+                                           font.bold: true // 设置
+                                           background: Rectangle {
+                                                        color: "transparent"
+
+                                                                }
+                                           onClicked: {
+                                               console.log("返回游戏");
+                                               // 这里可以添加进一步的逻辑，根据每个选项的选择进入不同的场景
+                                                  popup.close()
+
+                                           }
+                                       }
+                                   }
+                            }
+                    // onClicked: {
+                    //     console.log("游戏开始");
+                    //     // 这里可以添加进一步的逻辑，根据每个选项的选择进入不同的场景
+                    //     startgame()
+                    // }
                     HoverHandler{
                          cursorShape: Qt.PointingHandCursor
                     }
 
 
                 }
-            }
+
 
 
 

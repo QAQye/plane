@@ -83,7 +83,57 @@ void Server::portSlot(QString s)
     });
 }
 // 以下是一系列getter和setter方法，用于访问和修改服务器的属性
-// ...
+int Server::getCol() const
+{
+    return col;
+}
+
+void Server::setCol(int newCol)
+{
+    if (col == newCol)
+        return;
+    col = newCol;
+    emit colChanged();
+}
+
+int Server::getRow() const
+{
+    return row;
+}
+
+void Server::setRow(int newRow)
+{
+    if (row == newRow)
+        return;
+    row = newRow;
+    emit rowChanged();
+}
+
+int Server::getFirstcol() const
+{
+    return firstcol;
+}
+
+void Server::setFirstcol(int newFirstcol)
+{
+    if (firstcol == newFirstcol)
+        return;
+    firstcol = newFirstcol;
+    emit firstcolChanged();
+}
+
+int Server::getFirstrow() const
+{
+    return firstrow;
+}
+
+void Server::setFirstrow(int newFirstrow)
+{
+    if (firstrow == newFirstrow)
+        return;
+    firstrow = newFirstrow;
+    emit firstrowChanged();
+}
 
 void Server::xyChangedSlot(int x, int y, int x1, int y1)
 {
