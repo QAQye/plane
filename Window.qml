@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import QtMultimedia
-import "Control.js" as Controller
+import "Controller.js" as Controller
 
 ApplicationWindow {
     id:appWindow

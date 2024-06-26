@@ -196,6 +196,7 @@ Image {
                                                console.log("返回游戏");
                                                // 这里可以添加进一步的逻辑，根据每个选项的选择进入不同的场景
                                               popup.close()
+                                               startgame()//只是为了看到界面测试，startgame（）在连接时调用
                                            }
                                        }
                                    }

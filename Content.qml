@@ -26,6 +26,8 @@ Item {
    GameMap{
        id:_gamewindow
        visible: false
+
+
    }
 }
 

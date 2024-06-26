@@ -25,6 +25,11 @@
         <file>images/se5.png</file>
         <file>images/bgm.mp3</file>
         <file>images/dialog.png</file>
-        <file>CreatRoom.qml</file>
+        <file>images/fly.mp3</file>
+        <file>images/dice.mp3</file>
+        <file>images/dicing.gif</file>
+        <file>images/fly.wav</file>
+        <file>images/骰子.png</file>
+
     </qresource>
 </RCC>

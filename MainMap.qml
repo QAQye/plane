@@ -4,6 +4,7 @@ import QtQuick.Controls
 import QtQuick.Shapes
 RowLayout{
     id:rowlayout
+    property alias dicebutton:_dicebutton
     property double longs: rowlayout.width/15.5
     property double startx:_mainMapRectangle.width*0.31
     property double starty: _mainMapRectangle.height*0.86
@@ -89,7 +90,7 @@ RowLayout{
     property alias item74:mapitem74
     property alias item75:mapitem75
     property alias item76:mapitem76
-
+    property alias dice:_dice
     // 使用数组来存储地图上的颜色以便于切换主题
     property var mapitemcolor:["#83c326","#db224e","#e77918","#76c5f0"]
     // property var mappositioin:[]
@@ -1073,8 +1074,8 @@ RowLayout{
             z:3
             width: longs+longs/4
             height: longs
-            x:startx-longs*3
-            y:starty-longs*2
+            x:startx-longs
+            y:starty
             color:"transparent"
             Text{
                 anchors.bottom: parent.bottom
@@ -1109,8 +1110,8 @@ RowLayout{
         Rectangle{
             width: longs+longs/4
             height: longs
-            x:startx+longs*11/2
-            y:starty-longs*11/2
+            x:startx+longs*4
+            y:starty-longs*15/2
             color:"transparent"
             Text{
                 anchors.top: parent.top
@@ -1124,7 +1125,79 @@ RowLayout{
             }
 
         }
+// 骰子的图片
 
+        Rectangle{
+            id: _dice
+            // property int randomNum:1
+            z: 1
+            anchors.left: parent.left
+            anchors.leftMargin: parent.width / 18
+            anchors.top: parent.top
+            anchors.topMargin: parent.height /2.2
+            property int lastrandom:1
+            Image {
+                id:_diceimg
+                  source: "qrc:/images/" + _dice.lastrandom + ".png"
+              }
+            Timer{
+                // property alias randomNum : randomNum
+                  id:timers
+                  interval: 1
+                  running: false
+                  repeat: true
+                  onTriggered: {
+                      const randomNum = Math.floor(Math.random() * 6) + 1;
+                      _dice.lastrandom=randomNum
+                      _diceimg.source="qrc:/images/" + randomNum + ".png"
+
+                  }
+            }
+        }
+        Button{
+            signal randomchanged()
+            property int click:0
+            property int clickdoule:0
+            width: longs
+            height: longs
+            id:_dicebutton
+            z:1
+            anchors.top: parent.top
+            anchors.right: parent.right
+            anchors.rightMargin: parent.width / 15
+            anchors.topMargin: parent.height /2- height / 2
+            flat : true
+            highlighted : true
+            property int lastrandom:1
+            background: Rectangle{
+                Image {
+                    anchors.fill: parent
+                    id: _dizeimage
+                    source: "qrc:/images/骰子.png"
+
+                }
+                width:parent.width
+                height: width
+                radius: width/2
+            }
+            HoverHandler {
+                cursorShape: Qt.PointingHandCursor
+            }
+            onClicked: {
+                click++
+                if(click%2==0){
+                    timers.stop()
+                    clickdoule++
+                    lastrandom=_dice.lastrandom
+                    randomchanged()
+                    // console.log(lastrandom)
+                }
+                else{
+                 timers.start()
+                }
+
+            }
+        }
 
 
     }
