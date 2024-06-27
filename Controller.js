@@ -354,13 +354,12 @@ function initmap(){
     blueplane=[content.gamewindow.blue1,content.gamewindow.blue2,content.gamewindow.blue3,content.gamewindow.blue4]
     a={"x":content.gamewindow.blue1.startplanex,"y":content.gamewindow.blue1.startplaney}
     bluepath.push(a)
-    a={"x":content.gamewindow.blue2.startplanex,"y":content.gamewindow.blue2.startplaney+longs}
+    a={"x":content.gamewindow.blue2.startplanex+longs,"y":content.gamewindow.blue2.startplaney-longs}
     bluepath.push(a)
     content.gamewindow.blue1.planepath=bluepath
     content.gamewindow.blue2.planepath=bluepath
     content.gamewindow.blue3.planepath=bluepath
     content.gamewindow.blue4.planepath=bluepath
-    // content.gamewindow.blue1.planepath.push(a)
     for(let i=14;i>=1;i--){
         bluepath[16-i]=paths[i]
     }
@@ -380,7 +379,7 @@ function initmap(){
     redplane=[content.gamewindow.red1,content.gamewindow.red2,content.gamewindow.red3,content.gamewindow.red4]
     a={"x":content.gamewindow.red1.startplanex,"y":content.gamewindow.red1.startplaney}
     redpath.push(a)
-    a={"x":content.gamewindow.red2.startplanex,"y":content.gamewindow.red2.startplaney+longs}
+    a={"x":content.gamewindow.red2.startplanex-longs*2,"y":content.gamewindow.red2.startplaney+longs}
     redpath.push(a)
     content.gamewindow.red1.planepath=redpath
     content.gamewindow.red2.planepath=redpath
@@ -408,7 +407,7 @@ function initmap(){
 
     content.gamewindow.mainmaps.dicebutton.randomchanged.connect(()=>{
                                                                      randomNum=  randomNum=content.gamewindow.mainmaps.dicebutton.lastrandom
-                                                                    content.gamewindow.mainmaps.textarea.text="摇的骰子数是"+randomNum
+                                                                    content.gamewindow.mainmaps.textarea.text+="摇的骰子数是"+randomNum+"\n"
                                                                      let clickdoule= content.gamewindow.mainmaps.dicebutton.clickdoule
                                                                      if(clickdoule%4===1){
                                                                          type=1
