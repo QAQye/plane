@@ -406,28 +406,39 @@ function initmap(){
 
 
 
-    content.gamewindow.mainmaps.dicebutton.randomchanged.connect(()=>{
-                                                                     randomNum=  randomNum=content.gamewindow.mainmaps.dicebutton.lastrandom
-                                                                    content.gamewindow.mainmaps.textarea.text="摇的骰子数是"+randomNum
-                                                                     let clickdoule= content.gamewindow.mainmaps.dicebutton.clickdoule
-                                                                     if(clickdoule%4===1){
-                                                                         type=1
-                                                                        resetPlanesgreen()
-                                                                     }
-                                                                     else if(clickdoule%4===2){
-                                                                         type=2
-                                                                         resetPlanesorange()
-                                                                     }
-                                                                     else if(clickdoule%4===3){
-                                                                         type=3
-                                                                         resetPlanesblue()
-                                                                     }
-                                                                     else{
-                                                                         type=4
-                                                                         resetPlanesred()
-                                                                     }
-                                                                     console.log("刷新")
-                                                                 })
+    content.gamewindow.mainmaps.dicebutton.randomchanged.connect(() => {
+           let randomNum = content.gamewindow.mainmaps.dicebutton.lastrandom;
+           let clickdouble = content.gamewindow.mainmaps.dicebutton.clickdoule;
+
+           let type = clickdouble % 4;
+           let color = "";
+
+           // 根据 type 确定颜色
+           switch (type) {
+               case 1:
+                   color = "绿色";  // 绿色棋子
+                   resetPlanesgreen();  // 重置绿色棋子相关操作
+                   break;
+               case 2:
+                   color = "橙色";  // 橙色棋子
+                   resetPlanesorange();  // 重置橙色棋子相关操作
+                   break;
+               case 3:
+                   color = "蓝色";  // 蓝色棋子
+                   break;
+               case 0:  // 这个 case 包括了 type 为 4 的情况（因为 4 % 4 === 0）
+                   color = "红色";  // 红色棋子
+                   break;
+               default:
+                   color = "未知颜色";  // 默认情况
+                   break;
+           }
+
+           // 更新 TextArea 的文本内容
+           content.gamewindow.mainmaps.textarea.text +=  color + "棋子摇出的骰子数是 " + randomNum + "\n";
+
+           console.log("刷新");
+       });
 
     for(let j=0;j<4;j++){
         greenplane[j].ismoveed.connect(()=>{

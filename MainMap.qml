@@ -1213,7 +1213,8 @@ RowLayout{
     }
     TextArea{
         color:"black"
-        text: "aaaaa"
+        text: "骰子记录器：
+"
         id:_textarea
         background: Rectangle {
             color: "white"
