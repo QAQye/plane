@@ -1,7 +1,18 @@
 import QtQuick
 import QtQuick 2.15
 import QtQuick.Controls 2.15
+import Server 1.0
 Image{
+    signal gamePressed
+
+    signal disConnect_server
+    signal sendMes
+    signal portSig(var s)
+
+    property int row1
+    property int col1
+    property int row2
+    property int col2
     id: createRoomScene
     anchors.fill: parent
         source: "qrc:/images/se1.png"
@@ -63,18 +74,25 @@ Image{
             // color: "red"
             x: createRoomScene.width * 0.56 // 按钮 x 坐标为图像宽度的%
             y: createRoomScene.height * 0.64 // 按钮 y 坐标为图像高度的%
+
             Text {
                 font.pixelSize: createRoomScene.width * 0.03
                 font.bold: true // 设置
-                text: "本地IP: "/*+server.ip*/
-            }
+                text: "本地IP: "+server.ip
 
             }
+}
+
         Button {
             id: createButton
             text: "创建"
             // 设置文本颜色为黑色
 
+            // ColorAnimation {
+            //     from: "white"
+            //     to: "black"
+            //     duration: 200
+            // }
             // 根据按钮的宽度和高度设置字体大小
             font.pixelSize: createRoomScene.width * 0.04
             // 设置按钮的宽度和高度
@@ -87,12 +105,22 @@ Image{
             background:Rectangle {
                 color: "transparent"
             }
-
-            onClicked: {
-                console.log("创建成功");
-                // 这里可以添加进一步的逻辑，根据每个选项的选择进入不同的场景
-                waitMessage.visible = true
+            TapHandler{
+                onTapped: {
+                    portSig(inputport.getText(0,10))
+                    waitMessage.visible = true
+                }
             }
+            // TapHandler{
+            //     onTapped: {
+            //         var portSig = localportText.text;
+            //         // portSig(localport.getText(0,10))
+            //         waitMessage.visible = true
+            //     }
+            // }
+        }
+        Component.onCompleted: {
+            portSig.connect(server.portSlot)
         }
 
         Rectangle{
@@ -112,46 +140,46 @@ Image{
 
 
 
-     //     //c++注册的服务端对象
-     //     Server{
-     //         id:server
+         //c++注册的服务端对象
+         Server{
+             id:server
 
-     //         onConnectSuccess: {
-     //             gamePressed()
-     //             gameScene.camp = 0
-     //             gameScene.init()
-     //             waitMessage.visible = false
-     //         }
+             onConnectSuccess: {
+                 gamePressed()
+                 gameScene.camp = 0
+                 gameScene.init()
+                 waitMessage.visible = false
+             }
 
-     //         //接受成功则移动棋子
-     //         onReceiveOk: {
-     //             row1=server.firstrow
-     //             col1=server.firstcol
-     //             row2=server.row
-     //             col2=server.col
-     //             console.log(row1,col1,row2,col2)
-     //             gameScene.move_server()
-     //         }
+             //接受成功则移动棋子
+             onReceiveOk: {
+                 row1=server.firstrow
+                 col1=server.firstcol
+                 row2=server.row
+                 col2=server.col
+                 console.log(row1,col1,row2,col2)
+                 gameScene.move_server()
+             }
 
-     //         //发送成功
-     //         onWriteOk: {
-     //             console.log("C write ok")
-     //         }
+             //发送成功
+             onWriteOk: {
+                 console.log("C write ok")
+             }
 
-     //         //断开连接显示提示断开对话框
-     //         onDisConnectSignal: {
-     //             gameScene.disConnect()
-     //         }
-     //     }
+             //断开连接显示提示断开对话框
+             onDisConnectSignal: {
+                 gameScene.disConnect()
+             }
+         }
 
-     //     //收到发送信息信号就调用c++对象的棋子位置移动函数
-     //     onSendMes:{
-     //         console.log(row1,col1,row2,col2)
-     //         server.xyChangedSlot(row1, col1, row2, col2)
-     //     }
+         //收到发送信息信号就调用c++对象的棋子位置移动函数
+         onSendMes:{
+             console.log(row1,col1,row2,col2)
+             server.xyChangedSlot(row1, col1, row2, col2)
+         }
 
-     //     onDisConnect_server: {
-     //         server.disConnect()
-     //     }
+         onDisConnect_server: {
+             server.disConnect()
+         }
 }
 

@@ -36,18 +36,25 @@ let randomNum
 let type=1
 function init(){
     content.firstwindow.isclicked.connect(()=>{
-                                                          appWindow.showFullScreen();
+                                                          // appWindow.showFullScreen();
                                                           content.firstwindow.visible=false
                                                           content.secondwindow.visible=true
                                                       })
     content.secondwindow.creatroomscene.connect(()=>{
-                                                          appWindow.showFullScreen();
+                                                          // appWindow.showFullScreen();
                                                           content.firstwindow.visible=false
                                                           content.secondwindow.visible=false
                                                content.creatroom.visible=true
                                                       })
+    content.secondwindow.joinroomscene.connect(()=>{
+                                                          // appWindow.showFullScreen();
+                                                          content.firstwindow.visible=false
+                                                          content.secondwindow.visible=false
+
+                                               content.joinroom.visible=true
+                                                      })
     content.secondwindow.startgame.connect(initmap)
-    appWindow.showFullScreen();
+    // appWindow.showFullScreen();
 
 
 }

@@ -1,13 +1,17 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
+#include <QQmlEngine>
+#include "connect.h"
+#include "server.h"
 
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
-    // qmlRegisterType<Server>("Server", 1, 0, "Server");
-    // qmlRegisterType<Connect>("Connect", 1, 0, "Connect");
+    qmlRegisterType<Server>("Server", 1, 0, "Server");
+    qmlRegisterType<Connect>("Connect", 1, 0, "Connect");
     QObject::connect(
         &engine,
         &QQmlApplicationEngine::objectCreationFailed,

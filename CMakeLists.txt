@@ -3,16 +3,17 @@ cmake_minimum_required(VERSION 3.29)
 project(
   Planes
   VERSION 0.1
-  LANGUAGES CXX)
+  LANGUAGES CXX) # 创建项目
 
-find_package(Qt6 6.5 REQUIRED COMPONENTS Quick)
+find_package(Qt6 6.5 REQUIRED COMPONENTS Quick Core Network Qml Gui)
 
 qt_standard_project_setup(REQUIRES 6.7)
 
 qt_add_executable(appPlanes main.cpp ${Qt6_QML_MODULE_FILES}
-                  ${Qt6_QML_MODULE_SOURCES})
+                  ${Qt6_QML_MODULE_SOURCES}) # 创建可执行目标
 
 qt_add_qml_module(
+  # 添加QML模块
   appPlanes
   URI
   Planes
@@ -50,25 +51,23 @@ qt_add_qml_module(
   QML_FILES
   PlaneController.js
   QML_FILES
-
   GameMap.qml
   SOURCES
   connect.h
   SOURCES
-  server.cpp
-  SOURCES
   server.h
   SOURCES
   connect.cpp
+  SOURCES
+  server.cpp
   QML_FILES
   QML_FILES
   JoinRoom.qml
   QML_FILES
   CreatRoom.qml)
 
-
-target_compile_features(appPlanes PRIVATE cxx_std_20)
-
+target_compile_features(appPlanes PRIVATE cxx_std_20) # 指定编译特性
+target_link_libraries(appPlanes PRIVATE Qt6::Network Qt6::Gui)
 set_target_properties(
   appPlanes
   PROPERTIES AUTORCC TRUE
@@ -78,8 +77,6 @@ set_target_properties(
              ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
              MACOSX_BUNDLE TRUE
              WIN32_EXECUTABLE TRUE)
-
-target_link_libraries(appPlanes PRIVATE Qt6::Quick)
 
 include(GNUInstallDirs)
 install(
