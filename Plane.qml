@@ -57,10 +57,8 @@ Control{
             }
             anchors.fill: parent
             TapHandler {
-
                 onTapped: {
                     _fly.play()
-                    planesize = longs / 2
                     ismoveed()
 
                 }
