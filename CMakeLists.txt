@@ -64,7 +64,12 @@ qt_add_qml_module(
   QML_FILES
   JoinRoom.qml
   QML_FILES
-  CreatRoom.qml)
+  CreatRoom.qml
+  QML_FILES
+  QML_FILES GreenGameOver.qml
+  QML_FILES OrangeGameOver.qml
+  QML_FILES BlueGameOver.qml
+  QML_FILES RedGameOver.qml )
 
 
 target_compile_features(appPlanes PRIVATE cxx_std_20)

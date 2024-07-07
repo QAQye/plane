@@ -35,5 +35,9 @@
         <file>images/红色星星.png</file>
         <file>images/蓝色星星.png</file>
         <file>images/绿色星星.png</file>
+        <file>images/redover.png</file>
+        <file>images/blueover.png</file>
+        <file>images/orangeover.png</file>
+        <file>images/greenover.png</file>
     </qresource>
 </RCC>

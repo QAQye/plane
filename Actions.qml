@@ -19,6 +19,7 @@ Item {
     Action{
         id:_aboutAction
         text: "关于我们"
+
     }
     Action{
         id:_stopAction

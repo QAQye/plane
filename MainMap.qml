@@ -1212,6 +1212,11 @@ RowLayout{
                 console.log(_mainMapRectangle.height)
                   }
     }
+    ScrollView{
+
+    id:view
+    Layout.preferredHeight: parent.height
+    Layout.preferredWidth: parent.width*0.2
     TextArea{
         color:"black"
         text: "骰子记录器：
@@ -1221,8 +1226,7 @@ RowLayout{
             color: "white"
             anchors.fill: parent
         }
-        Layout.preferredHeight: parent.height
-        Layout.preferredWidth: parent.width*0.2
+
         // 使用自动换行
         wrapMode: Text.Wrap
         // 使文本对象只可读
@@ -1232,6 +1236,6 @@ RowLayout{
              cursorShape: Qt.ArrowCursor
         }
     }
-
+}
 }
 
