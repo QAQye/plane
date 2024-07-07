@@ -91,6 +91,7 @@ RowLayout{
     property alias item75:mapitem75
     property alias item76:mapitem76
     property alias dice:_dice
+    property alias delytimer:delytimer
     // 使用数组来存储地图上的颜色以便于切换主题
     property var mapitemcolor:["#83c326","#db224e","#e77918","#76c5f0"]
     // property var mappositioin:[]
@@ -1155,10 +1156,30 @@ RowLayout{
                   }
             }
         }
+        Timer{
+            id:stoptimer
+            interval: 1000//设置骰子的持续时间是2000ms
+            running:false
+            repeat: false
+            onTriggered: {
+                timers.stop()
+                _dicebutton.lastrandom=_dice.lastrandom
+                _dicebutton.randomchanged()
+
+            }
+        }
+        Timer{
+            id:delytimer
+            interval: 2000//设置骰子的持续时间是2000ms
+            onTriggered: {
+                       // 延迟后的操作
+                       dicebutton.clicked() // 触发 Button 的点击信号
+                   }
+
+        }
         Button{
             signal randomchanged()
             property int click:0
-            property int clickdoule:0
             width: longs
             height: longs
             id:_dicebutton
@@ -1185,17 +1206,22 @@ RowLayout{
                 cursorShape: Qt.PointingHandCursor
             }
             onClicked: {
-                click++
-                if(click%2==0){
-                    timers.stop()
-                    clickdoule++
-                    lastrandom=_dice.lastrandom
-                    randomchanged()
-                    // console.log(lastrandom)
+                if(!timers.running){
+                    click++
+                    timers.start()
+                    stoptimer.start()
+
                 }
-                else{
-                 timers.start()
-                }
+                // if(click%2==0){
+                //     timers.stop()
+                //     clickdoule++
+                //     lastrandom=_dice.lastrandom
+                //     randomchanged()
+                //     // console.log(lastrandom)
+                // }
+                // else{
+                //  timers.start()
+                // }
 
             }
         }

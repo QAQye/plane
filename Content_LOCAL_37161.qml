@@ -10,7 +10,6 @@ Item {
     property alias orangegameover: _orangegameover
     property alias bluegameover: _bluegameover
     property alias redgameover: _redgameover
-    property alias joinroom: _joinroom
     anchors.fill: parent
     Dialogs{
         id:_dialogs
@@ -26,10 +25,6 @@ Item {
    }
    CreatRoom{
        id:_creatroom
-       visible: false
-   }
-   JoinRoom{
-       id:_joinroom
        visible: false
    }
    GameMap{

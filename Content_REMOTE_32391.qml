@@ -6,10 +6,6 @@ Item {
     property alias secondwindow:_secondwindow
     property alias gamewindow: _gamewindow
     property alias creatroom: _creatroom
-    property alias greengameover: _greengameover
-    property alias orangegameover: _orangegameover
-    property alias bluegameover: _bluegameover
-    property alias redgameover: _redgameover
     property alias joinroom: _joinroom
     anchors.fill: parent
     Dialogs{
@@ -35,22 +31,6 @@ Item {
    GameMap{
        id:_gamewindow
        visible: false
-   }
-   GreenGameOver{
-       id:_greengameover
-       visible:false
-   }
-   OrangeGameOver{
-       id:_orangegameover
-       visible:false
-   }
-   BlueGameOver{
-       id:_bluegameover
-       visible:false
-   }
-   RedGameOver{
-       id:_redgameover
-       visible:false
    }
 }
 
