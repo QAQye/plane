@@ -3,16 +3,11 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import Server 1.0
 Image{
-    signal gamePressed
-
+    signal gamePressed()
     signal disConnect_server
-    signal sendMes
+    signal sendMesgamePressed()
     signal portSig(var s)
-
-    property int row1
-    property int col1
-    property int row2
-    property int col2
+    property alias servers:server
     id: createRoomScene
     anchors.fill: parent
         source: "qrc:/images/se1.png"
@@ -146,9 +141,6 @@ Image{
 
              onConnectSuccess: {
                  gamePressed()
-                 gameScene.camp = 0
-                 gameScene.init()
-                 waitMessage.visible = false
              }
 
              //接受成功则移动棋子
@@ -173,10 +165,8 @@ Image{
          }
 
          //收到发送信息信号就调用c++对象的棋子位置移动函数
-         onSendMes:{
-             console.log(row1,col1,row2,col2)
-             server.xyChangedSlot(row1, col1, row2, col2)
-         }
+         // onSendMes:{
+         // }
 
          onDisConnect_server: {
              server.disConnect()

@@ -14,11 +14,6 @@ Connect::Connect(QObject *parent)
         QByteArray data = tcpsocket->readAll();
         // 解析接收到的数据
         QStringList list = QString(data).split(",");
-        firstrow = 10 - list[0].toInt() + 1;
-        firstcol = 9 - list[1].toInt() + 1;
-        row = 10 - list[2].toInt() + 1;
-        col = 9 - list[3].toInt() + 1;
-        qDebug() << list << "  " << firstrow << "  " << firstcol << "  " << row << "  " << col;
         // 发出接收数据成功的信号
         emit receiveOk();
     });
@@ -65,73 +60,6 @@ void Connect::portSlot(QString p, QString i)
 void Connect::displayError(QAbstractSocket::SocketError)
 {
     qDebug() << tcpsocket->errorString();
-}
-
-// 以下是一系列getter和setter方法，用于访问和修改客户端的属性
-int Connect::getCol() const
-{
-    return col;
-}
-
-void Connect::setCol(int newCol)
-{
-    if (col == newCol)
-        return;
-    col = newCol;
-    emit colChanged();
-}
-
-int Connect::getRow() const
-{
-    return row;
-}
-
-void Connect::setRow(int newRow)
-{
-    if (row == newRow)
-        return;
-    row = newRow;
-    emit rowChanged();
-}
-
-int Connect::getFirstcol() const
-{
-    return firstcol;
-}
-
-void Connect::setFirstcol(int newFirstcol)
-{
-    if (firstcol == newFirstcol)
-        return;
-    firstcol = newFirstcol;
-    emit firstcolChanged();
-}
-
-int Connect::getFirstrow() const
-{
-    return firstrow;
-}
-
-void Connect::setFirstrow(int newFirstrow)
-{
-    if (firstrow == newFirstrow)
-        return;
-    firstrow = newFirstrow;
-    emit firstrowChanged();
-}
-
-// qml端可调用的向服务端发送棋子将要移动到的位置的方法
-void Connect::xyChangedSlot(int x, int y, int x1, int y1)
-{
-    // 将棋子的当前位置和目标位置转换为字符串
-    QString mes;
-    mes = QString::number(x) + "," + QString::number(y) + "," + QString::number(x1) + ","
-          + QString::number(y1);
-    qDebug() << "11111";
-    // 发送数据到服务器
-    tcpsocket->write(mes.toUtf8());
-    // 发出写入成功的信号
-    emit writeOk();
 }
 
 // 客户端断开连接

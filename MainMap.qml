@@ -1178,11 +1178,12 @@ RowLayout{
 
         }
         Button{
+            id:_dicebutton
             signal randomchanged()
             property int click:0
             width: longs
             height: longs
-            id:_dicebutton
+            enabled: true
             z:1
             anchors.top: parent.top
             anchors.right: parent.right
@@ -1210,6 +1211,7 @@ RowLayout{
                     click++
                     timers.start()
                     stoptimer.start()
+                    enabled=false
 
                 }
                 // if(click%2==0){
