@@ -4,14 +4,9 @@ import QtQuick.Controls 2.15
 import Connect 1.0
 Image{
     signal sendMes
-    signal gamePressed
+    signal gamePressed()
     signal connectSig(var p,var i)
     signal disConnect_Connect
-
-    property int row1
-    property int col1
-    property int row2
-    property int col2
 
     id: joinRoomScene
     anchors.fill: parent
@@ -130,6 +125,7 @@ Image{
         }
     }
     Component.onCompleted: {
+        // 连接到方法
         connectSig.connect(connect.portSlot)
     }
 
@@ -138,19 +134,12 @@ Image{
         id:connect
 
         onConnectSuccess: {
+            // 如果成功连接就发送信号
             gamePressed()
-            gameScene.camp = 1
-            gameScene.init()
         }
 
         //接受成功则移动棋子
         onReceiveOk: {
-            row1=connect.firstrow
-            col1=connect.firstcol
-            row2=connect.row
-            col2=connect.col
-            console.log(row1,col1,row2,col2)
-            gameScene.move_connect()
         }
 
         //发送成功
@@ -165,9 +154,9 @@ Image{
     }
 
     //收到发送信息信号就调用c++对象的棋子位置移动函数
+    // 用于发送信号
     onSendMes:{
-        console.log(row1,col1,row2,col2)
-        connect.xyChangedSlot(row1, col1, row2, col2)
+        // connect.xyChangedSlot(row1, col1, row2, col2)
     }
 
     onDisConnect_Connect: {

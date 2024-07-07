@@ -80,10 +80,12 @@ function init(){
                                              initmap()
                                              moverule()
                                          })
+
     content.greengameover.visible=false
         content.orangegameover.visible=false
         content.bluegameover.visible=false
         content.redgameover.visible=false
+
 
 
 }
@@ -713,7 +715,9 @@ function moveplane(j){
             greenplane[j].planesize=content.gamewindow.mainmaps.orangescreen.width*0.4
             greenplane[j].planesource="qrc:/images/绿色星星.png"
             greensend++
+
              checkGameOver()
+
         }
 
 
@@ -777,7 +781,9 @@ function  moveorangeplane(j){
             orangeplane[j].planesize=content.gamewindow.mainmaps.orangescreen.width*0.4
             orangeplane[j].planesource="qrc:/images/橙色星星.png"
             orangesend++
+
              checkGameOver()
+
         }
 
         // 当没有到达终点时候才执行
@@ -835,6 +841,7 @@ function moveblueplane(j){
         }
                 // 判断下一次摇的骰子是否达到了终点
         if(nextposition>=57){
+
             nextposition=57
             blueplane[j].isend=true
             blueplane[j].x=blueplane[j].startplanex
@@ -842,7 +849,9 @@ function moveblueplane(j){
             blueplane[j].planesize=content.gamewindow.mainmaps.orangescreen.width*0.4
             blueplane[j].planesource="qrc:/images/蓝色星星.png"
             bluesend++
+
             checkGameOver()
+
         }
 
 
@@ -908,7 +917,9 @@ function moveredplane(j){
             redplane[j].planesize=content.gamewindow.mainmaps.orangescreen.width*0.4
             redplane[j].planesource="qrc:/images/红色星星.png"
             redsend++
+
              checkGameOver()
+
         }
 
 

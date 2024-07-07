@@ -64,11 +64,6 @@ void Server::portSlot(QString s)
             QByteArray data = clientConnection->readAll();
             // 解析接收到的数据
             QStringList list = QString(data).split(",");
-            firstrow = 10 - list[0].toInt() + 1;
-            firstcol = 9 - list[1].toInt() + 1;
-            row = 10 - list[2].toInt() + 1;
-            col = 9 - list[3].toInt() + 1;
-            qDebug() << list << "  " << firstrow << "  " << firstcol << "  " << row << "  " << col;
             // 发出接收数据成功的信号
             emit receiveOk();
         });
@@ -82,72 +77,6 @@ void Server::portSlot(QString s)
         qDebug() << "server start";
     });
 }
-// 以下是一系列getter和setter方法，用于访问和修改服务器的属性
-int Server::getCol() const
-{
-    return col;
-}
-
-void Server::setCol(int newCol)
-{
-    if (col == newCol)
-        return;
-    col = newCol;
-    emit colChanged();
-}
-
-int Server::getRow() const
-{
-    return row;
-}
-
-void Server::setRow(int newRow)
-{
-    if (row == newRow)
-        return;
-    row = newRow;
-    emit rowChanged();
-}
-
-int Server::getFirstcol() const
-{
-    return firstcol;
-}
-
-void Server::setFirstcol(int newFirstcol)
-{
-    if (firstcol == newFirstcol)
-        return;
-    firstcol = newFirstcol;
-    emit firstcolChanged();
-}
-
-int Server::getFirstrow() const
-{
-    return firstrow;
-}
-
-void Server::setFirstrow(int newFirstrow)
-{
-    if (firstrow == newFirstrow)
-        return;
-    firstrow = newFirstrow;
-    emit firstrowChanged();
-}
-
-void Server::xyChangedSlot(int x, int y, int x1, int y1)
-{
-    // 将棋子的当前位置和目标位置转换为字符串
-    QString mes;
-    mes = QString::number(x) + "," + QString::number(y) + "," + QString::number(x1) + ","
-          + QString::number(y1);
-    qDebug() << "11111  " << mes;
-    // 将字符串发送到客户端
-    clientConnection->write(mes.toUtf8());
-    // 发出写入成功的信号
-    emit writeOk();
-}
-
 void Server::disConnect()
 {
     // 断开与客户端的连接
