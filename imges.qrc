@@ -30,6 +30,10 @@
         <file>images/dicing.gif</file>
         <file>images/fly.wav</file>
         <file>images/骰子.png</file>
-
+        <file>images/星星.png</file>
+        <file>images/橙色星星.png</file>
+        <file>images/红色星星.png</file>
+        <file>images/蓝色星星.png</file>
+        <file>images/绿色星星.png</file>
     </qresource>
 </RCC>

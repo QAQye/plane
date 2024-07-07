@@ -150,6 +150,7 @@ RowLayout{
             anchors.topMargin: _mainMapRectangle.height * 0.005
             color:"#db224e"
                 GridLayout {
+
                     anchors.fill: parent
                     columns: 2
                     rows: 2
@@ -159,11 +160,11 @@ RowLayout{
                         // 可以设置其数据模型
                         model: 4
                         Rectangle {
+
                             Layout.preferredWidth: _redscreen.width*0.4
                             Layout.preferredHeight: width
                             radius: width*0.5
                             color: "#f09abd"
-
                             // 修改这个可以放飞机
                             // Image {
                             //     anchors.centerIn: parent // 居中对齐
