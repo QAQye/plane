@@ -50,9 +50,12 @@ ApplicationWindow {
         }
     }
 
-    Actions {
-        id: actions
-        about.onTriggered: content.dialogs.aboutDialog.open()
+
+
+    Actions{
+        id:actions
+        about.onTriggered: content.dialogs.about.open()
+
     }
 
     MusicPlay {

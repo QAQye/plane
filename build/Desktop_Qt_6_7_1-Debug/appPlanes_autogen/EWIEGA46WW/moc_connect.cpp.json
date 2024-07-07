@@ -1,0 +1,178 @@
+{
+    "classes": [
+        {
+            "className": "Connect",
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "x",
+                            "type": "int"
+                        },
+                        {
+                            "name": "y",
+                            "type": "int"
+                        },
+                        {
+                            "name": "x1",
+                            "type": "int"
+                        },
+                        {
+                            "name": "y1",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "xyChangedSlot",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "disConnect",
+                    "returnType": "void"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "firstrow",
+                    "notify": "firstrowChanged",
+                    "read": "getFirstrow",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setFirstrow"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "firstcol",
+                    "notify": "firstcolChanged",
+                    "read": "getFirstcol",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setFirstcol"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "row",
+                    "notify": "rowChanged",
+                    "read": "getRow",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setRow"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "name": "col",
+                    "notify": "colChanged",
+                    "read": "getCol",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setCol"
+                }
+            ],
+            "qualifiedClassName": "Connect",
+            "signals": [
+                {
+                    "access": "public",
+                    "name": "connectSuccess",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "receiveOk",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "firstrowChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "firstcolChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "rowChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "colChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "writeOk",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "disConnectSignal",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "p",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "i",
+                            "type": "QString"
+                        }
+                    ],
+                    "name": "portSlot",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "type": "QAbstractSocket::SocketError"
+                        }
+                    ],
+                    "name": "displayError",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "connect.h",
+    "outputRevision": 68
+}

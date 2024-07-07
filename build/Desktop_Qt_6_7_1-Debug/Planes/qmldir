@@ -1,0 +1,20 @@
+module Planes
+typeinfo appPlanes.qmltypes
+prefer :/qt/qml/Planes/
+Window 1.0 Window.qml
+Content 1.0 Content.qml
+Dialogs 1.0 Dialogs.qml
+Actions 1.0 Actions.qml
+MainMap 1.0 MainMap.qml
+FirstWindow 1.0 FirstWindow.qml
+SecondWindow 1.0 SecondWindow.qml
+Triangle 1.0 Triangle.qml
+Controller 1.0 Controller.js
+MapRectangle 1.0 MapRectangle.qml
+MusicPlay 1.0 MusicPlay.qml
+Plane 1.0 Plane.qml
+PlaneController 1.0 PlaneController.js
+GameMap 1.0 GameMap.qml
+JoinRoom 1.0 JoinRoom.qml
+CreatRoom 1.0 CreatRoom.qml
+
