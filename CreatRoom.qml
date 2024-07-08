@@ -7,7 +7,7 @@ Image{
     signal disConnect_server
     signal sendMesgamePressed()
     signal portSig(var s)
-    property alias servers:server
+    // property alias servers:server
     id: createRoomScene
     anchors.fill: parent
         source: "qrc:/images/se1.png"
@@ -73,7 +73,7 @@ Image{
             Text {
                 font.pixelSize: createRoomScene.width * 0.03
                 font.bold: true // 设置
-                text: "本地IP: "+server.ip
+                // text: "本地IP: "+server.ip
 
             }
 }
@@ -115,7 +115,7 @@ Image{
             // }
         }
         Component.onCompleted: {
-            portSig.connect(server.portSlot)
+            // portSig.connect(server.portSlot)
         }
 
         Rectangle{
@@ -136,40 +136,5 @@ Image{
 
 
          //c++注册的服务端对象
-         Server{
-             id:server
-
-             onConnectSuccess: {
-                 gamePressed()
-             }
-
-             //接受成功则移动棋子
-             onReceiveOk: {
-                 row1=server.firstrow
-                 col1=server.firstcol
-                 row2=server.row
-                 col2=server.col
-                 console.log(row1,col1,row2,col2)
-                 gameScene.move_server()
-             }
-
-             //发送成功
-             onWriteOk: {
-                 console.log("C write ok")
-             }
-
-             //断开连接显示提示断开对话框
-             onDisConnectSignal: {
-                 gameScene.disConnect()
-             }
-         }
-
-         //收到发送信息信号就调用c++对象的棋子位置移动函数
-         // onSendMes:{
-         // }
-
-         onDisConnect_server: {
-             server.disConnect()
-         }
 }
 
