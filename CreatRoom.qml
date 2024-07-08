@@ -136,16 +136,5 @@ Image{
 
 
          //c++注册的服务端对象
-         // Server{
-         //     id:server
-         // }
-
-         //收到发送信息信号就调用c++对象的棋子位置移动函数
-         // onSendMes:{
-         // }
-
-         onDisConnect_server: {
-             server.disConnect()
-         }
 }
 

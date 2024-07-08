@@ -41,10 +41,8 @@ let bluesend=0
 let orangesend=0
 let redsend=0
 
-// 人机对战和人人对战的参数传递如果selecct是0那么是人人对战如果是其他数字那么就是人机对战
-let select =0
-let plane=[greenplane,orangeplane,blueplane,redplane]
-
+// 默认为人人对战
+let select=0
 function init(){
     content.firstwindow.isclicked.connect(()=>{
                                                           // appWindow.showFullScreen();
@@ -70,8 +68,7 @@ function init(){
 
     content.secondwindow.startgame.connect(()=>{
                                                initmap()
-                                               // moverule()
-                                                humanMachine()
+                                               humantocomputer()
 
                                            })
     appWindow.showFullScreen();
@@ -450,10 +447,18 @@ function initmap(){
 
 
 }
-function moverule(){
-    // 实现人人对战
-    content.gamewindow.mainmaps.dicebutton.randomchanged.connect(()=>{
 
+
+
+
+
+
+
+
+
+// 游戏逻辑人人对战
+function moverule(){
+    content.gamewindow.mainmaps.dicebutton.randomchanged.connect(()=>{
                                                                     randomNum=content.gamewindow.mainmaps.dicebutton.lastrandom
                                                                     content.gamewindow.mainmaps.textarea.text+="摇的骰子数是"+randomNum+"\n"
                                                                      let clicks= content.gamewindow.mainmaps.dicebutton.click
@@ -465,11 +470,6 @@ function moverule(){
                                                                              if( greenplane[k].isfly===false){
                                                                                  falsefly++
                                                                              }
-                                                                             // 人机对战
-
-
-                                                                             console.log(select)
-
                                                                          }
                                                                          if(falsefly===4-greensend&&randomNum!==6){
                                                                              content.gamewindow.mainmaps.dicebutton.enabled=false
@@ -482,17 +482,6 @@ function moverule(){
                                                                          content.gamewindow.mainmaps.textarea.text+="绿色棋子请移动\n"
                                                                          type=1
                                                                         resetPlanesgreen()
-                                                                         // 人机对战
-                                                                         if(select!=0&&select!=type){
-                                                                             let r
-                                                                             // 不是当前自己选择的飞机
-
-                                                                                 r = Math.floor(Math.random() * 4);
-                                                                                 plane[type-1][r].ismoveed()
-                                                                                 console.log("*********** 移动 **********")
-                                                                             }
-
-                                                                         console.log(select)
                                                                      }
                                                                      else if(clicks%4===2){
                                                                          falsefly=0
@@ -500,7 +489,6 @@ function moverule(){
                                                                              if( orangeplane[k].isfly===false){
                                                                                 falsefly++
                                                                              }
-
 
 
                                                                          }
@@ -515,17 +503,6 @@ function moverule(){
                                                                          content.gamewindow.mainmaps.textarea.text+="橙色棋子请移动\n"
                                                                          type=2
                                                                          resetPlanesorange()
-                                                                         // 人机对战
-                                                                         if(select!=0&&select!=type){
-                                                                             let r
-                                                                             // 不是当前自己选择的飞机
-
-                                                                                 r = Math.floor(Math.random() * 4);
-                                                                                 plane[type-1][r].ismoveed()
-                                                                                 console.log("*********** 移动 **********")
-                                                                             }
-
-                                                                         console.log(select)
                                                                      }
                                                                      else if(clicks%4===3){
                                                                          falsefly=0
@@ -533,9 +510,6 @@ function moverule(){
                                                                              if(blueplane[k].isfly===false){
                                                                                  falsefly++
                                                                              }
-
-                                                                             console.log(select)
-
 
 
                                                                          }
@@ -550,16 +524,6 @@ function moverule(){
                                                                          content.gamewindow.mainmaps.textarea.text+="蓝色棋子请移动\n"
                                                                          type=3
                                                                          resetPlanesblue()
-                                                                         // 人机对战
-                                                                         if(select!=0&&select!=type){
-                                                                             let r
-                                                                             // 不是当前自己选择的飞机
-
-                                                                                 r = Math.floor(Math.random() * 4);
-                                                                                 plane[type-1][r].ismoveed()
-                                                                                 console.log("*********** 移动 **********")
-                                                                             }
-
                                                                      }
                                                                      else{
                                                                          falsefly=0
@@ -567,17 +531,6 @@ function moverule(){
                                                                              if(redplane[k].isfly===false){
                                                                                  falsefly++
                                                                              }
-                                                                             // 人机对战
-                                                                             if(select!=0&&select!=type){
-                                                                                 let r
-                                                                                 // 不是当前自己选择的飞机
-
-                                                                                     r = Math.floor(Math.random() * 4);
-                                                                                     let ss=
-                                                                                     console.log("*********** 移动 **********")
-                                                                                 }
-
-                                                                             console.log(select)
 
 
                                                                          }
@@ -593,21 +546,9 @@ function moverule(){
                                                                          content.gamewindow.mainmaps.textarea.text+="红色棋子请移动\n"
                                                                          type=4
                                                                          resetPlanesred()
-                                                                         // 人机对战
-                                                                         if(select!=0&&select!=type){
-                                                                             let r
-                                                                             // 不是当前自己选择的飞机
-
-                                                                                 r = Math.floor(Math.random() * 4);
-                                                                                 plane[type-1][r].ismoveed()
-                                                                                 console.log("*********** 移动 **********")
-                                                                             }
-
                                                                      }
                                                                      console.log("刷新")
-
                                                                  })
-
 
     for(let j=0;j<4;j++){
         greenplane[j].ismoveed.connect(()=>{
@@ -619,8 +560,6 @@ function moverule(){
                                                        greenplane[k].ismove=false
                                                    }
                                                }
-                                               // 判断是人机对战的选择
-
                                                moveplane(j)
                                            }
                                            else if(greenplane[j].isfly===false&&randomNum===6&&type===1){
@@ -672,7 +611,6 @@ function moverule(){
 
     for(let j=0;j<4;j++){
         blueplane[j].ismoveed.connect(()=>{
-
                                           if(blueplane[j].isfly===true&&type===3){
                                               for(let k=0;k<4;k++){
                                                   if(k!==j){
@@ -801,6 +739,7 @@ function moveplane(j){
             checkCollisionAndReset(greenplane[j])
        }
 
+
     }
     // 判断飞机是否能够起飞只有摇骰子摇到六点才能起飞
     if(greenplane[j].isfly===false&&randomNum===6&&greenplane[j].ismove===true&&type===1){
@@ -815,8 +754,12 @@ function moveplane(j){
     // 只能走一次
     greenplane[j].ismove=false
     // 设置按钮可以用
-    if(select==0||select===2){
-       content.gamewindow.mainmaps.dicebutton.enabled=true
+    content.gamewindow.mainmaps.dicebutton.enabled=true
+    // 当如果是自己的飞机移动完毕后则发送移动下一个的信号
+    if(type===select){
+        content.gamewindow.mainmaps.dicebutton.enabled=false
+        content.gamewindow.mainmaps.delytimer.start()
+
     }
 }
 
@@ -882,8 +825,11 @@ function  moveorangeplane(j){
     // 此时场上有同颜色飞机处于起飞状态但是没有摇到点数6选择了未起飞状态的飞机
     // 只能走一次
     orangeplane[j].ismove=false
-    if(select==0||select===3){
     content.gamewindow.mainmaps.dicebutton.enabled=true
+    if(type===select){
+        content.gamewindow.mainmaps.dicebutton.enabled=false
+        content.gamewindow.mainmaps.delytimer.start()
+
     }
 }
 
@@ -952,8 +898,11 @@ function moveblueplane(j){
     }
     // 只能走一次
     blueplane[j].ismove=false
-    if(select==0||select===4){
-        content.gamewindow.mainmaps.dicebutton.enabled=true
+    content.gamewindow.mainmaps.dicebutton.enabled=true
+    if(type===select){
+        content.gamewindow.mainmaps.dicebutton.enabled=false
+        content.gamewindow.mainmaps.delytimer.start()
+
     }
 }
 
@@ -1022,9 +971,13 @@ function moveredplane(j){
     }
     // 只能走一次
     redplane[j].ismove=false
-     if(select==0||select===1){
     content.gamewindow.mainmaps.dicebutton.enabled=true
-}
+    if(type===select){
+        content.gamewindow.mainmaps.dicebutton.enabled=false
+        content.gamewindow.mainmaps.delytimer.start()
+
+    }
+
 
 }
 // 定义一个检查碰撞并重置飞机位置的函数
@@ -1106,12 +1059,346 @@ function showGameOver3() {
 }
 function showGameOver4() {
     content.redgameover.visible=true;
+
 }
 
 
-// 实现人机对战
-function humanMachine(){
-    console.log("请选择你的飞机")
-    select =1
-    moverule()
+
+
+// 实现人机部分
+function humantocomputer(){
+
+    select=4
+    if(select!==1){
+        // 如果没有选择第一个绿色飞机那么就直接开始电脑摇骰子
+        content.gamewindow.mainmaps.delytimer.start()
+        // 把按钮设置为不可以按动
+        content.gamewindow.mainmaps.dicebutton.enabled=false
+    }
+    content.gamewindow.mainmaps.dicebutton.randomchanged.connect(()=>{
+                                                                    randomNum=content.gamewindow.mainmaps.dicebutton.lastrandom
+                                                                    content.gamewindow.mainmaps.textarea.text+="摇的骰子数是"+randomNum+"\n"
+                                                                     let clicks= content.gamewindow.mainmaps.dicebutton.click
+                                                                     let falsefly=0
+                                                                     if(clicks%4===1){
+                                                                         falsefly=0
+                                                                         // 如果没有飞机处于起飞状态且当前的状态不能起飞
+                                                                         for(let k=0;k<4;k++){
+                                                                             if( greenplane[k].isfly===false){
+                                                                                 falsefly++
+                                                                             }
+                                                                         }
+
+                                                                         if(falsefly===4-greensend&&randomNum!==6){
+                                                                             content.gamewindow.mainmaps.dicebutton.enabled=false
+                                                                             content.gamewindow.mainmaps.textarea.text+="没有达到指定点数\n"
+                                                                             content.gamewindow.mainmaps.textarea.text+="绿色棋子不能移动\n"
+                                                                             // 判断下一个点数是否是用户选择的点数,如果是那么按钮变为可用不发送自动进行的信号
+                                                                             if(select===2){
+                                                                                 content.gamewindow.mainmaps.dicebutton.enabled=true
+                                                                                 return;
+                                                                             }
+                                                                             else{
+                                                                                 content.gamewindow.mainmaps.delytimer.start()
+                                                                                 return;
+                                                                             }
+                                                                         }
+
+                                                                         content.gamewindow.mainmaps.textarea.text+="绿色棋子请移动\n"
+                                                                         type=1
+                                                                        resetPlanesgreen()
+                                                                        computermove()
+                                                                     }
+                                                                     else if(clicks%4===2){
+                                                                         falsefly=0
+                                                                         for(let k=0;k<4;k++){
+                                                                             if( orangeplane[k].isfly===false){
+                                                                                falsefly++
+                                                                             }
+
+
+                                                                         }
+
+                                                                         if(falsefly===4-orangesend&&randomNum!==6){
+                                                                             content.gamewindow.mainmaps.dicebutton.enabled=false
+                                                                             content.gamewindow.mainmaps.textarea.text+="没有达到指定点数\n"
+                                                                             content.gamewindow.mainmaps.textarea.text+="橙色棋子不能移动\n"
+                                                                             if(select===3){
+                                                                                  content.gamewindow.mainmaps.dicebutton.enabled=true
+                                                                                 return;
+                                                                              }
+                                                                             else{
+                                                                                 content.gamewindow.mainmaps.delytimer.start()
+                                                                                 return;
+                                                                             }
+                                                                         }
+
+                                                                         content.gamewindow.mainmaps.textarea.text+="橙色棋子请移动\n"
+                                                                         type=2
+                                                                         resetPlanesorange()
+                                                                          computermove()
+                                                                     }
+                                                                     else if(clicks%4===3){
+                                                                         falsefly=0
+                                                                         for(let k=0;k<4;k++){
+                                                                             if(blueplane[k].isfly===false){
+                                                                                 falsefly++
+                                                                             }
+
+
+                                                                         }
+
+                                                                         if(falsefly===4-bluesend&&randomNum!==6){
+                                                                             content.gamewindow.mainmaps.dicebutton.enabled=false
+                                                                             content.gamewindow.mainmaps.textarea.text+="没有达到指定点数\n"
+                                                                             content.gamewindow.mainmaps.textarea.text+="蓝色棋子不能移动\n"
+                                                                             if(select===4){
+                                                                                 content.gamewindow.mainmaps.dicebutton.enabled=true
+                                                                                 return ;
+                                                                             }
+                                                                             else{
+                                                                                 content.gamewindow.mainmaps.delytimer.start()
+                                                                                 return ;
+                                                                             }
+                                                                         }
+
+                                                                         content.gamewindow.mainmaps.textarea.text+="蓝色棋子请移动\n"
+                                                                         type=3
+                                                                         resetPlanesblue()
+                                                                          computermove()
+                                                                     }
+                                                                     else{
+                                                                         falsefly=0
+                                                                         for(let k=0;k<4;k++){
+                                                                             if(redplane[k].isfly===false){
+                                                                                 falsefly++
+                                                                             }
+
+
+                                                                         }
+
+                                                                         if(falsefly===4-redsend&&randomNum!==6){
+                                                                             content.gamewindow.mainmaps.dicebutton.enabled=false
+                                                                             content.gamewindow.mainmaps.textarea.text+="没有达到指定点数\n"
+                                                                             content.gamewindow.mainmaps.textarea.text+="红色棋子不能移动\n"
+                                                                             if(select===1){
+                                                                                  content.gamewindow.mainmaps.dicebutton.enabled=true
+                                                                                  return ;
+                                                                              }
+                                                                             else{
+                                                                                 content.gamewindow.mainmaps.delytimer.start()
+                                                                                 return ;
+                                                                             }
+                                                                         }
+
+                                                                         content.gamewindow.mainmaps.textarea.text+="红色棋子请移动\n"
+                                                                         type=4
+                                                                         resetPlanesred()
+                                                                          computermove()
+                                                                     }
+                                                                     console.log("刷新")
+
+                                                                 }
+
+                                                                 )
+
+
+    for(let j=0;j<4;j++){
+        greenplane[j].ismoveed.connect(()=>{
+                                           // 如果飞机能起飞那么只能一次只能移动一架飞机,如果点击了未起飞的飞机且点数为6的时候才进行互斥否则必须选择其他的棋子进行移动
+                                           if(greenplane[j].isfly===true&&type===1){
+                                               for(let k=0;k<4;k++){
+                                                   if(k!==j){
+                                                       greenplane[k].ismove=false
+                                                   }
+                                               }
+                                               moveplane(j)
+                                           }
+                                           else if(greenplane[j].isfly===false&&randomNum===6&&type===1){
+                                               for(let k=0;k<4;k++){
+
+                                                   if(k!==j){
+                                                       greenplane[k].ismove=false
+                                                   }
+                                               }
+                                               moveplane(j)
+
+                                           }
+                                           else{
+                                               content.gamewindow.mainmaps.textarea.text+="这个棋子不能起飞请选择其他棋子移动\n"
+                                           }
+
+                                                 })
+    }
+
+
+    // 橙色飞机
+    for(let j=0;j<4;j++){
+        orangeplane[j].ismoveed.connect(()=>{
+                                            if(orangeplane[j].isfly===true&&type===2){
+                                                for(let k=0;k<4;k++){
+                                                    if(k!==j){
+                                                        orangeplane[k].ismove=false
+                                                    }
+                                                }
+                                                moveorangeplane(j)
+                                            }
+                                            else if(orangeplane[j].isfly===false&&randomNum===6&&type===2){
+                                                for(let k=0;k<4;k++){
+
+                                                    if(k!==j){
+                                                        orangeplane[k].ismove=false
+                                                    }
+                                                }
+                                                moveorangeplane(j)
+
+                                            }
+                                            else{
+                                                content.gamewindow.mainmaps.textarea.text+="这个棋子不能起飞请选择其他棋子移动\n"
+                                            }
+
+                                                 })
+    }
+    // 蓝色飞机
+
+    for(let j=0;j<4;j++){
+        blueplane[j].ismoveed.connect(()=>{
+                                          if(blueplane[j].isfly===true&&type===3){
+                                              for(let k=0;k<4;k++){
+                                                  if(k!==j){
+                                                      blueplane[k].ismove=false
+                                                  }
+                                              }
+                                              moveblueplane(j)
+                                          }
+                                          else if(blueplane[j].isfly===false&&randomNum===6&&type===3){
+                                              for(let k=0;k<4;k++){
+
+                                                  if(k!==j){
+                                                      blueplane[k].ismove=false
+                                                  }
+                                              }
+                                              moveblueplane(j)
+
+                                          }
+                                          else{
+                                              content.gamewindow.mainmaps.textarea.text+="这个棋子不能起飞请选择其他棋子移动\n"
+                                          }
+
+                                                 })
+    }
+
+    // 红色飞机
+    for(let j=0;j<4;j++){
+        redplane[j].ismoveed.connect(()=>{
+                                         if(redplane[j].isfly===true&&type===4){
+                                             for(let k=0;k<4;k++){
+                                                 if(k!==j){
+                                                     redplane[k].ismove=false
+                                                 }
+                                             }
+                                             moveredplane(j)
+                                         }
+                                         else if(redplane[j].isfly===false&&randomNum===6&&type===4){
+                                             for(let k=0;k<4;k++){
+
+                                                 if(k!==j){
+                                                     redplane[k].ismove=false
+                                                 }
+                                             }
+                                             moveredplane(j)
+
+                                         }
+                                         else{
+                                             content.gamewindow.mainmaps.textarea.text+="这个棋子不能起飞请选择其他棋子移动\n"
+                                         }
+
+                                                 })
+    }
+
+}
+
+function computermove(){
+    // 判断是玩家还是说是电脑
+    // 如果是电脑
+    if(type!==select&&select!=0){
+        let r=Math.floor(Math.random() * 4)
+        if(type===1){
+            // 发送飞机移动的信号
+            // 实现电脑移动飞机的算法
+            if(greenplane[r].isfly===false&&randomNum!==6||greenplane[r].isend===true){
+                for(let j=0;j<4;j++){
+                    if(greenplane[j].isfly===true&&greenplane[j].isend===false){
+                        r=j
+                        break;
+                    }
+                }
+            }
+            greenplane[r].ismoveed()
+
+
+            if(select!==2){
+                // 如果下一个还是电脑的话那么就直接禁用按钮
+                content.gamewindow.mainmaps.dicebutton.enabled=false
+                  content.gamewindow.mainmaps.textarea.text+="电脑移动\n"
+                content.gamewindow.mainmaps.delytimer.start()
+            }
+
+        }
+        if(type===2){
+            if(orangeplane[r].isfly===false&&randomNum!==6||orangeplane[r].isend===true){
+                for(let j=0;j<4;j++){
+                    if(orangeplane[j].isfly===true&&orangeplane[j].isend===false){
+                        r=j
+                        break;
+                    }
+                }
+            }
+            orangeplane[r].ismoveed()
+            if(select!==3){
+                // 如果下一个还是电脑的话那么就直接禁用按钮
+                content.gamewindow.mainmaps.dicebutton.enabled=false
+                  content.gamewindow.mainmaps.textarea.text+="电脑移动\n"
+                content.gamewindow.mainmaps.delytimer.start()
+            }
+        }
+        if(type===3){
+            if(blueplane[r].isfly===false&&randomNum!==6||blueplane[r].isend===true){
+                for(let j=0;j<4;j++){
+                    if(blueplane[j].isfly===true&&blueplane[j].isend===false){
+                        r=j
+                        break;
+                    }
+                }
+            }
+            blueplane[r].ismoveed()
+            if(select!==4){
+                // 如果下一个还是电脑的话那么就直接禁用按钮
+                content.gamewindow.mainmaps.dicebutton.enabled=false
+                  content.gamewindow.mainmaps.textarea.text+="电脑移动\n"
+                content.gamewindow.mainmaps.delytimer.start()
+            }
+        }
+        if(type===4){
+
+            // 当飞机处于起飞状态且摇的骰子不为6或者飞机已经到达终点,那么这个飞机不能被作为选择的选项
+            if(redplane[r].isfly===false&&randomNum!==6||redplane[r].isend===true){
+                for(let j=0;j<4;j++){
+                    // 避免再次选到已经到达终点的棋子只选择起飞了但未到达终点的棋子
+                    if(redplane[j].isfly===true&&redplane[j].isend===false){
+                        r=j
+                        break;
+                    }
+                }
+            }
+            redplane[r].ismoveed()
+            if(select!==1){
+                // 如果下一个还是电脑的话那么就直接禁用按钮
+                content.gamewindow.mainmaps.dicebutton.enabled=false
+                 content.gamewindow.mainmaps.textarea.text+="电脑移动\n"
+                content.gamewindow.mainmaps.delytimer.start()
+
+            }
+        }
+    }
 }
