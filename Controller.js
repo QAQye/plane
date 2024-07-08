@@ -41,7 +41,9 @@ let bluesend=0
 let orangesend=0
 let redsend=0
 
-
+// 人机对战和人人对战的参数传递如果selecct是0那么是人人对战如果是其他数字那么就是人机对战
+let select =0
+let plane=[greenplane,orangeplane,blueplane,redplane]
 
 function init(){
     content.firstwindow.isclicked.connect(()=>{
@@ -68,17 +70,18 @@ function init(){
 
     content.secondwindow.startgame.connect(()=>{
                                                initmap()
-                                               moverule()
+                                               // moverule()
+                                                humanMachine()
 
                                            })
     appWindow.showFullScreen();
     content.creatroom.gamePressed.connect(()=>{
-                                                      initmap()
-                                                      moverule()
+                                                      // initmap()
+                                                      // moverule()
                                                   })
     content.joinroom.gamePressed.connect(()=>{
-                                             initmap()
-                                             moverule()
+                                             // initmap()
+                                             // moverule()
                                          })
 
     content.greengameover.visible=false
@@ -448,7 +451,9 @@ function initmap(){
 
 }
 function moverule(){
+    // 实现人人对战
     content.gamewindow.mainmaps.dicebutton.randomchanged.connect(()=>{
+
                                                                     randomNum=content.gamewindow.mainmaps.dicebutton.lastrandom
                                                                     content.gamewindow.mainmaps.textarea.text+="摇的骰子数是"+randomNum+"\n"
                                                                      let clicks= content.gamewindow.mainmaps.dicebutton.click
@@ -460,7 +465,10 @@ function moverule(){
                                                                              if( greenplane[k].isfly===false){
                                                                                  falsefly++
                                                                              }
+                                                                             // 人机对战
 
+
+                                                                             console.log(select)
 
                                                                          }
                                                                          if(falsefly===4-greensend&&randomNum!==6){
@@ -474,6 +482,17 @@ function moverule(){
                                                                          content.gamewindow.mainmaps.textarea.text+="绿色棋子请移动\n"
                                                                          type=1
                                                                         resetPlanesgreen()
+                                                                         // 人机对战
+                                                                         if(select!=0&&select!=type){
+                                                                             let r
+                                                                             // 不是当前自己选择的飞机
+
+                                                                                 r = Math.floor(Math.random() * 4);
+                                                                                 plane[type-1][r].ismoveed()
+                                                                                 console.log("*********** 移动 **********")
+                                                                             }
+
+                                                                         console.log(select)
                                                                      }
                                                                      else if(clicks%4===2){
                                                                          falsefly=0
@@ -481,6 +500,7 @@ function moverule(){
                                                                              if( orangeplane[k].isfly===false){
                                                                                 falsefly++
                                                                              }
+
 
 
                                                                          }
@@ -495,6 +515,17 @@ function moverule(){
                                                                          content.gamewindow.mainmaps.textarea.text+="橙色棋子请移动\n"
                                                                          type=2
                                                                          resetPlanesorange()
+                                                                         // 人机对战
+                                                                         if(select!=0&&select!=type){
+                                                                             let r
+                                                                             // 不是当前自己选择的飞机
+
+                                                                                 r = Math.floor(Math.random() * 4);
+                                                                                 plane[type-1][r].ismoveed()
+                                                                                 console.log("*********** 移动 **********")
+                                                                             }
+
+                                                                         console.log(select)
                                                                      }
                                                                      else if(clicks%4===3){
                                                                          falsefly=0
@@ -502,6 +533,9 @@ function moverule(){
                                                                              if(blueplane[k].isfly===false){
                                                                                  falsefly++
                                                                              }
+
+                                                                             console.log(select)
+
 
 
                                                                          }
@@ -516,6 +550,16 @@ function moverule(){
                                                                          content.gamewindow.mainmaps.textarea.text+="蓝色棋子请移动\n"
                                                                          type=3
                                                                          resetPlanesblue()
+                                                                         // 人机对战
+                                                                         if(select!=0&&select!=type){
+                                                                             let r
+                                                                             // 不是当前自己选择的飞机
+
+                                                                                 r = Math.floor(Math.random() * 4);
+                                                                                 plane[type-1][r].ismoveed()
+                                                                                 console.log("*********** 移动 **********")
+                                                                             }
+
                                                                      }
                                                                      else{
                                                                          falsefly=0
@@ -523,6 +567,17 @@ function moverule(){
                                                                              if(redplane[k].isfly===false){
                                                                                  falsefly++
                                                                              }
+                                                                             // 人机对战
+                                                                             if(select!=0&&select!=type){
+                                                                                 let r
+                                                                                 // 不是当前自己选择的飞机
+
+                                                                                     r = Math.floor(Math.random() * 4);
+                                                                                     let ss=
+                                                                                     console.log("*********** 移动 **********")
+                                                                                 }
+
+                                                                             console.log(select)
 
 
                                                                          }
@@ -538,9 +593,21 @@ function moverule(){
                                                                          content.gamewindow.mainmaps.textarea.text+="红色棋子请移动\n"
                                                                          type=4
                                                                          resetPlanesred()
+                                                                         // 人机对战
+                                                                         if(select!=0&&select!=type){
+                                                                             let r
+                                                                             // 不是当前自己选择的飞机
+
+                                                                                 r = Math.floor(Math.random() * 4);
+                                                                                 plane[type-1][r].ismoveed()
+                                                                                 console.log("*********** 移动 **********")
+                                                                             }
+
                                                                      }
                                                                      console.log("刷新")
+
                                                                  })
+
 
     for(let j=0;j<4;j++){
         greenplane[j].ismoveed.connect(()=>{
@@ -552,6 +619,8 @@ function moverule(){
                                                        greenplane[k].ismove=false
                                                    }
                                                }
+                                               // 判断是人机对战的选择
+
                                                moveplane(j)
                                            }
                                            else if(greenplane[j].isfly===false&&randomNum===6&&type===1){
@@ -603,6 +672,7 @@ function moverule(){
 
     for(let j=0;j<4;j++){
         blueplane[j].ismoveed.connect(()=>{
+
                                           if(blueplane[j].isfly===true&&type===3){
                                               for(let k=0;k<4;k++){
                                                   if(k!==j){
@@ -745,7 +815,9 @@ function moveplane(j){
     // 只能走一次
     greenplane[j].ismove=false
     // 设置按钮可以用
-    content.gamewindow.mainmaps.dicebutton.enabled=true
+    if(select==0||select===2){
+       content.gamewindow.mainmaps.dicebutton.enabled=true
+    }
 }
 
 
@@ -810,7 +882,9 @@ function  moveorangeplane(j){
     // 此时场上有同颜色飞机处于起飞状态但是没有摇到点数6选择了未起飞状态的飞机
     // 只能走一次
     orangeplane[j].ismove=false
+    if(select==0||select===3){
     content.gamewindow.mainmaps.dicebutton.enabled=true
+    }
 }
 
 function moveblueplane(j){
@@ -878,7 +952,9 @@ function moveblueplane(j){
     }
     // 只能走一次
     blueplane[j].ismove=false
-    content.gamewindow.mainmaps.dicebutton.enabled=true
+    if(select==0||select===4){
+        content.gamewindow.mainmaps.dicebutton.enabled=true
+    }
 }
 
 
@@ -946,8 +1022,9 @@ function moveredplane(j){
     }
     // 只能走一次
     redplane[j].ismove=false
+     if(select==0||select===1){
     content.gamewindow.mainmaps.dicebutton.enabled=true
-
+}
 
 }
 // 定义一个检查碰撞并重置飞机位置的函数
@@ -1029,5 +1106,12 @@ function showGameOver3() {
 }
 function showGameOver4() {
     content.redgameover.visible=true;
+}
 
+
+// 实现人机对战
+function humanMachine(){
+    console.log("请选择你的飞机")
+    select =1
+    moverule()
 }

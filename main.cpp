@@ -2,7 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QQmlEngine>
-#include "connect.h"
+#include "client.h"
 #include "server.h"
 
 int main(int argc, char *argv[])
@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
     qmlRegisterType<Server>("Server", 1, 0, "Server");
-    qmlRegisterType<Connect>("Connect", 1, 0, "Connect");
+    qmlRegisterType<Client>("Client", 1, 0, "Client");
     QObject::connect(
         &engine,
         &QQmlApplicationEngine::objectCreationFailed,

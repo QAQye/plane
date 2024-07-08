@@ -1,30 +1,27 @@
-#ifndef CLIENT_H
+﻿#ifndef CLIENT_H
 #define CLIENT_H
 
-#include <QJsonDocument>
-#include <QJsonObject>
 #include <QObject>
-#include <QTcpSocket>
-
+#include<QTcpSocket>
 class Client : public QObject
 {
     Q_OBJECT
 
+    // Q_INVOKABLE void connectserver()
+    // Q_INVOKABLE void connectserver(const QString &ip, short port);
+
+    // //客户端断开连接
+    // Q_INVOKABLE void disConnect();
+
 public:
-    explicit Client(const QString &host, quint16 port, QObject *parent = nullptr);
-    void sendMessage(const QJsonObject &json);
+    void connectserver(const QString &ip, short port);
+    explicit Client(QObject *parent = nullptr);
 
 private slots:
-    void onConnected();
-    void onReadyRead();
-    void onDisconnected();
-    void portSlot(QString p, QString i);
-
+    void readData();
+signals:
 private:
-    QTcpSocket *tcpSocket;
-    int tid;
-    quint16 port;
-    QString ip;
+    QTcpSocket socket;
 };
 
 #endif // CLIENT_H

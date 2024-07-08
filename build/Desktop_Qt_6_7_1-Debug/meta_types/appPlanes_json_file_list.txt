@@ -1,0 +1,2 @@
+/root/Planes/build/Desktop_Qt_6_7_1-Debug/appPlanes_autogen/include/../EWIEGA46WW/moc_client.cpp.json
+/root/Planes/build/Desktop_Qt_6_7_1-Debug/appPlanes_autogen/include/../EWIEGA46WW/moc_server.cpp.json

@@ -53,11 +53,9 @@ qt_add_qml_module(
   QML_FILES
   GameMap.qml
   SOURCES
-  connect.h
   SOURCES
   server.h
   SOURCES
-  connect.cpp
   SOURCES
   server.cpp
   SOURCES
@@ -92,6 +90,7 @@ set_target_properties(
              WIN32_EXECUTABLE TRUE)
 
 include(GNUInstallDirs)
+target_include_directories(appPlanes PRIVATE .)
 install(
   TARGETS appPlanes
   DESTINATION bin

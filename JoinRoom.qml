@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick 2.15
 import QtQuick.Controls 2.15
-import Connect 1.0
+import Client 1.0
 Image{
     signal sendMes
     signal gamePressed()
@@ -126,31 +126,12 @@ Image{
     }
     Component.onCompleted: {
         // 连接到方法
-        connectSig.connect(connect.portSlot)
+        // connectSig.connect(connect.portSlot)
     }
 
     //c++注册的客户端对象
-    Connect{
+    Client{
         id:connect
-
-        onConnectSuccess: {
-            // 如果成功连接就发送信号
-            gamePressed()
-        }
-
-        //接受成功则移动棋子
-        onReceiveOk: {
-        }
-
-        //发送成功
-        onWriteOk: {
-            console.log("S write ok")
-        }
-
-        //断开连接显示提示断开对话框
-        onDisConnectSignal: {
-            gameScene.disConnect()
-        }
     }
 
     //收到发送信息信号就调用c++对象的棋子位置移动函数

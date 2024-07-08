@@ -1,0 +1,73 @@
+{
+    "classes": [
+        {
+            "className": "Connect",
+            "methods": [
+                {
+                    "access": "public",
+                    "name": "disConnect",
+                    "returnType": "void"
+                }
+            ],
+            "object": true,
+            "qualifiedClassName": "Connect",
+            "signals": [
+                {
+                    "access": "public",
+                    "name": "connectSuccess",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "receiveOk",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "writeOk",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "disConnectSignal",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "p",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "i",
+                            "type": "QString"
+                        }
+                    ],
+                    "name": "portSlot",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "type": "QAbstractSocket::SocketError"
+                        }
+                    ],
+                    "name": "displayError",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "connect.h",
+    "outputRevision": 68
+}
