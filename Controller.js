@@ -456,7 +456,7 @@ function initmap(){
 
 
 
-// 游戏逻辑
+// 游戏逻辑人人对战
 function moverule(){
     content.gamewindow.mainmaps.dicebutton.randomchanged.connect(()=>{
                                                                     randomNum=content.gamewindow.mainmaps.dicebutton.lastrandom
@@ -739,6 +739,7 @@ function moveplane(j){
             checkCollisionAndReset(greenplane[j])
        }
 
+
     }
     // 判断飞机是否能够起飞只有摇骰子摇到六点才能起飞
     if(greenplane[j].isfly===false&&randomNum===6&&greenplane[j].ismove===true&&type===1){
@@ -754,6 +755,12 @@ function moveplane(j){
     greenplane[j].ismove=false
     // 设置按钮可以用
     content.gamewindow.mainmaps.dicebutton.enabled=true
+    // 当如果是自己的飞机移动完毕后则发送移动下一个的信号
+    if(type===select){
+        content.gamewindow.mainmaps.dicebutton.enabled=false
+        content.gamewindow.mainmaps.delytimer.start()
+
+    }
 }
 
 
@@ -819,6 +826,11 @@ function  moveorangeplane(j){
     // 只能走一次
     orangeplane[j].ismove=false
     content.gamewindow.mainmaps.dicebutton.enabled=true
+    if(type===select){
+        content.gamewindow.mainmaps.dicebutton.enabled=false
+        content.gamewindow.mainmaps.delytimer.start()
+
+    }
 }
 
 function moveblueplane(j){
@@ -887,6 +899,11 @@ function moveblueplane(j){
     // 只能走一次
     blueplane[j].ismove=false
     content.gamewindow.mainmaps.dicebutton.enabled=true
+    if(type===select){
+        content.gamewindow.mainmaps.dicebutton.enabled=false
+        content.gamewindow.mainmaps.delytimer.start()
+
+    }
 }
 
 
@@ -955,6 +972,11 @@ function moveredplane(j){
     // 只能走一次
     redplane[j].ismove=false
     content.gamewindow.mainmaps.dicebutton.enabled=true
+    if(type===select){
+        content.gamewindow.mainmaps.dicebutton.enabled=false
+        content.gamewindow.mainmaps.delytimer.start()
+
+    }
 
 
 }
@@ -1046,7 +1068,7 @@ function showGameOver4() {
 // 实现人机部分
 function humantocomputer(){
 
-    select=2
+    select=4
     if(select!==1){
         // 如果没有选择第一个绿色飞机那么就直接开始电脑摇骰子
         content.gamewindow.mainmaps.delytimer.start()
@@ -1066,12 +1088,20 @@ function humantocomputer(){
                                                                                  falsefly++
                                                                              }
                                                                          }
+
                                                                          if(falsefly===4-greensend&&randomNum!==6){
                                                                              content.gamewindow.mainmaps.dicebutton.enabled=false
                                                                              content.gamewindow.mainmaps.textarea.text+="没有达到指定点数\n"
                                                                              content.gamewindow.mainmaps.textarea.text+="绿色棋子不能移动\n"
-                                                                             content.gamewindow.mainmaps.delytimer.start()
-                                                                             return ;
+                                                                             // 判断下一个点数是否是用户选择的点数,如果是那么按钮变为可用不发送自动进行的信号
+                                                                             if(select===2){
+                                                                                 content.gamewindow.mainmaps.dicebutton.enabled=true
+                                                                                 return;
+                                                                             }
+                                                                             else{
+                                                                                 content.gamewindow.mainmaps.delytimer.start()
+                                                                                 return;
+                                                                             }
                                                                          }
 
                                                                          content.gamewindow.mainmaps.textarea.text+="绿色棋子请移动\n"
@@ -1088,12 +1118,19 @@ function humantocomputer(){
 
 
                                                                          }
+
                                                                          if(falsefly===4-orangesend&&randomNum!==6){
                                                                              content.gamewindow.mainmaps.dicebutton.enabled=false
                                                                              content.gamewindow.mainmaps.textarea.text+="没有达到指定点数\n"
                                                                              content.gamewindow.mainmaps.textarea.text+="橙色棋子不能移动\n"
-                                                                             content.gamewindow.mainmaps.delytimer.start()
-                                                                             return ;
+                                                                             if(select===3){
+                                                                                  content.gamewindow.mainmaps.dicebutton.enabled=true
+                                                                                 return;
+                                                                              }
+                                                                             else{
+                                                                                 content.gamewindow.mainmaps.delytimer.start()
+                                                                                 return;
+                                                                             }
                                                                          }
 
                                                                          content.gamewindow.mainmaps.textarea.text+="橙色棋子请移动\n"
@@ -1110,12 +1147,19 @@ function humantocomputer(){
 
 
                                                                          }
+
                                                                          if(falsefly===4-bluesend&&randomNum!==6){
                                                                              content.gamewindow.mainmaps.dicebutton.enabled=false
                                                                              content.gamewindow.mainmaps.textarea.text+="没有达到指定点数\n"
                                                                              content.gamewindow.mainmaps.textarea.text+="蓝色棋子不能移动\n"
-                                                                             content.gamewindow.mainmaps.delytimer.start()
-                                                                             return ;
+                                                                             if(select===4){
+                                                                                 content.gamewindow.mainmaps.dicebutton.enabled=true
+                                                                                 return ;
+                                                                             }
+                                                                             else{
+                                                                                 content.gamewindow.mainmaps.delytimer.start()
+                                                                                 return ;
+                                                                             }
                                                                          }
 
                                                                          content.gamewindow.mainmaps.textarea.text+="蓝色棋子请移动\n"
@@ -1137,8 +1181,14 @@ function humantocomputer(){
                                                                              content.gamewindow.mainmaps.dicebutton.enabled=false
                                                                              content.gamewindow.mainmaps.textarea.text+="没有达到指定点数\n"
                                                                              content.gamewindow.mainmaps.textarea.text+="红色棋子不能移动\n"
-                                                                             content.gamewindow.mainmaps.delytimer.start()
-                                                                             return ;
+                                                                             if(select===1){
+                                                                                  content.gamewindow.mainmaps.dicebutton.enabled=true
+                                                                                  return ;
+                                                                              }
+                                                                             else{
+                                                                                 content.gamewindow.mainmaps.delytimer.start()
+                                                                                 return ;
+                                                                             }
                                                                          }
 
                                                                          content.gamewindow.mainmaps.textarea.text+="红色棋子请移动\n"
@@ -1270,6 +1320,7 @@ function humantocomputer(){
 
 function computermove(){
     // 判断是玩家还是说是电脑
+    // 如果是电脑
     if(type!==select&&select!=0){
         let r=Math.floor(Math.random() * 4)
         if(type===1){
@@ -1349,7 +1400,5 @@ function computermove(){
 
             }
         }
-
-
     }
 }

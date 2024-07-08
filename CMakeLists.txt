@@ -49,7 +49,7 @@ qt_add_qml_module(
   QML_FILES
   Plane.qml
   QML_FILES
-  PlaneController.js
+
   QML_FILES
   GameMap.qml
   SOURCES

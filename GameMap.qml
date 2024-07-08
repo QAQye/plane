@@ -1,6 +1,5 @@
 import QtQuick
 import QtQuick.Layouts
-import "PlaneController.js" as PlaneController
 Item{
     anchors.fill: parent
     property double longs:mainmap.longs
