@@ -1,0 +1,14 @@
+-rootPath
+/root/aaa/plane
+-cmake-output
+-output-file
+/root/aaa/plane/build/Desktop_Qt_6_7_1-Debug/.qt/qml_imports/appPlanes_build.cmake
+-importPath
+/root/aaa/plane/build/Desktop_Qt_6_7_1-Debug/Planes
+-importPath
+/root/aaa/plane/build/Desktop_Qt_6_7_1-Debug
+-importPath
+/opt/Qt/6.7.1/gcc_64/./qml
+-qrcFiles
+/root/aaa/plane/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/qmake_Planes.qrc
+/root/aaa/plane/build/Desktop_Qt_6_7_1-Debug/.qt/rcc/appPlanes_raw_qml_0.qrc

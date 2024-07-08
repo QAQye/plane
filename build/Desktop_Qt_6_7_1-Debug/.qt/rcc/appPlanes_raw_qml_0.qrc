@@ -1,0 +1,26 @@
+<RCC>
+  <qresource prefix="/qt/qml/Planes/">
+    <file alias="Window.qml">/root/aaa/plane/Window.qml</file>
+    <file alias="Content.qml">/root/aaa/plane/Content.qml</file>
+    <file alias="Dialogs.qml">/root/aaa/plane/Dialogs.qml</file>
+    <file alias="Actions.qml">/root/aaa/plane/Actions.qml</file>
+    <file alias="MainMap.qml">/root/aaa/plane/MainMap.qml</file>
+    <file alias="FirstWindow.qml">/root/aaa/plane/FirstWindow.qml</file>
+    <file alias="SecondWindow.qml">/root/aaa/plane/SecondWindow.qml</file>
+    <file alias="Triangle.qml">/root/aaa/plane/Triangle.qml</file>
+    <file alias="Controller.js">/root/aaa/plane/Controller.js</file>
+    <file alias="MapRectangle.qml">/root/aaa/plane/MapRectangle.qml</file>
+    <file alias="MusicPlay.qml">/root/aaa/plane/MusicPlay.qml</file>
+    <file alias="Plane.qml">/root/aaa/plane/Plane.qml</file>
+    <file alias="PlaneController.js">/root/aaa/plane/PlaneController.js</file>
+    <file alias="GameMap.qml">/root/aaa/plane/GameMap.qml</file>
+    <file alias="JoinRoom.qml">/root/aaa/plane/JoinRoom.qml</file>
+    <file alias="CreatRoom.qml">/root/aaa/plane/CreatRoom.qml</file>
+    <file alias="GreenGameOver.qml">/root/aaa/plane/GreenGameOver.qml</file>
+    <file alias="OrangeGameOver.qml">/root/aaa/plane/OrangeGameOver.qml</file>
+    <file alias="BlueGameOver.qml">/root/aaa/plane/BlueGameOver.qml</file>
+    <file alias="RedGameOver.qml">/root/aaa/plane/RedGameOver.qml</file>
+    <file alias="imges.qrc">/root/aaa/plane/imges.qrc</file>
+  </qresource>
+</RCC>
+
