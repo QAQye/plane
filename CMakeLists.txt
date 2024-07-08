@@ -60,16 +60,24 @@ qt_add_qml_module(
   connect.cpp
   SOURCES
   server.cpp
+  SOURCES
+  client.cpp
+  SOURCES
+  client.h
   QML_FILES
   QML_FILES
   JoinRoom.qml
   QML_FILES
   CreatRoom.qml
   QML_FILES
-  QML_FILES GreenGameOver.qml
-  QML_FILES OrangeGameOver.qml
-  QML_FILES BlueGameOver.qml
-  QML_FILES RedGameOver.qml )
+  QML_FILES
+  GreenGameOver.qml
+  QML_FILES
+  OrangeGameOver.qml
+  QML_FILES
+  BlueGameOver.qml
+  QML_FILES
+  RedGameOver.qml)
 
 target_compile_features(appPlanes PRIVATE cxx_std_20) # 指定编译特性
 target_link_libraries(appPlanes PRIVATE Qt6::Network Qt6::Gui)
