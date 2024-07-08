@@ -1045,10 +1045,13 @@ function showGameOver4() {
 
 // 实现人机部分
 function humantocomputer(){
+
     select=2
     if(select!==1){
         // 如果没有选择第一个绿色飞机那么就直接开始电脑摇骰子
         content.gamewindow.mainmaps.delytimer.start()
+        // 把按钮设置为不可以按动
+        content.gamewindow.mainmaps.dicebutton.enabled=false
     }
     content.gamewindow.mainmaps.dicebutton.randomchanged.connect(()=>{
                                                                     randomNum=content.gamewindow.mainmaps.dicebutton.lastrandom
@@ -1266,13 +1269,15 @@ function humantocomputer(){
 }
 
 function computermove(){
+    // 判断是玩家还是说是电脑
     if(type!==select&&select!=0){
         let r=Math.floor(Math.random() * 4)
         if(type===1){
             // 发送飞机移动的信号
-            if(greenplane[r].isfly===false){
+            // 实现电脑移动飞机的算法
+            if(greenplane[r].isfly===false&&randomNum!==6||greenplane[r].isend===true){
                 for(let j=0;j<4;j++){
-                    if(greenplane[j].isfly===true){
+                    if(greenplane[j].isfly===true&&greenplane[j].isend===false){
                         r=j
                         break;
                     }
@@ -1290,9 +1295,9 @@ function computermove(){
 
         }
         if(type===2){
-            if(orangeplane[r].isfly===false){
+            if(orangeplane[r].isfly===false&&randomNum!==6||orangeplane[r].isend===true){
                 for(let j=0;j<4;j++){
-                    if(orangeplane[j].isfly===true){
+                    if(orangeplane[j].isfly===true&&orangeplane[j].isend===false){
                         r=j
                         break;
                     }
@@ -1307,9 +1312,9 @@ function computermove(){
             }
         }
         if(type===3){
-            if(blueplane[r].isfly===false){
+            if(blueplane[r].isfly===false&&randomNum!==6||blueplane[r].isend===true){
                 for(let j=0;j<4;j++){
-                    if(blueplane[j].isfly===true){
+                    if(blueplane[j].isfly===true&&blueplane[j].isend===false){
                         r=j
                         break;
                     }
@@ -1324,9 +1329,12 @@ function computermove(){
             }
         }
         if(type===4){
-            if(redplane[r].isfly===false){
+
+            // 当飞机处于起飞状态且摇的骰子不为6或者飞机已经到达终点,那么这个飞机不能被作为选择的选项
+            if(redplane[r].isfly===false&&randomNum!==6||redplane[r].isend===true){
                 for(let j=0;j<4;j++){
-                    if(redplane[j].isfly===true){
+                    // 避免再次选到已经到达终点的棋子只选择起飞了但未到达终点的棋子
+                    if(redplane[j].isfly===true&&redplane[j].isend===false){
                         r=j
                         break;
                     }
