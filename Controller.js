@@ -71,7 +71,7 @@ function init(){
                                                humantocomputer()
 
                                            })
-    appWindow.showFullScreen();
+    // appWindow.showFullScreen();
     content.creatroom.gamePressed.connect(()=>{
                                                       // initmap()
                                                       // moverule()
@@ -1065,6 +1065,7 @@ function showGameOver4() {
 
 
 
+
 // 实现人机部分
 function humantocomputer(){
 
@@ -1096,6 +1097,9 @@ function humantocomputer(){
                                                                              // 判断下一个点数是否是用户选择的点数,如果是那么按钮变为可用不发送自动进行的信号
                                                                              if(select===2){
                                                                                  content.gamewindow.mainmaps.dicebutton.enabled=true
+                                                                                 // 实现动画的提示该你移动了
+                                                                                 content.gamewindow.mainmaps.an1.start()
+                                                                                 content.gamewindow.mainmaps.an2.start()
                                                                                  return;
                                                                              }
                                                                              else{
@@ -1125,6 +1129,8 @@ function humantocomputer(){
                                                                              content.gamewindow.mainmaps.textarea.text+="橙色棋子不能移动\n"
                                                                              if(select===3){
                                                                                   content.gamewindow.mainmaps.dicebutton.enabled=true
+                                                                                 content.gamewindow.mainmaps.an1.start()
+                                                                                 content.gamewindow.mainmaps.an2.start()
                                                                                  return;
                                                                               }
                                                                              else{
@@ -1154,6 +1160,8 @@ function humantocomputer(){
                                                                              content.gamewindow.mainmaps.textarea.text+="蓝色棋子不能移动\n"
                                                                              if(select===4){
                                                                                  content.gamewindow.mainmaps.dicebutton.enabled=true
+                                                                                 content.gamewindow.mainmaps.an1.start()
+                                                                                 content.gamewindow.mainmaps.an2.start()
                                                                                  return ;
                                                                              }
                                                                              else{
@@ -1183,6 +1191,8 @@ function humantocomputer(){
                                                                              content.gamewindow.mainmaps.textarea.text+="红色棋子不能移动\n"
                                                                              if(select===1){
                                                                                   content.gamewindow.mainmaps.dicebutton.enabled=true
+                                                                                 content.gamewindow.mainmaps.an1.start()
+                                                                                 content.gamewindow.mainmaps.an2.start()
                                                                                   return ;
                                                                               }
                                                                              else{
@@ -1343,6 +1353,11 @@ function computermove(){
                   content.gamewindow.mainmaps.textarea.text+="电脑移动\n"
                 content.gamewindow.mainmaps.delytimer.start()
             }
+            // 如果不是电脑就加载提示
+            else{
+                content.gamewindow.mainmaps.an1.start()
+                content.gamewindow.mainmaps.an2.start()
+            }
 
         }
         if(type===2){
@@ -1361,6 +1376,11 @@ function computermove(){
                   content.gamewindow.mainmaps.textarea.text+="电脑移动\n"
                 content.gamewindow.mainmaps.delytimer.start()
             }
+            // 如果不是电脑就加载提示
+            else{
+                content.gamewindow.mainmaps.an1.start()
+                content.gamewindow.mainmaps.an2.start()
+            }
         }
         if(type===3){
             if(blueplane[r].isfly===false&&randomNum!==6||blueplane[r].isend===true){
@@ -1377,6 +1397,11 @@ function computermove(){
                 content.gamewindow.mainmaps.dicebutton.enabled=false
                   content.gamewindow.mainmaps.textarea.text+="电脑移动\n"
                 content.gamewindow.mainmaps.delytimer.start()
+            }
+            // 如果不是电脑就加载提示
+            else{
+                content.gamewindow.mainmaps.an1.start()
+                content.gamewindow.mainmaps.an2.start()
             }
         }
         if(type===4){
@@ -1398,6 +1423,11 @@ function computermove(){
                  content.gamewindow.mainmaps.textarea.text+="电脑移动\n"
                 content.gamewindow.mainmaps.delytimer.start()
 
+            }
+            // 如果不是电脑就加载提示
+            else{
+                content.gamewindow.mainmaps.an1.start()
+                content.gamewindow.mainmaps.an2.start()
             }
         }
     }
