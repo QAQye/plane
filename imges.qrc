@@ -39,5 +39,6 @@
         <file>images/blueover.png</file>
         <file>images/orangeover.png</file>
         <file>images/greenover.png</file>
+        <file>images/xz.png</file>
     </qresource>
 </RCC>

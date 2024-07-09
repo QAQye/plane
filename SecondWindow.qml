@@ -7,10 +7,24 @@ Image {
     signal startgame()
     signal creatroomscene()
     signal joinroomscene()
+property string selectedButtonId: "" // 定义selectedButtonId属性
+
                 id: _background
                 source: "qrc:/images/se5.png" // 外部背景图片
                 anchors.fill: parent
+                // 定义颜色按钮的信号
+                signal colorButtonClicked()
 
+                // 创建一个点击信号处理器
+                function handleColorButtonClicked() {
+                    colorButtonClicked();
+                }
+
+                // 创建一个 TapHandler 组件，用于处理点击事件
+                TapHandler {
+                    // anchors.fill: parent // 使 TapHandler 覆盖整个 Rectangle
+                    onTapped: handleColorButtonClicked() // 处理轻触事件
+                }
                 Rectangle {
                     id:_deciveRectangle
                     width: _background.width*0.32
@@ -126,6 +140,7 @@ Image {
 
                     }
                 }
+
                 Popup {
                                        id: popup
                                        visible: false
@@ -183,7 +198,7 @@ Image {
                                     }
                                                                 }
                       Button {
-                                           text: "返回游戏"
+                                           text: "选择棋子"
                                            width: popup.width*0.6
                                            height: popup.height * 0.14//按钮大小
                                            x: _background.width * 0.06 // 按钮 x 坐标为图像宽度的%
@@ -198,11 +213,195 @@ Image {
                                                console.log("返回游戏");
                                                // 这里可以添加进一步的逻辑，根据每个选项的选择进入不同的场景
                                               popup.close()
-                                               startgame()//只是为了看到界面测试，startgame（）在连接时调用
+                                               popup1.open()
+                                               // startgame()//只是为了看到界面测试，startgame（）在连接时调用
                                            }
                                        }
                                    }
                             }
+
+                Popup {
+                                       id: popup1
+                                       visible: false
+                                       width: _background.width*0.55
+                                       height: _background.height * 0.75//弹窗大小
+                                       modal: true
+
+                                       // 设置弹窗的位置
+                                       x: _background.width * 0.25 // 按钮 x 坐标为图像宽度的%
+                                       y: _background.height * 0.06// 按钮 y 坐标为图像高度的%
+
+                                       contentItem: Column {
+                                           // anchors.centerIn: parent
+                                           Image {
+                                                      anchors.fill: parent
+                                                      source: "qrc:/images/xz.png" // 确保图片路径正确
+                                                  }
+
+                                           Button {
+                                               id:button1
+                                                       text: "红色方"
+                                                       width: popup.width*0.4
+                                                       height: popup.height * 0.14//按钮大小
+                                                       x: _background.width * 0.06 // 按钮 x 坐标为图像宽度的%
+                                                       y: _background.height * 0.14 // 按钮 y 坐标为图像高度的%
+                                                       font.pixelSize: _background.width * 0.03
+                                                       font.bold: true // 设置
+                                                         background: Rectangle {
+                                                                   color: "transparent"
+                                                             // color:"red"
+                                                                         }
+                                                         onClicked: {
+                                                             // background.color = "red"
+                                                             // console.log("红色方");
+                                                             if (selectedButtonId !== "button1") {
+                                                                            // 取消其他按钮的选中状态
+                                                                            if (selectedButtonId === "button2") button2.color = "transparent";
+                                                                            if (selectedButtonId === "button3") button3.color = "transparent";
+                                                                            if (selectedButtonId === "button4") button4.color = "transparent";
+                                                                            // 设置当前按钮的选中状态
+                                                                            selectedButtonId = "button1";
+                                                                            // 添加选中样式
+                                                                            background.color = "red"
+                                                                        } else {
+                                                                            // 如果点击的是已经选中的按钮，则取消选中
+                                                                            selectedButtonId = "";
+                                                                            background.color = "transparent"
+                                                                        }
+                                                             // 这里可以添加进一步的逻辑，根据每个选项的选择进入不同的场景
+
+                                                         }
+                                                         }
+                                           Button {
+                                               id:button2
+                                                       text: "绿色方"
+                                                       width: popup.width*0.4
+                                                       height: popup.height * 0.14//按钮大小
+                                                       x: _background.width * 0.35 // 按钮 x 坐标为图像宽度的%
+                                                       y: _background.height * 0.14 // 按钮 y 坐标为图像高度的%
+                                                       font.pixelSize: _background.width * 0.03
+                                                       font.bold: true // 设置
+                                                         background: Rectangle {
+                                                                   color: "transparent"
+                                                             // color:"lightgreen"
+                                                                         }
+                                                         onClicked: {
+                                                             // background.color = "lightgreen"
+                                                             // console.log("橙色方");
+                                                             if (selectedButtonId !== "button2") {
+                                                                            // 取消其他按钮的选中状态
+                                                                            if (selectedButtonId === "button1") button1.color = "transparent";
+                                                                            if (selectedButtonId === "button3") button3.color = "transparent";
+                                                                            if (selectedButtonId === "button4") button4.color = "transparent";
+                                                                            // 设置当前按钮的选中状态
+                                                                            selectedButtonId = "button2";
+                                                                            // 添加选中样式
+                                                                            background.color = "lightgreen"
+                                                                        } else {
+                                                                            // 如果点击的是已经选中的按钮，则取消选中
+                                                                            selectedButtonId = "";
+                                                                            background.color = "transparent"
+                                                                        }
+
+                                                             // 这里可以添加进一步的逻辑，根据每个选项的选择进入不同的场景
+
+                                                         }
+                                                         }
+                                           Button {
+                                               id:button3
+                                                       text: "蓝色方"
+                                                       width: popup.width*0.4
+                                                       height: popup.height * 0.14//按钮大小
+                                                       x: _background.width * 0.06 // 按钮 x 坐标为图像宽度的%
+                                                       y: _background.height * 0.42 // 按钮 y 坐标为图像高度的%
+                                                       font.pixelSize: _background.width * 0.03
+                                                       font.bold: true // 设置
+                                                         background: Rectangle {
+                                                                   color: "transparent"
+                                                             // color:"lightgreen"
+                                                                         }
+                                                         onClicked: {
+                                                             // background.color = "lightblue"
+                                                             // console.log("蓝色方");
+                                                             if (selectedButtonId !== "button3") {
+                                                                            // 取消其他按钮的选中状态
+                                                                            if (selectedButtonId === "button1") button1.color = "transparent";
+                                                                            if (selectedButtonId === "button2") button2.color = "transparent";
+                                                                            if (selectedButtonId === "button4") button4.color = "transparent";
+                                                                            // 设置当前按钮的选中状态
+                                                                            selectedButtonId = "button3";
+                                                                            // 添加选中样式
+                                                                            background.color = "lightblue"
+                                                                        } else {
+                                                                            // 如果点击的是已经选中的按钮，则取消选中
+                                                                            selectedButtonId = "";
+                                                                            background.color = "transparent"
+                                                                        }
+
+                                                             // 这里可以添加进一步的逻辑，根据每个选项的选择进入不同的场景
+
+                                                         }
+                                                         }
+                                           Button {
+                                               id:button4
+                                                       text: "橙色方"
+                                                       width: popup.width*0.4
+                                                       height: popup.height * 0.14//按钮大小
+                                                       x: _background.width * 0.32 // 按钮 x 坐标为图像宽度的%
+                                                       y: _background.height * 0.42 // 按钮 y 坐标为图像高度的%
+                                                       font.pixelSize: _background.width * 0.03
+                                                       font.bold: true // 设置
+                                                         background: Rectangle {
+                                                                   color: "transparent"
+                                                             // color:"lightgreen"
+                                                                         }
+                                                         onClicked: {
+                                                             // background.color = "#FFD580"
+                                                             // console.log("橙色方");
+                                                             if (selectedButtonId !== "button4") {
+                                                                            // 取消其他按钮的选中状态
+                                                                            if (selectedButtonId === "button1") button1.color = "transparent";
+                                                                            if (selectedButtonId === "button3") button3.color = "transparent";
+                                                                            if (selectedButtonId === "button2") button2.color = "transparent";
+                                                                            // 设置当前按钮的选中状态
+                                                                            selectedButtonId = "button4";
+                                                                            // 添加选中样式
+                                                                            background.color = "#FFD580"
+                                                                        } else {
+                                                                            // 如果点击的是已经选中的按钮，则取消选中
+                                                                            selectedButtonId = "";
+                                                                            background.color = "transparent"
+                                                                        }
+
+                                                             // 这里可以添加进一步的逻辑，根据每个选项的选择进入不同的场景
+
+                                                         }
+                                                         }
+                                           Button {
+                                                       text: "开始"
+                                                       width: popup.width*0.4
+                                                       height: popup.height * 0.14//按钮大小
+                                                       x: _background.width * 0.4 // 按钮 x 坐标为图像宽度的%
+                                                       y: _background.height * 0.65 // 按钮 y 坐标为图像高度的%
+                                                       font.pixelSize: _background.width * 0.03
+                                                       font.bold: true // 设置
+                                                         background: Rectangle {
+                                                                   color: "transparent"
+                                                             // color:"lightgreen"
+                                                                         }
+                                                         onClicked: {
+
+                                                             console.log("开始游戏");
+
+                                                             popup1.close()
+                                                             startgame()
+
+                                                             // 这里可以添加进一步的逻辑，根据每个选项的选择进入不同的场景
+
+                                                         }
+                                                         }
+                                       }
+                }
                     // onClicked: {
                     //     console.log("游戏开始");
                     //     // 这里可以添加进一步的逻辑，根据每个选项的选择进入不同的场景
@@ -213,7 +412,8 @@ Image {
                     }
 
 
-                }
+
+}
 
 
 
