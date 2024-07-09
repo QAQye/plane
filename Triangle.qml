@@ -1,3 +1,4 @@
+//aly
 import QtQuick
 import QtQuick.Shapes
 // 这个类用于绘制三角形

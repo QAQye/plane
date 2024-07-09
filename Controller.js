@@ -1,3 +1,4 @@
+//aly
 let greenstartx
 let greenstarty
 // 用于存放路径
@@ -71,7 +72,7 @@ function init(){
                                                humantocomputer()
 
                                            })
-    // appWindow.showFullScreen();
+    appWindow.showFullScreen();
     content.creatroom.gamePressed.connect(()=>{
                                                       // initmap()
                                                       // moverule()

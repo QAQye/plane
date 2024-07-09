@@ -1,4 +1,4 @@
-//hyf
+//aly
 import QtQuick
 import QtQuick.Controls
 Item {
@@ -6,6 +6,7 @@ Item {
     property  alias about: _aboutAction
     property  alias stopAction: _stopAction
     property   alias music: _music
+    property   alias rule: _ruleAction
     Action{
         id:_exitAction
         // icon.name:
@@ -14,6 +15,11 @@ Item {
             // 如果点击按钮那么退出
             Qt.quit()
         }
+
+    }
+    Action{
+        id:_ruleAction
+        text: "游戏规则"
 
     }
     Action{

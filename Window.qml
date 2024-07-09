@@ -1,3 +1,4 @@
+//aly
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
@@ -46,8 +47,19 @@ ApplicationWindow {
                  icon.name: "help-about"
             }
         }
+        Menu {
 
+            title: "规则"
+            icon.name: "rule "
+            MenuItem {
+
+                action: actions.rule
+                 icon.name: "rule_explanation"
+            }
+        }
     }
+
+
     // Button{
     //     width:200
     //     height:60
@@ -61,8 +73,11 @@ ApplicationWindow {
     // }
     Actions{
         id:actions
-        about.onTriggered: content.dialogs.about.open()
+         about.onTriggered: content.dialogs.about.open()
+        rule.onTriggered: content.dialogs.rule.open()
+
     }
+
 
     MusicPlay{
         id:music

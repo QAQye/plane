@@ -1,4 +1,5 @@
-﻿#include "client.h"
+﻿//pjl
+#include "client.h"
 #include <QDebug>
 #include <QHostAddress>
 #include <QJsonDocument>
