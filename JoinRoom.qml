@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick 2.15
 import QtQuick.Controls 2.15
-import Client 1.0
+
 Image{
     signal sendMes
     signal gamePressed()
@@ -96,32 +96,52 @@ Image{
         }
 
     }
-    Button {
-        id: joinButton
-        text: "加入"
-        // 设置文本颜色为黑色
+    // Button {
+    //     id: joinButton
+    //     text: "加入"
+    //     // 设置文本颜色为黑色
 
-        // ColorAnimation {
-        //     from: "white"
-        //     to: "black"
-        //     duration: 200
-        // }
-        // 根据按钮的宽度和高度设置字体大小
-        font.pixelSize: joinRoomScene.width * 0.04
-        // 设置按钮的宽度和高度
-        width: joinRoomScene.width * 0.16
-        height: joinRoomScene.height * 0.1
-        // 设置按钮的位置
-        x: joinRoomScene.width * 0.83 // 水平居中
-        y: joinRoomScene.height * 0.85 // 按钮 y 坐标为图像高度的10%
-        // 设置按钮的背景颜色
-        background:Rectangle {
-            color: "transparent"
-        }
-        TapHandler{
-            onTapped: {
-                connectSig(inputport.getText(0,6),inputip.getText(0,15))
+    //     // ColorAnimation {
+    //     //     from: "white"
+    //     //     to: "black"
+    //     //     duration: 200
+    //     // }
+    //     // 根据按钮的宽度和高度设置字体大小
+    //     font.pixelSize: joinRoomScene.width * 0.04
+    //     // 设置按钮的宽度和高度
+    //     width: joinRoomScene.width * 0.16
+    //     height: joinRoomScene.height * 0.1
+    //     // 设置按钮的位置
+    //     x: joinRoomScene.width * 0.83 // 水平居中
+    //     y: joinRoomScene.height * 0.85 // 按钮 y 坐标为图像高度的10%
+    //     // 设置按钮的背景颜色
+    //     background:Rectangle {
+    //         color: "transparent"
+    //     }
+    //     TapHandler{
+    //         onTapped: {
+    //             connectSig(inputport.getText(0,6),inputip.getText(0,15))
+    //         }
+    //     }
+    // }
+    Button{
+
+        text:"加入"
+            font.pixelSize: joinRoomScene.width * 0.04
+            // 设置按钮的宽度和高度
+            width: joinRoomScene.width * 0.16
+            height: joinRoomScene.height * 0.1
+            // 设置按钮的位置
+            x: joinRoomScene.width * 0.83 // 水平居中
+            y: joinRoomScene.height * 0.85 // 按钮 y 坐标为图像高度的10%
+            // 设置按钮的背景颜色
+            background:Rectangle {
+                color: "lightblue"
             }
+        onClicked: {
+
+            console.log("发送调试信息");
+            client.sendMsg("你好服务器");
         }
     }
     Component.onCompleted: {
@@ -130,18 +150,16 @@ Image{
     }
 
     //c++注册的客户端对象
-    Client{
-        id:connect
-    }
+
 
     //收到发送信息信号就调用c++对象的棋子位置移动函数
     // 用于发送信号
-    onSendMes:{
-        // connect.xyChangedSlot(row1, col1, row2, col2)
-    }
+    // onSendMes:{
+    //     // connect.xyChangedSlot(row1, col1, row2, col2)
+    // }
 
-    onDisConnect_Connect: {
-        connect.disConnect()
-    }
+    // onDisConnect_Connect: {
+    //     connect.disConnect()
+    // }
 }
 

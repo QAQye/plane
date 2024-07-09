@@ -71,7 +71,7 @@ function init(){
                                                humantocomputer()
 
                                            })
-    appWindow.showFullScreen();
+    // appWindow.showFullScreen();
     content.creatroom.gamePressed.connect(()=>{
                                                       // initmap()
                                                       // moverule()

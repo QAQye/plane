@@ -46,7 +46,19 @@ ApplicationWindow {
                  icon.name: "help-about"
             }
         }
+
     }
+    // Button{
+    //     width:200
+    //     height:60
+    //     text:"调试"
+
+    //     onClicked: {
+
+    //         console.log("发送调试信息");
+    //         client.sendMsg("你好服务器");
+    //     }
+    // }
     Actions{
         id:actions
         about.onTriggered: content.dialogs.about.open()

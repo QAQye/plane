@@ -54,11 +54,6 @@ qt_add_qml_module(
   GameMap.qml
   SOURCES
   SOURCES
-  server.h
-  SOURCES
-  SOURCES
-  server.cpp
-  SOURCES
   client.cpp
   SOURCES
   client.h

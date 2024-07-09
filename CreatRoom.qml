@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick 2.15
 import QtQuick.Controls 2.15
-import Server 1.0
+
 Image{
     signal gamePressed()
     signal disConnect_server

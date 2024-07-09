@@ -2,7 +2,7 @@
 #define CLIENT_H
 
 #include <QObject>
-#include<QTcpSocket>
+#include <QTcpSocket>
 class Client : public QObject
 {
     Q_OBJECT
@@ -16,11 +16,13 @@ class Client : public QObject
 public:
     void connectserver(const QString &ip, short port);
     explicit Client(QObject *parent = nullptr);
-
+    Q_INVOKABLE int Id();
+    Q_INVOKABLE void sendMsg(const QString &str);
 private slots:
     void readData();
 signals:
 private:
+    int id;
     QTcpSocket socket;
 };
 
