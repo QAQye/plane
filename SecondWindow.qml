@@ -7,7 +7,8 @@ Image {
     signal startgame()
     signal creatroomscene()
     signal joinroomscene()
-property string selectedButtonId: "" // 定义selectedButtonId属性
+    property int select:0
+    property string selectedButtonId: "" // 定义selectedButtonId属性
 
                 id: _background
                 source: "qrc:/images/se5.png" // 外部背景图片
@@ -240,6 +241,7 @@ property string selectedButtonId: "" // 定义selectedButtonId属性
 
                                            Button {
                                                id:button1
+                                               property alias redrectangle: _redrectangle
                                                        text: "红色方"
                                                        width: popup.width*0.4
                                                        height: popup.height * 0.14//按钮大小
@@ -248,17 +250,19 @@ property string selectedButtonId: "" // 定义selectedButtonId属性
                                                        font.pixelSize: _background.width * 0.03
                                                        font.bold: true // 设置
                                                          background: Rectangle {
+                                                             id:_redrectangle
                                                                    color: "transparent"
                                                              // color:"red"
                                                                          }
                                                          onClicked: {
+                                                             select=4
                                                              // background.color = "red"
                                                              // console.log("红色方");
                                                              if (selectedButtonId !== "button1") {
                                                                             // 取消其他按钮的选中状态
-                                                                            if (selectedButtonId === "button2") button2.color = "transparent";
-                                                                            if (selectedButtonId === "button3") button3.color = "transparent";
-                                                                            if (selectedButtonId === "button4") button4.color = "transparent";
+                                                                            if (selectedButtonId === "button2") button2.greenrectangle.color= "transparent";
+                                                                            if (selectedButtonId === "button3") button3.bluerectangle.color = "transparent";
+                                                                            if (selectedButtonId === "button4") button4.orangerectangle.color = "transparent";
                                                                             // 设置当前按钮的选中状态
                                                                             selectedButtonId = "button1";
                                                                             // 添加选中样式
@@ -267,6 +271,7 @@ property string selectedButtonId: "" // 定义selectedButtonId属性
                                                                             // 如果点击的是已经选中的按钮，则取消选中
                                                                             selectedButtonId = "";
                                                                             background.color = "transparent"
+                                                                            select=0
                                                                         }
                                                              // 这里可以添加进一步的逻辑，根据每个选项的选择进入不同的场景
 
@@ -274,6 +279,7 @@ property string selectedButtonId: "" // 定义selectedButtonId属性
                                                          }
                                            Button {
                                                id:button2
+                                               property alias greenrectangle: _greenrectangle
                                                        text: "绿色方"
                                                        width: popup.width*0.4
                                                        height: popup.height * 0.14//按钮大小
@@ -282,17 +288,19 @@ property string selectedButtonId: "" // 定义selectedButtonId属性
                                                        font.pixelSize: _background.width * 0.03
                                                        font.bold: true // 设置
                                                          background: Rectangle {
+                                                             id:_greenrectangle
                                                                    color: "transparent"
                                                              // color:"lightgreen"
                                                                          }
                                                          onClicked: {
+                                                             select=1
                                                              // background.color = "lightgreen"
                                                              // console.log("橙色方");
                                                              if (selectedButtonId !== "button2") {
                                                                             // 取消其他按钮的选中状态
-                                                                            if (selectedButtonId === "button1") button1.color = "transparent";
-                                                                            if (selectedButtonId === "button3") button3.color = "transparent";
-                                                                            if (selectedButtonId === "button4") button4.color = "transparent";
+                                                                            if (selectedButtonId === "button1") button1.redrectangle.color = "transparent";
+                                                                            if (selectedButtonId === "button3") button3.bluerectangle.color = "transparent";
+                                                                            if (selectedButtonId === "button4") button4.orangerectangle.color = "transparent";
                                                                             // 设置当前按钮的选中状态
                                                                             selectedButtonId = "button2";
                                                                             // 添加选中样式
@@ -301,6 +309,7 @@ property string selectedButtonId: "" // 定义selectedButtonId属性
                                                                             // 如果点击的是已经选中的按钮，则取消选中
                                                                             selectedButtonId = "";
                                                                             background.color = "transparent"
+                                                                            select=0
                                                                         }
 
                                                              // 这里可以添加进一步的逻辑，根据每个选项的选择进入不同的场景
@@ -309,6 +318,7 @@ property string selectedButtonId: "" // 定义selectedButtonId属性
                                                          }
                                            Button {
                                                id:button3
+                                               property alias bluerectangle: _bluerectangle
                                                        text: "蓝色方"
                                                        width: popup.width*0.4
                                                        height: popup.height * 0.14//按钮大小
@@ -318,16 +328,18 @@ property string selectedButtonId: "" // 定义selectedButtonId属性
                                                        font.bold: true // 设置
                                                          background: Rectangle {
                                                                    color: "transparent"
+                                                                   id:_bluerectangle
                                                              // color:"lightgreen"
                                                                          }
                                                          onClicked: {
+                                                             select=3
                                                              // background.color = "lightblue"
                                                              // console.log("蓝色方");
                                                              if (selectedButtonId !== "button3") {
                                                                             // 取消其他按钮的选中状态
-                                                                            if (selectedButtonId === "button1") button1.color = "transparent";
-                                                                            if (selectedButtonId === "button2") button2.color = "transparent";
-                                                                            if (selectedButtonId === "button4") button4.color = "transparent";
+                                                                            if (selectedButtonId === "button1") button1.redrectangle.color = "transparent";
+                                                                            if (selectedButtonId === "button2") button2.greenrectangle.color = "transparent";
+                                                                            if (selectedButtonId === "button4") button4.orangerectangle.color = "transparent";
                                                                             // 设置当前按钮的选中状态
                                                                             selectedButtonId = "button3";
                                                                             // 添加选中样式
@@ -336,6 +348,7 @@ property string selectedButtonId: "" // 定义selectedButtonId属性
                                                                             // 如果点击的是已经选中的按钮，则取消选中
                                                                             selectedButtonId = "";
                                                                             background.color = "transparent"
+                                                                 select=0
                                                                         }
 
                                                              // 这里可以添加进一步的逻辑，根据每个选项的选择进入不同的场景
@@ -344,6 +357,7 @@ property string selectedButtonId: "" // 定义selectedButtonId属性
                                                          }
                                            Button {
                                                id:button4
+                                               property alias orangerectangle: _orangerectangle
                                                        text: "橙色方"
                                                        width: popup.width*0.4
                                                        height: popup.height * 0.14//按钮大小
@@ -352,17 +366,19 @@ property string selectedButtonId: "" // 定义selectedButtonId属性
                                                        font.pixelSize: _background.width * 0.03
                                                        font.bold: true // 设置
                                                          background: Rectangle {
+                                                                    id:_orangerectangle
                                                                    color: "transparent"
                                                              // color:"lightgreen"
                                                                          }
                                                          onClicked: {
+                                                             select=2
                                                              // background.color = "#FFD580"
                                                              // console.log("橙色方");
                                                              if (selectedButtonId !== "button4") {
                                                                             // 取消其他按钮的选中状态
-                                                                            if (selectedButtonId === "button1") button1.color = "transparent";
-                                                                            if (selectedButtonId === "button3") button3.color = "transparent";
-                                                                            if (selectedButtonId === "button2") button2.color = "transparent";
+                                                                            if (selectedButtonId === "button1") button1.redrectangle.color = "transparent";
+                                                                            if (selectedButtonId === "button3") button3.bluerectangle.color = "transparent";
+                                                                            if (selectedButtonId === "button2") button2.greenrectangle.color = "transparent";
                                                                             // 设置当前按钮的选中状态
                                                                             selectedButtonId = "button4";
                                                                             // 添加选中样式
@@ -371,6 +387,7 @@ property string selectedButtonId: "" // 定义selectedButtonId属性
                                                                             // 如果点击的是已经选中的按钮，则取消选中
                                                                             selectedButtonId = "";
                                                                             background.color = "transparent"
+                                                                 select=0
                                                                         }
 
                                                              // 这里可以添加进一步的逻辑，根据每个选项的选择进入不同的场景
@@ -391,10 +408,11 @@ property string selectedButtonId: "" // 定义selectedButtonId属性
                                                                          }
                                                          onClicked: {
 
+                                                             if(select!==0){
                                                              console.log("开始游戏");
-
                                                              popup1.close()
                                                              startgame()
+                                                             }
 
                                                              // 这里可以添加进一步的逻辑，根据每个选项的选择进入不同的场景
 

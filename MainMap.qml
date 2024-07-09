@@ -92,6 +92,10 @@ RowLayout{
     property alias item76:mapitem76
     property alias dice:_dice
     property alias delytimer:delytimer
+    property alias an1: _an1
+    property alias an2: _an2
+
+
     // 使用数组来存储地图上的颜色以便于切换主题
     property var mapitemcolor:["#83c326","#db224e","#e77918","#76c5f0"]
     // property var mappositioin:[]
@@ -257,6 +261,39 @@ RowLayout{
                     }
                 }
 
+        }
+        Text {
+            id: turnText
+            text: "该你的回合了"
+            font.pointSize: 50
+            anchors.centerIn: parent
+            color: "black"
+            opacity: 0
+            visible: false
+            z:6
+        }
+
+        PropertyAnimation {
+            id: _an1
+            target: turnText
+            property: "opacity"
+            from: 0
+            to: 1
+            duration: 3000
+            onStarted: {
+                turnText.visible=true
+            }
+        }
+        PropertyAnimation {
+            id: _an2
+            target: turnText
+            property: "opacity"
+            from: 1
+            to: 0
+            duration: 3000
+            onFinished: {
+  turnText.visible=false
+            }
         }
         Triangle{
             id:mapitem1
