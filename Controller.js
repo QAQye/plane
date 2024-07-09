@@ -1068,7 +1068,7 @@ function showGameOver4() {
 // 实现人机部分
 function humantocomputer(){
 
-    select=4
+    select=content.secondwindow.select
     if(select!==1){
         // 如果没有选择第一个绿色飞机那么就直接开始电脑摇骰子
         content.gamewindow.mainmaps.delytimer.start()
@@ -1119,7 +1119,7 @@ function humantocomputer(){
 
                                                                          }
 
-                                                                         if(falsefly===4-orangesend&&randomNum!==6){
+                                                                      if(falsefly===4-orangesend&&randomNum!==6){
                                                                              content.gamewindow.mainmaps.dicebutton.enabled=false
                                                                              content.gamewindow.mainmaps.textarea.text+="没有达到指定点数\n"
                                                                              content.gamewindow.mainmaps.textarea.text+="橙色棋子不能移动\n"
